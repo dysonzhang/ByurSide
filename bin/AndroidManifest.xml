@@ -40,7 +40,7 @@
             android:name="com.ysls.imhere.WelcomeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" >
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,7 +55,27 @@
             android:name="com.ysls.imhere.GuideActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" />
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.ysls.imhere.LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.ysls.imhere.RegisterPhoneActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.ysls.imhere.RegisterInfoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.ysls.imhere.RegisterResultActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name="com.ysls.imhere.DetailsActivity"
             android:hardwareAccelerated="false"

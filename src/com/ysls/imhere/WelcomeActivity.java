@@ -8,6 +8,7 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import cn.jpush.android.api.JPushInterface;
 import com.ysls.imhere.base.BaseActivity;
+import com.ysls.imhere.utils.Golbal;
 import com.ysls.imhere.utils.SharedPreferencesUtil;
 
 /**
@@ -19,6 +20,7 @@ import com.ysls.imhere.utils.SharedPreferencesUtil;
 public class WelcomeActivity extends BaseActivity {
 
 	private Boolean isFirstUse;
+	private Boolean isLogin;
 	private Handler mHandler = new Handler();
 
 	protected void onCreate(Bundle paramBundle) {
@@ -59,14 +61,20 @@ public class WelcomeActivity extends BaseActivity {
 
 		isFirstUse = (Boolean) SharedPreferencesUtil.getParam(this,
 				"isFirstUse", true);
+		isLogin = (Boolean) SharedPreferencesUtil.getParam(this,
+				"isLogin", false);
+		Golbal.isLogin = isLogin;
 		
 		if (isFirstUse) {
 			SharedPreferencesUtil.setParam(this, "isFirstUse", false);
 			openActivity(GuideActivity.class);
 		} else {
-			openActivity(HomeActivity.class);
+			if(isLogin){
+				openActivity(HomeActivity.class);
+			}else{
+				openActivity(LoginActivity.class);
+			}
 		}
-		
 		defaultFinish();
 	}
 }
