@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/view_load_fail"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff5f5f5"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:visibility="gone" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10.0dip"
+        android:background="@drawable/webview_load_default" />
+
+    <TextView
+        android:id="@id/txt_neterr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="网络请求失败,请稍后重试" />
+
+    <Button
+        android:id="@id/bn_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20.0dip"
+        android:text="刷新" />
+
+</LinearLayout>

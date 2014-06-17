@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff5f5f5"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/user_login_title" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.0dip"
+                android:text="@string/user_login_alert"
+                android:textColor="#ff000000"
+                android:textSize="20.0sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/user_bind_height"
+                android:layout_marginTop="25.0dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <EditText
+                    android:id="@id/edittext_user_key"
+                    android:layout_width="200.0dip"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/back_textview_style"
+                    android:gravity="center_vertical"
+                    android:hint="@string/user_key_alert"
+                    android:paddingLeft="5.0dip"
+                    android:textColor="#ff000000"
+                    android:textCursorDrawable="@color/black"
+                    android:textSize="@dimen/user_alert_size" />
+
+                <Button
+                    android:id="@id/user_login_bind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="3.0dip"
+                    android:layout_marginLeft="5.0dip"
+                    android:background="@drawable/back_submit_style"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:text="@string/user_bind_btn"
+                    android:textColor="#ffffffff" />
+            </LinearLayout>
+
+            <Button
+                android:id="@id/scan_user_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3.0dip"
+                android:layout_marginLeft="5.0dip"
+                android:background="@drawable/back_submit_style"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:text="@string/user_qr_scan_btn"
+                android:textColor="#ffffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="36.0dip"
+                android:layout_marginTop="15.0dip"
+                android:lineSpacingExtra="1.0dip"
+                android:text="@string/user_alert"
+                android:textColor="#ff666666"
+                android:textSize="@dimen/user_alert_size" />
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50.0dip"
+                android:layout_marginRight="50.0dip"
+                android:layout_marginTop="25.0dip"
+                android:src="@drawable/dis_user_example" />
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="80.0dip"
+                android:layout_margin="36.0dip" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.0dip"
+                    android:background="@drawable/shape_corner_border"
+                    android:padding="10.0dip" >
+
+                    <com.ysls.imhere.widget.CustomButton
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        Image="@drawable/button_details_collect_selected"
+                        ImageID="@+id/imageview_details_collect"
+                        Text="@string/DetailsCollect"
+                        TextID="@+id/textview_details_collect"
+                        android:clickable="true" />
+
+                    <com.ysls.imhere.widget.CustomButton
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        Image="@drawable/button_details_discuss_selected"
+                        ImageID="@+id/imageview_details_discuss"
+                        Text="@string/DetailsDiscuss"
+                        TextID="@+id/textview_details_discuss"
+                        android:clickable="true" />
+
+                    <com.ysls.imhere.widget.CustomButton
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        Image="@drawable/button_details_good_selected"
+                        ImageID="@+id/imageview_details_good"
+                        Text="@string/DetailsGood"
+                        TextID="@+id/textview_details_good"
+                        android:clickable="true" />
+
+                    <com.ysls.imhere.widget.CustomButton
+                        android:layout_width="0.0dip"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1.0"
+                        Image="@drawable/button_details_share_selected"
+                        ImageID="@+id/imageview_details_share"
+                        Text="@string/DetailsShare"
+                        TextID="@+id/textview_details_share"
+                        android:clickable="true" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:background="#fff5f5f5"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:text="@string/user_button_alert"
+                    android:textColor="#ff000000"
+                    android:textSize="@dimen/user_alert_size" />
+            </FrameLayout>
+
+            <Button
+                android:id="@id/login_button_another"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20.0dip"
+                android:layout_marginTop="15.0dip"
+                android:background="@drawable/back_submit_style"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:paddingTop="0.0dip"
+                android:text="@string/user_login_another"
+                android:textColor="#ffffffff" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

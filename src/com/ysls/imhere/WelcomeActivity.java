@@ -1,0 +1,72 @@
+package com.ysls.imhere;
+
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
+import cn.jpush.android.api.JPushInterface;
+import com.ysls.imhere.base.BaseActivity;
+import com.ysls.imhere.utils.SharedPreferencesUtil;
+
+/**
+ * 欢迎界面
+ * 
+ * @author dyson
+ * 
+ */
+public class WelcomeActivity extends BaseActivity {
+
+	private Boolean isFirstUse;
+	private Handler mHandler = new Handler();
+
+	protected void onCreate(Bundle paramBundle) {
+		super.onCreate(paramBundle);
+		View localView = View.inflate(this, R.layout.activity_welcome, null);
+
+		setContentView(localView);
+		Animation localAnimation = AnimationUtils.loadAnimation(this,
+				R.anim.alpha);
+		localView.startAnimation(localAnimation);
+		localAnimation.setAnimationListener(new AnimationListener() {
+			public void onAnimationEnd(Animation paramAnimation) {
+				mHandler.postDelayed(new Runnable() {
+					public void run() {
+						goHome();
+					}
+				}, 500L);
+			}
+
+			public void onAnimationRepeat(Animation paramAnimation) {
+			}
+
+			public void onAnimationStart(Animation paramAnimation) {
+			}
+		});
+	}
+
+	protected void onPause() {
+		super.onPause();
+		JPushInterface.onPause(this);
+	}
+
+	protected void onResume() {
+		super.onResume();
+		JPushInterface.onResume(this);
+	}
+	public void goHome() {
+
+		isFirstUse = (Boolean) SharedPreferencesUtil.getParam(this,
+				"isFirstUse", true);
+		
+		if (isFirstUse) {
+			SharedPreferencesUtil.setParam(this, "isFirstUse", false);
+			openActivity(GuideActivity.class);
+		} else {
+			openActivity(HomeActivity.class);
+		}
+		
+		defaultFinish();
+	}
+}

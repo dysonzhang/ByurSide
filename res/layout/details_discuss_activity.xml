@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff5f5f5"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_gravity="top"
+        layout="@layout/details_title" />
+
+    <ListView
+        android:id="@id/details_listview_show"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="49.0dip"
+        android:layout_marginTop="@dimen/title_height"
+        android:divider="@drawable/dis_behind_side"
+        android:listSelector="#00ffffff" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#ffd4d4d4"
+        android:minHeight="50.0dip"
+        android:padding="8.0dip" >
+
+        <EditText
+            android:id="@id/details_edittext_discuss"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="fill_vertical|left|center"
+            android:layout_marginLeft="8.0dip"
+            android:layout_marginRight="80.0dip"
+            android:background="@drawable/back_textview_style"
+            android:drawableLeft="@drawable/dis_details_show"
+            android:hint="@string/detail_prompt"
+            android:maxLines="3"
+            android:textColor="#ff000000"
+            android:textCursorDrawable="@color/black" />
+
+        <Button
+            android:id="@id/details_button_enter"
+            android:layout_width="60.0dip"
+            android:layout_height="36.0dip"
+            android:layout_gravity="bottom|right|center"
+            android:layout_marginRight="10.0dip"
+            android:background="@drawable/back_submit_style"
+            android:paddingLeft="10.0dip"
+            android:paddingRight="10.0dip"
+            android:text="@string/detail_enter"
+            android:textColor="#ffffffff" />
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff5f5f5"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="#ff2477ab" >
+
+        <ImageView
+            android:id="@id/about_imageview_gohome"
+            style="@style/title_right_button"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:src="@drawable/button_details_gohome" />
+
+        <TextView
+            android:id="@id/textview_details_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="关于"
+            android:textColor="#ffffffff"
+            android:textSize="20.0sp" />
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20.0dip"
+                android:gravity="center_vertical" >
+
+                <ImageView
+                    android:layout_width="60.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:src="@drawable/ic_launcher" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_title"
+                    android:textColor="#ff000000"
+                    android:textSize="14.0sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginTop="20.0dip"
+                android:text="@string/about_intro"
+                android:textColor="#ff000000"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginTop="12.0dip"
+                android:text="@string/about_story"
+                android:textColor="#ff000000"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginTop="12.0dip"
+                android:text="@string/about_thanks"
+                android:textColor="#ff000000"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginTop="12.0dip"
+                android:text="@string/about_opensource"
+                android:textColor="#ff000000"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginTop="20.0dip"
+                android:text="@string/about_tontact"
+                android:textColor="#ff000000"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:id="@id/about_textview_weibo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginTop="3.0dip"
+                android:drawableLeft="@drawable/dis_about_sina"
+                android:text="@string/about_sina"
+                android:textColor="#ff000000"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@id/about_textview_weixin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:layout_marginTop="3.0dip"
+                android:clickable="true"
+                android:drawableLeft="@drawable/dis_about_weixin"
+                android:text="@string/about_weixin"
+                android:textColor="#ff000000"
+                android:textSize="16.0sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10.0dip"
+                android:layout_marginTop="20.0dip"
+                android:src="@drawable/dis_about_logo" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
