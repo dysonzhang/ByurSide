@@ -1,0 +1,45 @@
+package com.ysls.imhere.view;
+
+import com.ysls.imhere.R;
+import com.ysls.imhere.widget.ProgressWebView;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+@SuppressLint("ValidFragment")
+public class HomeFragment extends Fragment {
+
+	private Activity mActivity;
+
+	protected View view;
+	private ProgressWebView webview;
+
+	public HomeFragment() {
+	}
+
+	public HomeFragment(Activity paramActivity) {
+		this.mActivity = paramActivity;
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+
+	public View onCreateView(LayoutInflater layoutInflater,
+			ViewGroup viewGroup, Bundle bundle) {
+		view = layoutInflater.inflate(R.layout.common_web, null);
+
+		// 绑定控件
+		webview = (ProgressWebView) view.findViewById(R.id.webview);
+
+		webview.loadUrl("http://a.m.taobao.com/i17166586737.htm?sid=7fabde721d3199f9&show_id=1&pds=fromtop%23h%23shop");
+
+		return view;
+	}
+}

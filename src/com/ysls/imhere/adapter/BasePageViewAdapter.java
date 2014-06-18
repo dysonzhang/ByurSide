@@ -5,12 +5,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
-import cn.eoe.app.view.CheckFragment;
-import cn.eoe.app.view.HomeFragment;
-import cn.eoe.app.view.HttpErrorFragment;
-import cn.eoe.app.view.TodoFragment;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.ysls.imhere.view.HomeFragment;
+import com.ysls.imhere.view.HttpErrorFragment;
+import com.ysls.imhere.view.SocialFragment;
+import com.ysls.imhere.view.TodoFragment;
 
 public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 	private Activity mActivity;
@@ -32,11 +33,11 @@ public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 		for (int i = 0; i < tabs.size(); i++) {
 			String str = (String) this.tabs.get(i);
 			if (str.equals("任务"))
-				addTab(new HomeFragment(this.mActivity));
-			if (str.equals("主页"))
 				addTab(new TodoFragment(this.mActivity));
+			if (str.equals("主页"))
+				addTab(new HomeFragment(this.mActivity));
 			if (str.equals("通讯录"))
-				addTab(new CheckFragment(this.mActivity));
+				addTab(new SocialFragment(this.mActivity));
 		}
 	}
 

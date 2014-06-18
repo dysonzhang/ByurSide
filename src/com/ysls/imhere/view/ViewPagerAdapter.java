@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
- * @author yangyu 功能描述：ViewPager适配器，用来绑定数据和view
+ * 功能描述：ViewPager适配器，用来绑定数据和view
  */
 public class ViewPagerAdapter extends PagerAdapter {
 	// 界面列表
