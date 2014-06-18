@@ -963,9 +963,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int accelerate_quint=0x7f050000;
     }
     public static final class layout {
-        public static final int about=0x7f030000;
         public static final int above_slidingmenu=0x7f030001;
         public static final int above_title=0x7f030002;
+        public static final int activity_about=0x7f030000;
         public static final int activity_guide=0x7f030003;
         public static final int activity_login=0x7f03002b;
         public static final int activity_main=0x7f030004;

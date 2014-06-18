@@ -148,7 +148,7 @@ public class TitlePageIndicator extends View implements PageIndicator {
 	private int mActivePointerId = INVALID_POINTER;
 	private boolean mIsDragging;
 
-	// �Լ�д�� �������Ҿ���
+	//
 	private int TextMaginLeftAndRight = 50;
 
 	private OnCenterItemClickListener mCenterItemClickListener;

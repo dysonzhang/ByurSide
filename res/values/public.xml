@@ -151,7 +151,7 @@
     <public id="0x7f020070" name="webview_load_default" type="drawable" />
     <public id="0x7f020071" name="welcome_background" type="drawable" />
     <public id="0x7f020072" name="xlistview_arrow" type="drawable" />
-    <public id="0x7f030000" name="about" type="layout" />
+    <public id="0x7f030000" name="activity_about" type="layout" />
     <public id="0x7f030001" name="above_slidingmenu" type="layout" />
     <public id="0x7f030002" name="above_title" type="layout" />
     <public id="0x7f030003" name="activity_guide" type="layout" />
@@ -249,7 +249,6 @@
     <public id="0x7f060027" name="textView1" type="id" />
     <public id="0x7f060028" name="imageview_behind_icon" type="id" />
     <public id="0x7f060029" name="textview_behind_title" type="id" />
-    <public id="0x7f06002a" name="behind_list_show" type="id" />
     <public id="0x7f06002b" name="tv_username" type="id" />
     <public id="0x7f06002c" name="img_thu" type="id" />
     <public id="0x7f06002d" name="tx_header_title" type="id" />
@@ -296,7 +295,6 @@
     <public id="0x7f060056" name="edt_search" type="id" />
     <public id="0x7f060057" name="search_imageview_wait" type="id" />
     <public id="0x7f060058" name="txt_empty" type="id" />
-    <public id="0x7f060059" name="slidingmenumain" type="id" />
     <public id="0x7f06005a" name="imageview" type="id" />
     <public id="0x7f06005b" name="textview" type="id" />
     <public id="0x7f06005c" name="imageview_user_left" type="id" />
@@ -413,13 +411,8 @@
     <public id="0x7f0a0003" name="default_title_indicator_selected_bold" type="bool" />
     <public id="0x7f0a0004" name="default_underline_indicator_fades" type="bool" />
     <public id="0x7f0b0000" name="app_name" type="string" />
-    <public id="0x7f0b0001" name="action_settings" type="string" />
     <public id="0x7f0b0002" name="hello_world" type="string" />
-    <public id="0x7f0b0003" name="menu_settings" type="string" />
     <public id="0x7f0b0004" name="title_activity_main" type="string" />
-    <public id="0x7f0b0005" name="button_setting" type="string" />
-    <public id="0x7f0b0006" name="button_feedback" type="string" />
-    <public id="0x7f0b0007" name="button_about" type="string" />
     <public id="0x7f0b0008" name="menuGood" type="string" />
     <public id="0x7f0b0009" name="menuNews" type="string" />
     <public id="0x7f0b000a" name="menuStudio" type="string" />
@@ -499,7 +492,6 @@
     <public id="0x7f0c0001" name="Theme.splash" type="style" />
     <public id="0x7f0c0002" name="behind_button_style" type="style" />
     <public id="0x7f0c0003" name="title_right_button" type="style" />
-    <public id="0x7f0d0000" name="main" type="menu" />
     <public id="0x7f0d0001" name="menu_main" type="menu" />
 
 </resources>

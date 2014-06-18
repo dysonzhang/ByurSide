@@ -21,7 +21,7 @@ public class AboutActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.about);
+		setContentView(R.layout.activity_about);
 		mWeixin = (TextView) findViewById(R.id.about_textview_weixin);
 		// http://weixin.qq.com/r/7HX_8R7EfiABhw_SnyDI
 		// http://e.weibo.com/eoeandroid00?ref=http%3A%2F%2Fwww.weibo.com%2Fu%2F1959452825%3Fwvr%3D5%26
