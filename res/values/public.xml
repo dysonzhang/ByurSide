@@ -157,9 +157,6 @@
     <public id="0x7f030003" name="activity_guide" type="layout" />
     <public id="0x7f030004" name="activity_main" type="layout" />
     <public id="0x7f030005" name="activity_welcome" type="layout" />
-    <public id="0x7f030006" name="behind_list_show" type="layout" />
-    <public id="0x7f030007" name="behind_slidingmenu" type="layout" />
-    <public id="0x7f030008" name="behind_title" type="layout" />
     <public id="0x7f030009" name="blogs_item_layout" type="layout" />
     <public id="0x7f03000a" name="details_activity" type="layout" />
     <public id="0x7f03000b" name="details_discuss_activity" type="layout" />

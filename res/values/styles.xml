@@ -89,4 +89,15 @@
         <item name="android:scaleType">fitCenter</item>
     </style>
 
+      <style name="shape_line">
+        <item name="android:background">#ffdedede</item>
+        <item name="android:layout_width">1.0px</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="horizontal_line">
+        <item name="android:background">#ffdedede</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+    </style>
 </resources>

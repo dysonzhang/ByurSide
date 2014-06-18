@@ -14,22 +14,20 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import cn.eoe.app.entity.NavigationModel;
+import android.widget.FrameLayout.LayoutParams;
 
 import com.ysls.imhere.adapter.BasePageViewAdapter;
 import com.ysls.imhere.base.BaseFragmentActivity;
 import com.ysls.imhere.db.DBHelper;
 import com.ysls.imhere.indicator.PageIndicator;
-import com.ysls.imhere.slidingmenu.SlidingMenu;
+import com.ysls.imhere.slidingdrawer.SemiClosedSlidingDrawer;
 import com.ysls.imhere.utils.LogUtil;
 import com.ysls.imhere.utils.PopupWindowUtil;
+import com.ysls.imhere.widget.ImageViewWithText;
+
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -38,11 +36,10 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	private static String TAG = "HomeActivity";
 
-	private final String LIST_IMAGEVIEW = "img";
-	private final String LIST_TEXT = "text";
+	private SemiClosedSlidingDrawer slidingDrawer;
+	private LinearLayout openLayout, closeLayout;
 
 	private Button bn_refresh;
-	private String current_page;
 
 	private ImageView imgLeft;
 	private ImageView imgMore;
@@ -57,34 +54,27 @@ public class HomeActivity extends BaseFragmentActivity implements
 	private LinearLayout llGoHome;
 	private LinearLayout loadFaillayout;
 	private LinearLayout loadLayout;
-	private SimpleAdapter lvAdapter;
 
-	private ListView lvTitle;
 	private TextView mAboveTitle;
 	private BasePageViewAdapter mBasePageViewAdapter;
-	private FrameLayout mFrameTv;
-	private ImageView mImgTv;
+
 	private PageIndicator mIndicator;
 	private boolean mIsAnim = false;
 	private boolean mIsTitleHide = false;
 	private int mTag = 0;
 	private ViewPager mViewPager;
 	private LinearLayout mlinear_listview;
-	private List<NavigationModel> navs;
-	private SlidingMenu sm;
+
 	private View title;
-	private TextView tv_username;
 
 	public void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
-		
 		setContentView(R.layout.above_slidingmenu);
 
 		initClass();
 		initControl();
-
+		initBelowSlidingMenu();
 		initViewPager();
-
 		initgoHome();
 	}
 
@@ -98,24 +88,65 @@ public class HomeActivity extends BaseFragmentActivity implements
 		loadFaillayout = (LinearLayout) findViewById(R.id.view_load_fail);
 
 		mAboveTitle = (TextView) findViewById(R.id.tv_above_title);
-		mAboveTitle.setText("我在");
+		mAboveTitle.setText("IMHere");
+		mAboveTitle.setTextSize(22);
 
 		imgMore = (ImageView) findViewById(R.id.imageview_above_more);
 		imgMore.setOnClickListener(this);
 		imgLeft = (ImageView) findViewById(R.id.imageview_above_left);
 		imgRight = (ImageView) findViewById(R.id.imageview_above_right);
+
 		mViewPager = (ViewPager) findViewById(R.id.above_pager);
 		mIndicator = (PageIndicator) findViewById(R.id.above_indicator);
-		lvTitle = (ListView) findViewById(R.id.behind_list_show);
 		llGoHome = (LinearLayout) findViewById(R.id.Linear_above_toHome);
 
 		title = findViewById(R.id.main_title);
 		mlinear_listview = (LinearLayout) findViewById(R.id.main_linear_listview);
-		mFrameTv = (FrameLayout) findViewById(R.id.fl_off);
-		mImgTv = (ImageView) findViewById(R.id.iv_off);
 
 		bn_refresh = ((Button) findViewById(R.id.bn_refresh));
 		bn_refresh.setOnClickListener(this);
+
+		slidingDrawer = (SemiClosedSlidingDrawer) findViewById(R.id.sd);
+		openLayout = (LinearLayout) findViewById(R.id.open_header_layout);
+		closeLayout = (LinearLayout) findViewById(R.id.close_header_layout);
+
+	}
+
+	private void initBelowSlidingMenu() {
+		slidingDrawer
+				.setOnDrawerCloseListener(new SemiClosedSlidingDrawer.OnDrawerCloseListener() {
+					public void onDrawerClosed() {
+						// TODO Auto-generated method stub
+						openLayout.setVisibility(View.INVISIBLE);
+						closeLayout.setVisibility(View.VISIBLE);
+					}
+				});
+
+		slidingDrawer
+				.setOnDrawerOpenListener(new SemiClosedSlidingDrawer.OnDrawerOpenListener() {
+					public void onDrawerOpened() {
+						// TODO Auto-generated method stub
+						openLayout.setVisibility(View.VISIBLE);
+						closeLayout.setVisibility(View.INVISIBLE);
+					}
+				});
+
+		ImageViewWithText sdgl = (ImageViewWithText) findViewById(R.id.custom_sdgl);
+		sdgl.setOnClickListener(this);
+		ImageViewWithText ysbh = (ImageViewWithText) findViewById(R.id.custom_ysbh);
+		ysbh.setOnClickListener(this);
+		ImageViewWithText wdrj = (ImageViewWithText) findViewById(R.id.custom_wdrj);
+		wdrj.setOnClickListener(this);
+		ImageViewWithText rjyx = (ImageViewWithText) findViewById(R.id.custom_rjyx);
+		rjyx.setOnClickListener(this);
+		ImageViewWithText sygj = (ImageViewWithText) findViewById(R.id.custom_sygj);
+		sygj.setOnClickListener(this);
+		ImageViewWithText sjfd = (ImageViewWithText) findViewById(R.id.custom_sjfd);
+		sjfd.setOnClickListener(this);
+		ImageViewWithText txbf = (ImageViewWithText) findViewById(R.id.custom_txbf);
+		txbf.setOnClickListener(this);
+		ImageViewWithText qqwp = (ImageViewWithText) findViewById(R.id.custom_qqwp);
+		qqwp.setOnClickListener(this);
 	}
 
 	private void initViewPager() {
@@ -126,7 +157,6 @@ public class HomeActivity extends BaseFragmentActivity implements
 		mIndicator.setViewPager(mViewPager);
 		mIndicator.setOnPageChangeListener(new MyPageChangeListener());
 
-		// TODO Auto-generated method stub
 		imgLeft.setVisibility(View.GONE);
 		imgRight.setVisibility(View.GONE);
 		loadLayout.setVisibility(View.VISIBLE);
@@ -136,10 +166,10 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 		isShowPopupWindows = false;
 
-		ArrayList localArrayList = new ArrayList();
+		ArrayList<String> localArrayList = new ArrayList<String>();
+		localArrayList.add("任务");
 		localArrayList.add("主页");
-		localArrayList.add("任务中心");
-		localArrayList.add("我的考勤");
+		localArrayList.add("通讯录");
 
 		this.isShowPopupWindows = true;
 		this.mBasePageViewAdapter.Clear();
@@ -157,7 +187,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 		}
 		mViewPager.setVisibility(View.VISIBLE);
 		mBasePageViewAdapter.notifyDataSetChanged();
-		mViewPager.setCurrentItem(0);
+		mViewPager.setCurrentItem(1);
 		mIndicator.notifyDataSetChanged();
 
 	}
@@ -213,33 +243,44 @@ public class HomeActivity extends BaseFragmentActivity implements
 		return false;
 	}
 
-	public void onAnimationEnd(Animation paramAnimation) {
-		if (this.mIsTitleHide)
-			this.title.setVisibility(8);
-		this.mIsAnim = false;
-	}
+	@Override
+	public void onAnimationEnd(Animation animation) {
+		// TODO Auto-generated method stub
+		if (mIsTitleHide) {
+			title.setVisibility(View.GONE);
+		} else {
 
-	public void onAnimationRepeat(Animation paramAnimation) {
-	}
-
-	public void onAnimationStart(Animation paramAnimation) {
-		this.title.setVisibility(0);
-		if (this.mIsTitleHide) {
-			FrameLayout.LayoutParams localLayoutParams3 = (FrameLayout.LayoutParams) this.mlinear_listview
-					.getLayoutParams();
-			localLayoutParams3.setMargins(0, 0, 0, 0);
-			this.mlinear_listview.setLayoutParams(localLayoutParams3);
-			return;
 		}
-		FrameLayout.LayoutParams localLayoutParams1 = (FrameLayout.LayoutParams) this.title
-				.getLayoutParams();
-		localLayoutParams1.setMargins(0, 0, 0, 0);
-		this.title.setLayoutParams(localLayoutParams1);
-		FrameLayout.LayoutParams localLayoutParams2 = (FrameLayout.LayoutParams) this.mlinear_listview
-				.getLayoutParams();
-		localLayoutParams2.setMargins(0,
-				getResources().getDimensionPixelSize(2131230725), 0, 0);
-		this.mlinear_listview.setLayoutParams(localLayoutParams2);
+		mIsAnim = false;
+	}
+
+	@Override
+	public void onAnimationRepeat(Animation animation) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onAnimationStart(Animation animation) {
+		// TODO Auto-generated method stub
+		title.setVisibility(View.VISIBLE);
+		if (mIsTitleHide) {
+			FrameLayout.LayoutParams lp = (LayoutParams) mlinear_listview
+					.getLayoutParams();
+			lp.setMargins(0, 0, 0, 0);
+			mlinear_listview.setLayoutParams(lp);
+		} else {
+			FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) title
+					.getLayoutParams();
+			lp.setMargins(0, 0, 0, 0);
+			title.setLayoutParams(lp);
+			FrameLayout.LayoutParams lp1 = (LayoutParams) mlinear_listview
+					.getLayoutParams();
+			lp1.setMargins(0,
+					getResources().getDimensionPixelSize(R.dimen.title_height),
+					0, 0);
+			mlinear_listview.setLayoutParams(lp1);
+		}
 	}
 
 	public void onClick(View paramView) {
@@ -292,12 +333,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 				}, 3000);
 				break;
 			case 1:
-				mFrameTv.setVisibility(View.VISIBLE);
-				mImgTv.setVisibility(View.VISIBLE);
-				Animation anim = AnimationUtils.loadAnimation(
-						HomeActivity.this, R.anim.tv_off);
-				anim.setAnimationListener(new tvOffAnimListener());
-				mImgTv.startAnimation(anim);
+				defaultFinish();
 				break;
 			default:
 				break;
@@ -334,30 +370,18 @@ public class HomeActivity extends BaseFragmentActivity implements
 		public void onPageSelected(int paramInt) {
 			if (paramInt == 0) {
 				imgLeft.setVisibility(View.GONE);
-				LogUtil.i(HomeActivity.TAG, "主页");
+				LogUtil.i(HomeActivity.TAG, "任务");
 
 			} else if (paramInt == HomeActivity.this.mBasePageViewAdapter.mFragments
 					.size() - 1) {
 				imgRight.setVisibility(View.GONE);
-				LogUtil.i(HomeActivity.TAG, "我的考勤");
+				LogUtil.i(HomeActivity.TAG, "主页");
 
 			} else {
 				imgRight.setVisibility(View.VISIBLE);
 				imgLeft.setVisibility(View.VISIBLE);
-				LogUtil.i(HomeActivity.TAG, "任务中心");
+				LogUtil.i(HomeActivity.TAG, "通讯录");
 			}
-		}
-	}
-
-	class tvOffAnimListener implements Animation.AnimationListener {
-		public void onAnimationEnd(Animation paramAnimation) {
-			HomeActivity.this.defaultFinish();
-		}
-
-		public void onAnimationRepeat(Animation paramAnimation) {
-		}
-
-		public void onAnimationStart(Animation paramAnimation) {
 		}
 	}
 }

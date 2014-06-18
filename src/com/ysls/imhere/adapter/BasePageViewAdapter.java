@@ -31,11 +31,11 @@ public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 		tabs.addAll(paramList);
 		for (int i = 0; i < tabs.size(); i++) {
 			String str = (String) this.tabs.get(i);
-			if (str.equals("主页"))
+			if (str.equals("任务"))
 				addTab(new HomeFragment(this.mActivity));
-			if (str.equals("任务中心"))
+			if (str.equals("主页"))
 				addTab(new TodoFragment(this.mActivity));
-			if (str.equals("我的考勤"))
+			if (str.equals("通讯录"))
 				addTab(new CheckFragment(this.mActivity));
 		}
 	}

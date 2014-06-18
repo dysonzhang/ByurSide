@@ -195,4 +195,13 @@ eoe客户端代码已经完全开源，欢迎每个eoer们参与, 详情情况�
     <string name="storage_warning">没有外部存储设备或SD卡不可用</string>
     <string name="wifi">文件管理</string>
 
+    <string name="sdgl">考勤查询</string>
+    <string name="ysbh">通知公告</string>
+    <string name="wdrj">帐号设置</string>
+    <string name="rjyx">关于</string>
+    <string name="sygj">反馈</string>
+    <string name="sjfd">退出</string>
+    <string name="txbf">通讯备份</string>
+    <string name="qqwp">门禁开门</string>
+    
 </resources>

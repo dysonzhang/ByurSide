@@ -8,7 +8,7 @@
     <color name="default_circle_indicator_stroke_color">#ffdddddd</color>
     <color name="default_line_indicator_selected_color">#ff33b5e5</color>
     <color name="default_line_indicator_unselected_color">#ffbbbbbb</color>
-    <color name="default_title_indicator_footer_color">#ff33b5e5</color>
+    <color name="default_title_indicator_footer_color">#ff4ec5d5</color>
     <color name="default_title_indicator_selected_color">#ffffffff</color>
     <color name="default_title_indicator_text_color">#bbffffff</color>
     <color name="default_underline_indicator_selected_color">#ff33b5e5</color>
@@ -44,5 +44,8 @@
 
     <color name="remote_connect_text">#FFe78018</color>
     <color name="remote_disconnect_text">#FF901821</color>
+    
+     <color name="normal">#ffffff</color>
+        <color name="click">#ffe9a1</color>
 
 </resources>

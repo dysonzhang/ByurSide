@@ -36,7 +36,7 @@
             <com.ysls.imhere.indicator.TitlePageIndicator
                 android:id="@id/above_indicator"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_gravity="center"
                 android:textColor="#ff666666"
                 android:textSize="18.0sp"
@@ -59,23 +59,6 @@
         android:id="@id/main_title"
         layout="@layout/above_title" />
 
-    <FrameLayout
-        android:id="@id/fl_off"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:visibility="gone" >
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@color/black" />
-
-        <ImageView
-            android:id="@id/iv_off"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@color/white"
-            android:visibility="gone" />
-    </FrameLayout>
+    <include layout="@layout/below_slidingmenu" />
 
 </FrameLayout>
