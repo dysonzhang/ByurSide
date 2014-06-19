@@ -1,22 +1,17 @@
 package com.ysls.imhere;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
-import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.FrameLayout.LayoutParams;
 
 import com.ysls.imhere.adapter.BasePageViewAdapter;
 import com.ysls.imhere.base.BaseFragmentActivity;
@@ -25,19 +20,36 @@ import com.ysls.imhere.indicator.PageIndicator;
 import com.ysls.imhere.slidingdrawer.SemiClosedSlidingDrawer;
 import com.ysls.imhere.utils.LogUtil;
 import com.ysls.imhere.utils.PopupWindowUtil;
+import com.ysls.imhere.utils.ToastUtil;
 import com.ysls.imhere.widget.ImageViewWithText;
 
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * 主类Activity加载所有布局以及FragmentActivity
+ * 
+ * @author dyson
+ * 
+ */
 public class HomeActivity extends BaseFragmentActivity implements
-		OnClickListener, AnimationListener {
+		OnClickListener {
 
 	private static String TAG = "HomeActivity";
 
+	private Context mContext;
+
 	private SemiClosedSlidingDrawer slidingDrawer;
 	private LinearLayout openLayout, closeLayout;
+	private ImageViewWithText sdgl;
+	private ImageViewWithText ysbh;
+	private ImageViewWithText wdrj;
+	private ImageViewWithText rjyx;
+	private ImageViewWithText sygj;
+	private ImageViewWithText sjfd;
+	private ImageViewWithText txbf;
+	private ImageViewWithText qqwp;
 
 	private Button bn_refresh;
 
@@ -67,20 +79,27 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	private View title;
 
-	public void onCreate(Bundle paramBundle) {
-		super.onCreate(paramBundle);
+	public void onCreate(Bundle bundle) {
+		super.onCreate(bundle);
 		setContentView(R.layout.above_slidingmenu);
+		mContext = this;
 
 		initClass();
 		initControl();
 		initBelowSlidingMenu();
 		initViewPager();
-		initgoHome();
+
 	}
 
+	/**
+	 * 初始化相关类
+	 */
 	private void initClass() {
 	}
 
+	/**
+	 * 加载界面所有布局控件
+	 */
 	private void initControl() {
 		imm = ((InputMethodManager) getApplicationContext().getSystemService(
 				"input_method"));
@@ -99,6 +118,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 		mViewPager = (ViewPager) findViewById(R.id.above_pager);
 		mIndicator = (PageIndicator) findViewById(R.id.above_indicator);
 		llGoHome = (LinearLayout) findViewById(R.id.Linear_above_toHome);
+		llGoHome.setOnClickListener(this);
 
 		title = findViewById(R.id.main_title);
 		mlinear_listview = (LinearLayout) findViewById(R.id.main_linear_listview);
@@ -112,11 +132,13 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	}
 
+	/**
+	 * 初始化底部界面抽屉Menu
+	 */
 	private void initBelowSlidingMenu() {
 		slidingDrawer
 				.setOnDrawerCloseListener(new SemiClosedSlidingDrawer.OnDrawerCloseListener() {
 					public void onDrawerClosed() {
-						// TODO Auto-generated method stub
 						openLayout.setVisibility(View.INVISIBLE);
 						closeLayout.setVisibility(View.VISIBLE);
 					}
@@ -125,30 +147,32 @@ public class HomeActivity extends BaseFragmentActivity implements
 		slidingDrawer
 				.setOnDrawerOpenListener(new SemiClosedSlidingDrawer.OnDrawerOpenListener() {
 					public void onDrawerOpened() {
-						// TODO Auto-generated method stub
 						openLayout.setVisibility(View.VISIBLE);
 						closeLayout.setVisibility(View.INVISIBLE);
 					}
 				});
 
-		ImageViewWithText sdgl = (ImageViewWithText) findViewById(R.id.custom_sdgl);
+		sdgl = (ImageViewWithText) findViewById(R.id.custom_sdgl);
 		sdgl.setOnClickListener(this);
-		ImageViewWithText ysbh = (ImageViewWithText) findViewById(R.id.custom_ysbh);
+		ysbh = (ImageViewWithText) findViewById(R.id.custom_ysbh);
 		ysbh.setOnClickListener(this);
-		ImageViewWithText wdrj = (ImageViewWithText) findViewById(R.id.custom_wdrj);
+		wdrj = (ImageViewWithText) findViewById(R.id.custom_wdrj);
 		wdrj.setOnClickListener(this);
-		ImageViewWithText rjyx = (ImageViewWithText) findViewById(R.id.custom_rjyx);
+		rjyx = (ImageViewWithText) findViewById(R.id.custom_rjyx);
 		rjyx.setOnClickListener(this);
-		ImageViewWithText sygj = (ImageViewWithText) findViewById(R.id.custom_sygj);
+		sygj = (ImageViewWithText) findViewById(R.id.custom_sygj);
 		sygj.setOnClickListener(this);
-		ImageViewWithText sjfd = (ImageViewWithText) findViewById(R.id.custom_sjfd);
+		sjfd = (ImageViewWithText) findViewById(R.id.custom_sjfd);
 		sjfd.setOnClickListener(this);
-		ImageViewWithText txbf = (ImageViewWithText) findViewById(R.id.custom_txbf);
+		txbf = (ImageViewWithText) findViewById(R.id.custom_txbf);
 		txbf.setOnClickListener(this);
-		ImageViewWithText qqwp = (ImageViewWithText) findViewById(R.id.custom_qqwp);
+		qqwp = (ImageViewWithText) findViewById(R.id.custom_qqwp);
 		qqwp.setOnClickListener(this);
 	}
 
+	/**
+	 * 初始化 主页，任务，通讯录 滑动Menu菜单
+	 */
 	private void initViewPager() {
 
 		this.mBasePageViewAdapter = new BasePageViewAdapter(this);
@@ -166,17 +190,17 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 		isShowPopupWindows = false;
 
-		ArrayList<String> localArrayList = new ArrayList<String>();
-		localArrayList.add("任务");
-		localArrayList.add("主页");
-		localArrayList.add("通讯录");
+		ArrayList<String> menuList = new ArrayList<String>();
+		menuList.add("任务");
+		menuList.add("主页");
+		menuList.add("通讯录");
 
 		this.isShowPopupWindows = true;
 		this.mBasePageViewAdapter.Clear();
 		this.mViewPager.removeAllViews();
 
-		if (!localArrayList.isEmpty()) {
-			this.mBasePageViewAdapter.addFragment(localArrayList);
+		if (!menuList.isEmpty()) {
+			mBasePageViewAdapter.addFragment(menuList);
 			imgRight.setVisibility(View.VISIBLE);
 			loadLayout.setVisibility(View.GONE);
 			loadFaillayout.setVisibility(View.GONE);
@@ -185,6 +209,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 			loadLayout.setVisibility(View.GONE);
 			loadFaillayout.setVisibility(View.VISIBLE);
 		}
+
 		mViewPager.setVisibility(View.VISIBLE);
 		mBasePageViewAdapter.notifyDataSetChanged();
 		mViewPager.setCurrentItem(1);
@@ -192,117 +217,21 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	}
 
-	private void initgoHome() {
-		this.llGoHome.setOnClickListener(this);
-	}
-
-	@Override
-	public boolean dispatchTouchEvent(MotionEvent event) {
-		// TODO Auto-generated method stub
-		super.dispatchTouchEvent(event);
-		if (mIsAnim || mViewPager.getChildCount() <= 1) {
-			return false;
-		}
-		final int action = event.getAction();
-
-		float x = event.getX();
-		float y = event.getY();
-
-		switch (action) {
-		case MotionEvent.ACTION_DOWN:
-			lastY = y;
-			lastX = x;
-			return false;
-		case MotionEvent.ACTION_MOVE:
-			float dY = Math.abs(y - lastY);
-			float dX = Math.abs(x - lastX);
-			boolean down = y > lastY ? true : false;
-			lastY = y;
-			lastX = x;
-			if (dX < 8 && dY > 8 && !mIsTitleHide && !down) {
-				Animation anim = AnimationUtils.loadAnimation(
-						HomeActivity.this, R.anim.push_top_in);
-				// anim.setFillAfter(true);
-				anim.setAnimationListener(HomeActivity.this);
-				title.startAnimation(anim);
-			} else if (dX < 8 && dY > 8 && mIsTitleHide && down) {
-				Animation anim = AnimationUtils.loadAnimation(
-						HomeActivity.this, R.anim.push_top_out);
-				// anim.setFillAfter(true);
-				anim.setAnimationListener(HomeActivity.this);
-				title.startAnimation(anim);
-			} else {
-				return false;
-			}
-			mIsTitleHide = !mIsTitleHide;
-			mIsAnim = true;
-			break;
-		default:
-			return false;
-		}
-		return false;
-	}
-
-	@Override
-	public void onAnimationEnd(Animation animation) {
-		// TODO Auto-generated method stub
-		if (mIsTitleHide) {
-			title.setVisibility(View.GONE);
-		} else {
-
-		}
-		mIsAnim = false;
-	}
-
-	@Override
-	public void onAnimationRepeat(Animation animation) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void onAnimationStart(Animation animation) {
-		// TODO Auto-generated method stub
-		title.setVisibility(View.VISIBLE);
-		if (mIsTitleHide) {
-			FrameLayout.LayoutParams lp = (LayoutParams) mlinear_listview
-					.getLayoutParams();
-			lp.setMargins(0, 0, 0, 0);
-			mlinear_listview.setLayoutParams(lp);
-		} else {
-			FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) title
-					.getLayoutParams();
-			lp.setMargins(0, 0, 0, 0);
-			title.setLayoutParams(lp);
-			FrameLayout.LayoutParams lp1 = (LayoutParams) mlinear_listview
-					.getLayoutParams();
-			lp1.setMargins(0,
-					getResources().getDimensionPixelSize(R.dimen.title_height),
-					0, 0);
-			mlinear_listview.setLayoutParams(lp1);
-		}
-	}
-
 	public void onClick(View paramView) {
-		// TODO Auto-generated method stub
 		switch (paramView.getId()) {
 		case R.id.Linear_above_toHome:
-			// showMenu();
+			ToastUtil.showMsg(mContext, "You clicked my logo!");
 			break;
-
 		case R.id.imageview_above_more:
 			if (isShowPopupWindows) {
 				new PopupWindowUtil(mViewPager).showActionWindow(paramView,
 						this, mBasePageViewAdapter.tabs);
 			}
 			break;
-
 		case R.id.bn_refresh:
-			switch (mTag) {
-			}
+			ToastUtil.showMsg(mContext, "You clicked my refresh button!");
 			break;
 		}
-
 	}
 
 	protected void onDestroy() {
@@ -310,8 +239,8 @@ public class HomeActivity extends BaseFragmentActivity implements
 		try {
 			DBHelper.getInstance(this).closeDb();
 			return;
-		} catch (Exception localException) {
-			localException.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -340,12 +269,11 @@ public class HomeActivity extends BaseFragmentActivity implements
 			}
 			return true;
 		} else if (keyCode == KeyEvent.KEYCODE_MENU) {
-
-			// if (sm.isMenuShowing()) {
-			// toggle();
-			// } else {
-			// showMenu();
-			// }
+			if (slidingDrawer.isOpened()) {
+				slidingDrawer.toggle();
+			} else {
+				slidingDrawer.showContextMenu();
+			}
 		}
 		return super.onKeyDown(keyCode, event);
 	}
@@ -355,8 +283,8 @@ public class HomeActivity extends BaseFragmentActivity implements
 		this.keyBackClickCount = 0;
 	}
 
-	public void onSaveInstanceState(Bundle paramBundle) {
-		super.onSaveInstanceState(paramBundle);
+	public void onSaveInstanceState(Bundle bundle) {
+		super.onSaveInstanceState(bundle);
 	}
 
 	class MyPageChangeListener implements ViewPager.OnPageChangeListener {
@@ -367,13 +295,12 @@ public class HomeActivity extends BaseFragmentActivity implements
 				int paramInt2) {
 		}
 
-		public void onPageSelected(int paramInt) {
-			if (paramInt == 0) {
+		public void onPageSelected(int selectId) {
+			if (selectId == 0) {
 				imgLeft.setVisibility(View.GONE);
 				LogUtil.i(HomeActivity.TAG, "任务");
 
-			} else if (paramInt == HomeActivity.this.mBasePageViewAdapter.mFragments
-					.size() - 1) {
+			} else if (selectId == mBasePageViewAdapter.mFragments.size() - 1) {
 				imgRight.setVisibility(View.GONE);
 				LogUtil.i(HomeActivity.TAG, "主页");
 

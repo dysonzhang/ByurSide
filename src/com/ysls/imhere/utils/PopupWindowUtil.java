@@ -16,8 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.PopupWindow;
-import cn.eoe.app.entity.CategorysEntity;
+import android.widget.PopupWindow; 
 
 public class PopupWindowUtil<T> implements OnClickListener {
 	PopupWindow popupWindow;
@@ -68,9 +67,7 @@ public class PopupWindowUtil<T> implements OnClickListener {
 				String name = "";
 				if (tabs.get(i) instanceof String) {
 					name = ((List<String>) tabs).get(i);
-				} else if (tabs.get(i) instanceof CategorysEntity) {
-					name = ((List<CategorysEntity>) tabs).get(i).getName();
-				}
+				}  
 				Button btn = getButton(context, name, i);
 				ImageView img = getImageView(context);
 				layout.addView(btn);
@@ -79,9 +76,7 @@ public class PopupWindowUtil<T> implements OnClickListener {
 				String name = "";
 				if (tabs.get(i) instanceof String) {
 					name = ((List<String>) tabs).get(i);
-				} else if (tabs.get(i) instanceof CategorysEntity) {
-					name = ((List<CategorysEntity>) tabs).get(i).getName();
-				}
+				}  
 				Button btn = getButton(context, name, i);
 				layout.addView(btn);
 			}

@@ -22,12 +22,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class NewsFragment extends Fragment {
+	
 	private static final String TAG = "NewsFragment";
+	
 	private Context mContext;
 	private View mBaseView;
 	private CustomListView mCustomListView;
 	private LoadingView mLoadingView;
-	private View mSearchView;
+//	private View mSearchView;
 	private NewsAdapter adapter;
 	private LinkedList<RecentChat> chats = new LinkedList<RecentChat>();
 
@@ -35,24 +37,26 @@ public class NewsFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		mContext = getActivity();
+		
 		mBaseView = inflater.inflate(R.layout.fragment_news, null);
-		mSearchView = inflater.inflate(R.layout.common_search_l, null);
+//		mSearchView = inflater.inflate(R.layout.common_search_l, null);
+		
 		findView();
 		init();
+		
 		return mBaseView;
 	}
 
 	private void findView() {
 		mCustomListView = (CustomListView) mBaseView.findViewById(R.id.lv_news);
 		mLoadingView = (LoadingView) mBaseView.findViewById(R.id.loading);
-
 	}
 
 	private void init() {
 		adapter = new NewsAdapter(mContext, chats, mCustomListView);
 		mCustomListView.setAdapter(adapter);
 
-		mCustomListView.addHeaderView(mSearchView);
+//		mCustomListView.addHeaderView(mSearchView);
 		mCustomListView.setOnRefreshListener(new OnRefreshListener() {
 			@Override
 			public void onRefresh() {
@@ -120,7 +124,5 @@ public class NewsFragment extends Fragment {
 		protected void onPreExecute() {
 			super.onPreExecute();
 		}
-
 	}
-
 }

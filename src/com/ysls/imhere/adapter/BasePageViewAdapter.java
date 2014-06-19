@@ -3,9 +3,7 @@ package com.ysls.imhere.adapter;
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,13 +11,21 @@ import java.util.List;
 import com.ysls.imhere.fragment.HomeFragment;
 import com.ysls.imhere.fragment.HttpErrorFragment;
 import com.ysls.imhere.fragment.NewsFatherFragment;
-import com.ysls.imhere.fragment.SocialFragment;
 import com.ysls.imhere.fragment.TodoFragment;
 
+/**
+ * 三大导航栏viewpage适配器
+ * 
+ * @author dyson
+ * 
+ */
 public class BasePageViewAdapter extends FragmentStatePagerAdapter {
+	
 	private Activity mActivity;
-	public ArrayList<Fragment> mFragments = new ArrayList();
-	public List<String> tabs = new ArrayList();
+	
+	public ArrayList<Fragment> mFragments = new ArrayList<Fragment>();
+	
+	public List<String> tabs = new ArrayList<String>();
 
 	public BasePageViewAdapter(FragmentActivity paramFragmentActivity) {
 		super(paramFragmentActivity.getSupportFragmentManager());
@@ -40,25 +46,17 @@ public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 			if (str.equals("主页"))
 				addTab(new HomeFragment(this.mActivity));
 			if (str.equals("通讯录"))
-				
-//				FragmentManager fm=getSupportFragmentManager();
-//			FragmentTransaction ft=fm.beginTransaction();
-//			NewsFatherFragment newsFatherFragment=new NewsFatherFragment();
-//			ft.replace(R.id.fl_content, newsFatherFragment,MainActivity.TAG);
-//			ft.commit();
-			
 				addTab(new NewsFatherFragment());
 		}
 	}
 
 	public void addNullFragment() {
-		new String();
-		this.tabs.add("连接错误");
+		tabs.add("连接错误");
 		addTab(new HttpErrorFragment());
 	}
 
 	public void addTab(Fragment paramFragment) {
-		this.mFragments.add(paramFragment);
+		mFragments.add(paramFragment);
 		notifyDataSetChanged();
 	}
 
@@ -68,11 +66,11 @@ public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 	}
 
 	public int getCount() {
-		return this.mFragments.size();
+		return mFragments.size();
 	}
 
 	public Fragment getItem(int paramInt) {
-		return ((Fragment) this.mFragments.get(paramInt));
+		return ((Fragment) mFragments.get(paramInt));
 	}
 
 	public int getItemPosition(Object paramObject) {
@@ -80,6 +78,6 @@ public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 	}
 
 	public CharSequence getPageTitle(int paramInt) {
-		return ((CharSequence) this.tabs.get(paramInt));
+		return ((CharSequence) tabs.get(paramInt));
 	}
 }
