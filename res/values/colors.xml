@@ -45,7 +45,9 @@
     <color name="remote_connect_text">#FFe78018</color>
     <color name="remote_disconnect_text">#FF901821</color>
     
-     <color name="normal">#ffffff</color>
-        <color name="click">#ffe9a1</color>
+    <color name="normal">#ffffff</color>
+    <color name="click">#ffe9a1</color>
+    
+    <color name="logocolor">#ff4ec5d5</color>
 
 </resources>

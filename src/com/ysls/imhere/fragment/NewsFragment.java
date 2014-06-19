@@ -4,32 +4,38 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import com.ysls.imhere.R;
-import com.ysls.imhere.adapter.NewsAdapter;
-import com.ysls.imhere.bean.RecentChat;
-import com.ysls.imhere.http.AsyncTaskBase;
-import com.ysls.imhere.test.TestData;
-import com.ysls.imhere.widget.CustomListView;
-import com.ysls.imhere.widget.CustomListView.OnRefreshListener;
-import com.ysls.imhere.widget.LoadingView;
-
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+
+import com.ysls.imhere.ChatActivity;
+import com.ysls.imhere.R;
+import com.ysls.imhere.adapter.NewsAdapter;
+import com.ysls.imhere.bean.RecentChat;
+import com.ysls.imhere.http.AsyncTaskBase;
+import com.ysls.imhere.test.TestData;
+import com.ysls.imhere.utils.ToastUtil;
+import com.ysls.imhere.widget.CustomListView;
+import com.ysls.imhere.widget.CustomListView.OnRefreshListener;
+import com.ysls.imhere.widget.LoadingView;
 
 public class NewsFragment extends Fragment {
 	
 	private static final String TAG = "NewsFragment";
 	
 	private Context mContext;
+	
 	private View mBaseView;
 	private CustomListView mCustomListView;
 	private LoadingView mLoadingView;
-//	private View mSearchView;
+	
 	private NewsAdapter adapter;
 	private LinkedList<RecentChat> chats = new LinkedList<RecentChat>();
 
@@ -37,9 +43,7 @@ public class NewsFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		mContext = getActivity();
-		
 		mBaseView = inflater.inflate(R.layout.fragment_news, null);
-//		mSearchView = inflater.inflate(R.layout.common_search_l, null);
 		
 		findView();
 		init();
@@ -56,7 +60,6 @@ public class NewsFragment extends Fragment {
 		adapter = new NewsAdapter(mContext, chats, mCustomListView);
 		mCustomListView.setAdapter(adapter);
 
-//		mCustomListView.addHeaderView(mSearchView);
 		mCustomListView.setOnRefreshListener(new OnRefreshListener() {
 			@Override
 			public void onRefresh() {
@@ -65,6 +68,17 @@ public class NewsFragment extends Fragment {
 		});
 		mCustomListView.setCanLoadMore(false);
 		new NewsAsyncTask(mLoadingView).execute(0);
+		
+		mCustomListView.setOnItemClickListener(new OnItemClickListener() {  
+			  
+            @Override  
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,  
+                    long arg3) {  
+                ToastUtil.showMsg(mContext, "点击第"+arg2+"个项目");  
+                Intent intent=new Intent(mContext, ChatActivity.class);
+				startActivity(intent);
+            }  
+        });  
 	}
 
 	private class NewsAsyncTask extends AsyncTaskBase {

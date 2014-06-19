@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.PopupWindow; 
+import android.widget.PopupWindow;
 
 public class PopupWindowUtil<T> implements OnClickListener {
 	PopupWindow popupWindow;
@@ -36,10 +36,7 @@ public class PopupWindowUtil<T> implements OnClickListener {
 				R.dimen.popupWindow_width);
 		parent.getLocationOnScreen(location);
 		View view = getView(context, tabs);
-		popupWindow = new PopupWindow(view, popWidth, LayoutParams.WRAP_CONTENT);// new
-																					// PopupWindow(view,
-																					// popWidth,
-																					// LayoutParams.WRAP_CONTENT);
+		popupWindow = new PopupWindow(view, popWidth, LayoutParams.WRAP_CONTENT);
 		popupWindow.setFocusable(true);
 		popupWindow.setOutsideTouchable(true);
 		popupWindow.setBackgroundDrawable(new BitmapDrawable());
@@ -49,7 +46,7 @@ public class PopupWindowUtil<T> implements OnClickListener {
 		int xPos = (int) (windowManager.getDefaultDisplay().getWidth()
 				- popupWindow.getWidth() - context.getResources().getDimension(
 				R.dimen.popupWindow_margin));
-		// popupWindow.showAsDropDown(parent, -10,0);
+		popupWindow.showAsDropDown(parent, -10, 0);
 		popupWindow.showAtLocation(parent, Gravity.NO_GRAVITY, xPos,
 				location[1] + parent.getHeight() - 20);
 	}
@@ -61,13 +58,20 @@ public class PopupWindowUtil<T> implements OnClickListener {
 				LinearLayout.LayoutParams.WRAP_CONTENT);
 		layout.setLayoutParams(params);
 		layout.setOrientation(LinearLayout.VERTICAL);
-		layout.setBackgroundResource(R.drawable.back_popup_more);
+		// layout.setBackgroundResource(R.drawable.back_popup_more);
+		layout.setBackgroundColor(context.getResources().getColor(
+				R.color.logocolor));
+
 		for (int i = 0; i < tabs.size(); i++) {
+			if (i == 0) {
+				ImageView img = getImageView(context);
+				layout.addView(img);
+			}
 			if (i != tabs.size() - 1) {
 				String name = "";
 				if (tabs.get(i) instanceof String) {
 					name = ((List<String>) tabs).get(i);
-				}  
+				}
 				Button btn = getButton(context, name, i);
 				ImageView img = getImageView(context);
 				layout.addView(btn);
@@ -76,7 +80,7 @@ public class PopupWindowUtil<T> implements OnClickListener {
 				String name = "";
 				if (tabs.get(i) instanceof String) {
 					name = ((List<String>) tabs).get(i);
-				}  
+				}
 				Button btn = getButton(context, name, i);
 				layout.addView(btn);
 			}
@@ -98,7 +102,7 @@ public class PopupWindowUtil<T> implements OnClickListener {
 
 	private static ImageView getImageView(Context context) {
 		ImageView img = new ImageView(context);
-		img.setBackgroundResource(R.drawable.dis_popup_side);
+		img.setBackgroundResource(R.drawable.dis_behind_side);
 		img.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
 				LayoutParams.WRAP_CONTENT));
 		return img;

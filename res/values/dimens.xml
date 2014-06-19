@@ -48,4 +48,8 @@
     <dimen name="popmenu_yoff">5.0dip</dimen>
     <dimen name="indicatoroffset">10dip</dimen>
     
+      <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    
 </resources>
