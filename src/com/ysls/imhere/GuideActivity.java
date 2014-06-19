@@ -9,9 +9,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.ysls.imhere.adapter.ViewPagerAdapter;
 import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.utils.Golbal;
-import com.ysls.imhere.view.ViewPagerAdapter;
 import java.util.ArrayList;
 
 /**

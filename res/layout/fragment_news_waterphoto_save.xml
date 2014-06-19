@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:scaleType="fitXY"
         android:contentDescription="@string/app_name"/>
-    <com.qq.view.WaterView 
+    <com.ysls.imhere.widget.WaterView 
         android:id="@+id/waterView"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

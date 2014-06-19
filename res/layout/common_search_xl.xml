@@ -45,7 +45,7 @@
             android:layout_below="@id/tv_call2"/>
     </RelativeLayout>
     
-     <com.qq.view.LoadingView 
+     <com.ysls.imhere.widget.LoadingView 
         android:id="@+id/loading"
         android:layout_height="match_parent"
         android:layout_width="match_parent"

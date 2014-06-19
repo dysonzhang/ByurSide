@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.qq.view.TitleBarView
+    <com.ysls.imhere.widget.TitleBarView
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <com.qq.view.CustomerScrollView
+    <com.ysls.imhere.widget.CustomerScrollView
         android:layout_below="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
@@ -295,6 +295,6 @@
                 </RelativeLayout>
             </LinearLayout>
         </RelativeLayout>
-    </com.qq.view.CustomerScrollView>
+    </com.ysls.imhere.widget.CustomerScrollView>
 
 </RelativeLayout>

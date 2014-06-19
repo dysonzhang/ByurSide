@@ -3,15 +3,18 @@ package com.ysls.imhere.adapter;
 import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ysls.imhere.view.HomeFragment;
-import com.ysls.imhere.view.HttpErrorFragment;
-import com.ysls.imhere.view.SocialFragment;
-import com.ysls.imhere.view.TodoFragment;
+import com.ysls.imhere.fragment.HomeFragment;
+import com.ysls.imhere.fragment.HttpErrorFragment;
+import com.ysls.imhere.fragment.NewsFatherFragment;
+import com.ysls.imhere.fragment.SocialFragment;
+import com.ysls.imhere.fragment.TodoFragment;
 
 public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 	private Activity mActivity;
@@ -37,7 +40,14 @@ public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 			if (str.equals("主页"))
 				addTab(new HomeFragment(this.mActivity));
 			if (str.equals("通讯录"))
-				addTab(new SocialFragment(this.mActivity));
+				
+//				FragmentManager fm=getSupportFragmentManager();
+//			FragmentTransaction ft=fm.beginTransaction();
+//			NewsFatherFragment newsFatherFragment=new NewsFatherFragment();
+//			ft.replace(R.id.fl_content, newsFatherFragment,MainActivity.TAG);
+//			ft.commit();
+			
+				addTab(new NewsFatherFragment());
 		}
 	}
 

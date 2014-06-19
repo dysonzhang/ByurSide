@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-    <com.qq.view.TitleBarView 
+    <com.ysls.imhere.widget.TitleBarView 
         android:id="@+id/title_bar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"/>

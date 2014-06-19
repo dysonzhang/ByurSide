@@ -8,6 +8,11 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.ysls.imhere.utils.Golbal;
 
+/**
+ * Baidu Location API
+ * @author dyson
+ *
+ */
 public class BaiduLocation {
 	private static BaiduLocation bl = null;
 
@@ -17,28 +22,28 @@ public class BaiduLocation {
 	public LocationClient mLocationClient;
 	private MyLocationListener mMyLocationListener;
 
-	public BaiduLocation(Context paramContext) {
-		this.mLocationClient = new LocationClient(paramContext);
-		this.mMyLocationListener = new MyLocationListener();
-		this.mLocationClient.registerLocationListener(this.mMyLocationListener);
+	public BaiduLocation(Context context) {
+		 mLocationClient = new LocationClient(context);
+		 mMyLocationListener = new MyLocationListener();
+		 mLocationClient.registerLocationListener(this.mMyLocationListener);
 		setLocationParm();
 	}
 
-	public static BaiduLocation getBaiduLocationInstance(Context paramContext) {
+	public static BaiduLocation getBaiduLocationInstance(Context context) {
 		if (bl == null)
-			bl = new BaiduLocation(paramContext);
+			bl = new BaiduLocation(context);
 		return bl;
 	}
 
 	private void setLocationParm() {
-		LocationClientOption localLocationClientOption = new LocationClientOption();
-		localLocationClientOption
+		LocationClientOption lClientOption = new LocationClientOption();
+		lClientOption
 				.setLocationMode(LocationClientOption.LocationMode.Hight_Accuracy);
-		localLocationClientOption.setCoorType("bd09ll");
-		localLocationClientOption.setScanSpan(10000);
-		localLocationClientOption.setIsNeedAddress(true);
-		localLocationClientOption.setNeedDeviceDirect(true);
-		this.mLocationClient.setLocOption(localLocationClientOption);
+		lClientOption.setCoorType("bd09ll");
+		lClientOption.setScanSpan(20000);
+		lClientOption.setIsNeedAddress(true);
+		lClientOption.setNeedDeviceDirect(true);
+		this.mLocationClient.setLocOption(lClientOption);
 	}
 
 	private void updateMyLocation(Double lon, Double lat) {
