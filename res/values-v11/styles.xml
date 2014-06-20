@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme" parent="@*android:style/Theme.Light" />
+    <style name="AppTheme" parent="android:style/Theme.Light" />
 
-    <style name="Theme.splash" parent="@*android:style/Theme.NoTitleBar.Fullscreen">
+    <style name="Theme.splash" parent="android:style/Theme.NoTitleBar.Fullscreen">
         <item name="android:windowIsTranslucent">true</item>
     </style>
 

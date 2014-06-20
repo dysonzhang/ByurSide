@@ -170,7 +170,6 @@
     <public id="0x7f030013" name="load_failed_layout" type="layout" />
     <public id="0x7f030014" name="loading_layout" type="layout" />
     <public id="0x7f030015" name="main" type="layout" />
-    <public id="0x7f030016" name="main_tab_layout" type="layout" />
     <public id="0x7f030017" name="merge_verticalside" type="layout" />
     <public id="0x7f030018" name="news_item_layout" type="layout" />
     <public id="0x7f030019" name="qr_code_scan" type="layout" />
@@ -198,7 +197,6 @@
     <public id="0x7f040004" name="push_right_out" type="anim" />
     <public id="0x7f040005" name="push_top_in" type="anim" />
     <public id="0x7f040006" name="push_top_out" type="anim" />
-    <public id="0x7f040007" name="tv_off" type="anim" />
     <public id="0x7f040008" name="umeng_fb_slide_in_from_left" type="anim" />
     <public id="0x7f040009" name="umeng_fb_slide_in_from_right" type="anim" />
     <public id="0x7f04000a" name="umeng_fb_slide_out_from_left" type="anim" />
