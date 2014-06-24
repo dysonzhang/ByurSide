@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/ll_transprent"
+        android:layout_width="fill_parent"
+        android:layout_height="240dp"
+        android:background="@color/transparent"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/ll_transprent"
+        android:background="#dc5bb4e5" >
+
+        <TextView
+            android:id="@+id/tv_ibeacon_push_content_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/ibeacon_push_title_margin_top"
+            android:gravity="center"
+            android:text="Welcome"
+            android:textColor="@color/white"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/tv_ibeacon_push_content_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_ibeacon_push_content_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"  
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="@dimen/ibeacon_push_subtitle_margin_top"
+            android:gravity="center"
+            android:lines="2"
+            android:text="this is the info  this is the info this is the infothis is the infothis is the info"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_ibeacon_push_content_info"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="@dimen/ibeacon_push_image_margin_top" >
+
+            <org.shopplay.view.ImgLoadView
+                android:id="@+id/rl_ibeacon_push_img"
+                android:layout_width="@dimen/ibeacon_push_img_width"
+                android:layout_height="@dimen/ibeacon_push_img_heigh"
+                android:layout_centerHorizontal="true"
+                android:background="@color/white"
+                android:padding="10dp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="-30dp"
+                android:layout_toLeftOf="@id/rl_ibeacon_push_img"
+                android:background="@drawable/logo_circle" >
+
+                <ImageView
+                    android:id="@+id/iv_ibeacon_push_logo"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

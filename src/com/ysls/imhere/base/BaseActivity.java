@@ -16,6 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.umeng.analytics.MobclickAgent;
+import com.ysls.imhere.MyApplication;
 import com.ysls.imhere.R;
 import com.ysls.imhere.utils.LogUtil;
 
@@ -24,6 +25,7 @@ public class BaseActivity extends Activity {
 	private static final String TAG = "BaseActivity";
 
 	protected AlertDialog mAlertDialog;
+	
 	protected AsyncTask mRunningTask;
 
 	/******************************** 【Activity LifeCycle For Debug】 *******************************************/
@@ -33,8 +35,8 @@ public class BaseActivity extends Activity {
 				+ " onCreate() invoked!!");
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		// MobclickAgent.onError(this);
-
+		
+		MyApplication.getInstance().add(this);
 	}
 
 	@Override

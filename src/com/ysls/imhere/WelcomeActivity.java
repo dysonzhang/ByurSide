@@ -8,7 +8,7 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import cn.jpush.android.api.JPushInterface;
 import com.ysls.imhere.base.BaseActivity;
-import com.ysls.imhere.utils.Golbal;
+import com.ysls.imhere.config.Golbal;
 import com.ysls.imhere.utils.SharedPreferencesUtil;
 
 /**

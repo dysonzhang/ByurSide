@@ -1,6 +1,8 @@
 package com.ysls.imhere;
 
+import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 import com.ysls.imhere.adapter.BasePageViewAdapter;
 import com.ysls.imhere.base.BaseFragmentActivity;
 import com.ysls.imhere.db.DBHelper;
+import com.ysls.imhere.ibeacon.BluetoothController;
 import com.ysls.imhere.indicator.PageIndicator;
 import com.ysls.imhere.slidingdrawer.SemiClosedSlidingDrawer;
 import com.ysls.imhere.utils.LogUtil;
@@ -60,8 +63,6 @@ public class HomeActivity extends BaseFragmentActivity implements
 	private InputMethodManager imm;
 	private boolean isShowPopupWindows = false;
 	private int keyBackClickCount = 0;
-	private float lastX = 0.0F;
-	private float lastY = 0.0F;
 
 	private LinearLayout llGoHome;
 	private LinearLayout loadFaillayout;
@@ -71,13 +72,14 @@ public class HomeActivity extends BaseFragmentActivity implements
 	private BasePageViewAdapter mBasePageViewAdapter;
 
 	private PageIndicator mIndicator;
-	private boolean mIsAnim = false;
-	private boolean mIsTitleHide = false;
-	private int mTag = 0;
+
 	private ViewPager mViewPager;
 	private LinearLayout mlinear_listview;
 
 	private View title;
+
+	/* 取得默认的蓝牙适配器 */
+	public BluetoothAdapter mBtAdapter;
 
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
@@ -85,6 +87,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 		mContext = this;
 
 		initClass();
+		initBtContorller();
 		initControl();
 		initBelowSlidingMenu();
 		initViewPager();
@@ -95,6 +98,21 @@ public class HomeActivity extends BaseFragmentActivity implements
 	 * 初始化相关类
 	 */
 	private void initClass() {
+
+	}
+
+	/**
+	 * 初始化蓝牙接口
+	 */
+	private void initBtContorller() {
+
+		// If BT is not on, request that it be enabled.
+		if (!BluetoothController.getInstance(mContext).bluetoothEnablState()) {
+			Intent enableIntent = new Intent(
+					BluetoothAdapter.ACTION_REQUEST_ENABLE);
+			startActivityForResult(enableIntent, 3);
+		}
+		
 	}
 
 	/**
@@ -217,6 +235,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	}
 
+	@SuppressWarnings("unchecked")
 	public void onClick(View paramView) {
 		switch (paramView.getId()) {
 		case R.id.Linear_above_toHome:
@@ -262,7 +281,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 				}, 3000);
 				break;
 			case 1:
-				defaultFinish();
+				MyApplication.exitApp();
 				break;
 			default:
 				break;

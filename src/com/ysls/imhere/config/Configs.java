@@ -1,16 +1,14 @@
 package com.ysls.imhere.config;
 
 public class Configs {
-	public static int Content_ContentCacheTime;
-	public static int Content_DefaultCacheTime;
+	// 分钟
 	public static int Content_ListCacheTime = 5;
-	public static int DiscussCacheTime;
-	public static int ImageCacheTime;
+	public static int Content_ContentCacheTime = 60 * 24 * 3;
+	public static int ImageCacheTime = 60 * 24 * 15;
+	public static int Content_DefaultCacheTime = 60 * 24 * 3;
+	
+	public static int DiscussCacheTime=60;
+	
+	public static String ShareSdk_Appkey = "21490f8034f8";
 
-	static {
-		Content_ContentCacheTime = 4320;
-		ImageCacheTime = 21600;
-		Content_DefaultCacheTime = 4320;
-		DiscussCacheTime = 60;
-	}
 }

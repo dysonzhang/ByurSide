@@ -6,7 +6,7 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-import com.ysls.imhere.utils.Golbal;
+import com.ysls.imhere.config.Golbal;
 
 /**
  * Baidu Location API
@@ -43,7 +43,7 @@ public class BaiduLocation {
 		lClientOption.setScanSpan(20000);
 		lClientOption.setIsNeedAddress(true);
 		lClientOption.setNeedDeviceDirect(true);
-		this.mLocationClient.setLocOption(lClientOption);
+		mLocationClient.setLocOption(lClientOption);
 	}
 
 	private void updateMyLocation(Double lon, Double lat) {
@@ -65,6 +65,13 @@ public class BaiduLocation {
 			mLocationClient.requestLocation();
 		}
 		Log.i("LocSDK3", "locClient is null or not started");
+	}
+	
+	public void stopLocationReq() {
+		if ((mLocationClient != null) && (mLocationClient.isStarted())) {
+			mLocationClient.stop();
+		}
+		Log.i("LocSDK3", "locClient is null or not stop");
 	}
 
 	public class MyLocationListener implements BDLocationListener {

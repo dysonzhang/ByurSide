@@ -12,7 +12,8 @@ import android.widget.LinearLayout;
 
 import com.ysls.imhere.adapter.ViewPagerAdapter;
 import com.ysls.imhere.base.BaseActivity;
-import com.ysls.imhere.utils.Golbal;
+import com.ysls.imhere.config.Golbal;
+
 import java.util.ArrayList;
 
 /**

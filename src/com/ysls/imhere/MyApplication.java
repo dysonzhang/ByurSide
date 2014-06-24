@@ -1,21 +1,196 @@
 package com.ysls.imhere;
 
-import android.app.Application;
-import android.content.Context;
-import cn.jpush.android.api.JPushInterface;
-import com.ysls.imhere.baidu.BaiduLocation;
+import java.util.LinkedList;
+import java.util.List;
 
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.Application;
+import android.app.ActivityManager.RunningAppProcessInfo;
+import android.content.Context;
+import android.os.Build;
+import cn.jpush.android.api.JPushInterface;
+import cn.sharesdk.framework.ShareSDK;
+
+import com.radiusnetworks.ibeacon.IBeaconManager;
+import com.ysls.imhere.baidu.BaiduLocation;
+import com.ysls.imhere.config.Configs;
+import com.ysls.imhere.utils.LogUtil;
+
+/**
+ * Global Application
+ * 
+ * @author dyson
+ * 
+ */
 public class MyApplication extends Application {
-	
+
+	private static String TAG = "MyApplication";
 	public static Context ctx;
+	private static MyApplication mApp;
+	
+	private IBeaconManager iBeaconManager;
+
+	public static MyApplication getInstance() {
+		if (mApp == null) {
+			return new MyApplication();
+		}
+		return mApp;
+	}
 
 	public void onCreate() {
 		super.onCreate();
-		
 		ctx = getApplicationContext();
+
+		// Baidu location api init
 		BaiduLocation.getBaiduLocationInstance(ctx).sendLocationReq();
-		
+
+		// JPush api init
 		JPushInterface.setDebugMode(true);
 		JPushInterface.init(ctx);
+
+		iBeaconManager = IBeaconManager.getInstanceForApplication(this);
+
+		// ShareSdk api init
+		ShareSDK.initSDK(ctx, Configs.ShareSdk_Appkey);
+	}
+
+	/**
+	 * Exit application
+	 */
+	public static void exitApp() {
+
+		// exitAudioThread();
+
+		finishProgram();
+
+		android.os.Process.killProcess(android.os.Process.myPid());
+
+		ActivityManager activityMgr = (ActivityManager) ctx
+				.getSystemService(Context.ACTIVITY_SERVICE);
+		int currentVersion = Build.VERSION.SDK_INT;
+		if (currentVersion > Build.VERSION_CODES.ECLAIR_MR1) {
+			activityMgr.killBackgroundProcesses(ctx.getPackageName());
+		} else {
+			activityMgr.restartPackage(ctx.getPackageName());
+		}
+
+		BaiduLocation.getBaiduLocationInstance(ctx).stopLocationReq();
+		ShareSDK.stopSDK(ctx);
+
+		System.exit(0);
+	}
+
+	/**
+	 * Check application isBackground
+	 * 
+	 * @param context
+	 * @return
+	 */
+	public static boolean isBackground(Context context) {
+
+		ActivityManager activityManager = (ActivityManager) context
+				.getSystemService(Context.ACTIVITY_SERVICE);
+		List<RunningAppProcessInfo> appProcesses = activityManager
+				.getRunningAppProcesses();
+		for (RunningAppProcessInfo appProcess : appProcesses) {
+			if (appProcess.processName.equals(context.getPackageName())) {
+				if (appProcess.importance == RunningAppProcessInfo.IMPORTANCE_BACKGROUND) {
+					LogUtil.i(TAG, "app is background");
+					return true;
+				} else {
+					LogUtil.i(TAG, "app is foreground");
+					return false;
+				}
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * isAppOnForeground
+	 * 
+	 * @param context
+	 * @return
+	 */
+	public static boolean isAppOnForeground(Context context) {
+		// Returns a list of application processes that are running on the
+		// device
+
+		ActivityManager activityManager = (ActivityManager) context
+				.getSystemService(Context.ACTIVITY_SERVICE);
+		String packageName = context.getPackageName();
+
+		List<RunningAppProcessInfo> appProcesses = activityManager
+				.getRunningAppProcesses();
+		if (appProcesses == null)
+			return false;
+
+		for (RunningAppProcessInfo appProcess : appProcesses) {
+			// The name of the process that this object is associated with.
+			if (appProcess.processName.equals(packageName)
+					&& appProcess.importance == RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+				LogUtil.i(TAG, "app is foreground");
+				return true;
+			}
+		}
+		LogUtil.i(TAG, "app is background");
+		return false;
+	}
+
+	/**
+	 * List<Activity>
+	 */
+	public static List<Activity> activityList = new LinkedList<Activity>();
+
+	/**
+	 * Get activity list size
+	 * 
+	 * @return
+	 */
+	public int getActivitySize() {
+		return activityList.size();
+	}
+
+	/**
+	 * Add an init activity to activity list
+	 * 
+	 * @param activity
+	 */
+	public void add(Activity activity) {
+		activityList.add(activity);
+	}
+
+	/**
+	 * Finish all activity that in activity list
+	 */
+	public static void finishProgram() {
+
+		for (Activity activity : activityList) {
+			activity.finish();
+		}
+	}
+
+	/**
+	 * finish someone activity by name
+	 */
+	public void finishActivityByName(String name) {
+		for (Activity ac : activityList) {
+			if (ac.getClass().getName().indexOf(name) >= 0) {
+				ac.finish();
+			}
+		}
+	}
+
+	/**
+	 * Check someone activity is active by name
+	 */
+	public boolean isActiveActivityByName(String name) {
+		for (Activity ac : activityList) {
+			if (ac.getClass().getName().indexOf(name) >= 0) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

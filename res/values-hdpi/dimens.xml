@@ -1,0 +1,14 @@
+<resources>
+
+    <!--
+         Customize dimensions originally defined in res/values/dimens.xml (such as
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+    -->
+    <dimen name="activity_horizontal_margin">128dp</dimen>
+    <dimen name="ibeacon_push_image_margin_top">0dp</dimen>
+    <dimen name="ibeacon_push_subtitle_margin_top">-10dp</dimen>
+    <dimen name="ibeacon_push_img_width">190dp</dimen>
+    <dimen name="ibeacon_push_img_heigh">190dp</dimen>
+    <dimen name= "ibeacon_push_title_margin_top">-10dp</dimen>
+
+</resources>

@@ -11,5 +11,16 @@
 	<classpathentry kind="lib" path="libs/jpush-sdk-release1.6.1.jar"/>
 	<classpathentry kind="lib" path="libs/locSDK_4.1.jar"/>
 	<classpathentry kind="lib" path="libs/umeng-analytics-v5.2.3.jar"/>
+	<classpathentry kind="lib" path="libs/mframework.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Core-2.3.8.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Email-2.3.8.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-QQ-2.3.8.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-QZone-2.3.8.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-ShortMessage-2.3.8.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-SinaWeibo-2.3.8.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Wechat-2.3.8.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Wechat-Core-2.3.8.jar"/>
+	<classpathentry kind="lib" path="libs/ShareSDK-Wechat-Moments-2.3.8.jar"/>
+	<classpathentry kind="lib" path="libs/ShopplayIBeaconLibrary-0.7.3.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
