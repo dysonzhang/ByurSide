@@ -95,7 +95,18 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         
+        <!-- BT2.0 Mac Address Found Service  start-->
+        <service android:name="com.ysls.imhere.ibeacon.GeneralBluetoothService" >
+        </service>
+        <!-- BT2.0 Mac Address Found Service  end-->
+        
         <!-- iBeacon Service start -->
+        <activity
+            android:name="com.ysls.imhere.ibeacon.IBeaconPushActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/pushdialog" >
+        </activity>
+        
         <service
             android:name="com.ysls.imhere.ibeacon.ShopplayIBeaconService"
             android:enabled="true"

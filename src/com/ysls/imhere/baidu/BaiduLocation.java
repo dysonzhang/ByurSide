@@ -6,7 +6,7 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
-import com.ysls.imhere.config.Golbal;
+import com.ysls.imhere.config.Global;
 
 /**
  * Baidu Location API
@@ -50,8 +50,8 @@ public class BaiduLocation {
 		try {
 			if ((lon != null) && (lat != null)) {
 
-				Golbal.lon = lon + "";
-				Golbal.lat = lat + "";
+				Global.lon = lon + "";
+				Global.lat = lat + "";
 				Log.i("mylocation is : ", lon + "," + lat);
 			}
 		} catch (Exception e) {
@@ -107,7 +107,7 @@ public class BaiduLocation {
 				sb.append(location.getOperators());
 			}
 
-			Log.i("BaiduLocationApi", sb.toString());
+//			Log.i("BaiduLocationApi", sb.toString());
 		}
 
 		@Override

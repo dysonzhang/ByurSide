@@ -14,7 +14,9 @@ import cn.sharesdk.framework.ShareSDK;
 
 import com.radiusnetworks.ibeacon.IBeaconManager;
 import com.ysls.imhere.baidu.BaiduLocation;
-import com.ysls.imhere.config.Configs;
+import com.ysls.imhere.config.Constants;
+import com.ysls.imhere.config.Global;
+import com.ysls.imhere.ibeacon.ShopplayIBeaconService;
 import com.ysls.imhere.utils.LogUtil;
 
 /**
@@ -28,7 +30,7 @@ public class MyApplication extends Application {
 	private static String TAG = "MyApplication";
 	public static Context ctx;
 	private static MyApplication mApp;
-	
+
 	private IBeaconManager iBeaconManager;
 
 	public static MyApplication getInstance() {
@@ -41,6 +43,7 @@ public class MyApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		ctx = getApplicationContext();
+		iBeaconManager = IBeaconManager.getInstanceForApplication(ctx);
 
 		// Baidu location api init
 		BaiduLocation.getBaiduLocationInstance(ctx).sendLocationReq();
@@ -49,10 +52,33 @@ public class MyApplication extends Application {
 		JPushInterface.setDebugMode(true);
 		JPushInterface.init(ctx);
 
-		iBeaconManager = IBeaconManager.getInstanceForApplication(this);
-
 		// ShareSdk api init
-		ShareSDK.initSDK(ctx, Configs.ShareSdk_Appkey);
+		ShareSDK.initSDK(ctx, Constants.ShareSdk_Appkey);
+
+		// iBeacon service background and foreground control
+		iBeaconBackAndforeControl(ctx);
+	}
+
+	/**
+	 * iBeacon service background and foreground control
+	 * 
+	 * @param context
+	 */
+	private void iBeaconBackAndforeControl(Context context) {
+		if (!isBackground(context)) {
+			if (iBeaconManager.isBound(ShopplayIBeaconService.getInstance())) {
+				iBeaconManager.setBackgroundMode(
+						ShopplayIBeaconService.getInstance(), false);
+				LogUtil.i(TAG, "set it in the foreground");
+			}
+		} else {
+			if (iBeaconManager.isBound(ShopplayIBeaconService.getInstance())) {
+				iBeaconManager.setBackgroundMode(
+						ShopplayIBeaconService.getInstance(), true);
+				LogUtil.i(TAG, "set it in the background");
+
+			}
+		}
 	}
 
 	/**
@@ -60,7 +86,9 @@ public class MyApplication extends Application {
 	 */
 	public static void exitApp() {
 
-		// exitAudioThread();
+		if (Global.CHECKIN_MODE == Constants.BT_GENREAL_CHECKIN_MODE) {
+			// exitBTserachThread();
+		}
 
 		finishProgram();
 

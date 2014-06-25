@@ -14,13 +14,15 @@ public final class R {
         public static final int alpha=0x7f040000;
         public static final int cancel_rc=0x7f04000d;
         public static final int cancel_rc2=0x7f04000e;
-        public static final int fade_in=0x7f04000f;
-        public static final int fade_out=0x7f040010;
-        public static final int login_anim=0x7f040011;
-        public static final int pop_down=0x7f040012;
-        public static final int pop_enter=0x7f040013;
-        public static final int pop_out=0x7f040014;
-        public static final int pop_up=0x7f040015;
+        public static final int dialog_enter=0x7f04000f;
+        public static final int dialog_exit=0x7f040010;
+        public static final int fade_in=0x7f040011;
+        public static final int fade_out=0x7f040012;
+        public static final int login_anim=0x7f040013;
+        public static final int pop_down=0x7f040014;
+        public static final int pop_enter=0x7f040015;
+        public static final int pop_out=0x7f040016;
+        public static final int pop_up=0x7f040017;
         public static final int push_left_in=0x7f040001;
         public static final int push_left_out=0x7f040002;
         public static final int push_right_in=0x7f040003;
@@ -940,7 +942,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int decode=0x7f06000b;
         public static final int decode_failed=0x7f06000c;
         public static final int decode_succeeded=0x7f06000d;
-        public static final int del_re=0x7f060126;
+        public static final int del_re=0x7f060124;
         public static final int detail_webView=0x7f060030;
         public static final int details_button_enter=0x7f060042;
         public static final int details_edittext_discuss=0x7f060041;
@@ -966,23 +968,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int filter_edit=0x7f060103;
         public static final int firstlayout=0x7f0600a5;
         public static final int fl_off=0x7f060020;
-        public static final int four_line=0x7f060130;
-        public static final int four_time=0x7f060131;
+        public static final int four_line=0x7f06012e;
+        public static final int four_time=0x7f06012f;
         public static final int fullscreen=0x7f060003;
         public static final int game=0x7f0600d8;
         public static final int group_indicator=0x7f0600d1;
         public static final int group_item_layout=0x7f0600d0;
         public static final int group_name=0x7f0600d2;
         public static final int handle=0x7f06009f;
-        public static final int head_arrowImageView=0x7f06011e;
-        public static final int head_contentLayout=0x7f06011d;
-        public static final int head_lastUpdatedTextView=0x7f060121;
-        public static final int head_progressBar=0x7f06011f;
-        public static final int head_tipsTextView=0x7f060120;
+        public static final int head_arrowImageView=0x7f06011c;
+        public static final int head_contentLayout=0x7f06011b;
+        public static final int head_lastUpdatedTextView=0x7f06011f;
+        public static final int head_progressBar=0x7f06011d;
+        public static final int head_tipsTextView=0x7f06011e;
         public static final int huodong=0x7f0600d9;
         public static final int icon=0x7f0600cb;
-        public static final int imageView=0x7f060112;
-        public static final int imageView1=0x7f060123;
+        public static final int imageView=0x7f060110;
+        public static final int imageView1=0x7f060121;
         public static final int imageview=0x7f06005a;
         public static final int imageview_above_left=0x7f06001b;
         public static final int imageview_above_more=0x7f060024;
@@ -996,15 +998,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int imageview_user_left=0x7f06005c;
         public static final int imageview_user_right=0x7f06005d;
         public static final int imageview_user_title=0x7f060074;
-        public static final int img1=0x7f060125;
+        public static final int img1=0x7f060123;
         public static final int img_thu=0x7f06002c;
-        public static final int imgload_iv=0x7f060111;
-        public static final int imgload_pb=0x7f060110;
-        public static final int instruction=0x7f060117;
-        public static final int instruction_pre=0x7f060116;
-        public static final int ip_address=0x7f060118;
+        public static final int imgload_iv=0x7f06010f;
+        public static final int imgload_pb=0x7f06010e;
+        public static final int instruction=0x7f060115;
+        public static final int instruction_pre=0x7f060114;
+        public static final int ip_address=0x7f060116;
         public static final int ivPopUp=0x7f0600b3;
-        public static final int iv_ibeacon_push_logo=0x7f06010e;
         public static final int iv_loading=0x7f0600be;
         public static final int iv_off=0x7f060021;
         public static final int iv_userhead=0x7f0600bb;
@@ -1021,9 +1022,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ll_news=0x7f0600f8;
         public static final int ll_phone=0x7f06008e;
         public static final int ll_title=0x7f0600e9;
-        public static final int ll_transprent=0x7f06010a;
         public static final int ll_user_info=0x7f060087;
-        public static final int load_more=0x7f06011c;
+        public static final int load_more=0x7f06011a;
         public static final int load_progressBar=0x7f06004e;
         public static final int loading=0x7f0600e8;
         public static final int login=0x7f06008a;
@@ -1042,8 +1042,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int news_short_content=0x7f060052;
         public static final int news_title=0x7f060051;
         public static final int none=0x7f060004;
-        public static final int one_day=0x7f06012c;
-        public static final int one_hour=0x7f06012b;
+        public static final int one_day=0x7f06012a;
+        public static final int one_hour=0x7f060129;
         public static final int online_count=0x7f0600d3;
         public static final int open_header_layout=0x7f0600a4;
         public static final int panelHandle=0x7f0600a0;
@@ -1052,9 +1052,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int password=0x7f060089;
         public static final int pic=0x7f0600df;
         public static final int preview_view=0x7f060053;
-        public static final int pro_img_bg=0x7f06010f;
-        public static final int progressBar1=0x7f060129;
-        public static final int pull_to_refresh_progress=0x7f06011b;
+        public static final int pro_img_bg=0x7f06010d;
+        public static final int progressBar1=0x7f060127;
+        public static final int pull_to_refresh_progress=0x7f060119;
         public static final int qianbao=0x7f0600e1;
         public static final int quit=0x7f060011;
         public static final int rcChat_popup=0x7f0600b9;
@@ -1074,12 +1074,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int rl_bottom=0x7f0600b2;
         public static final int rl_canvers=0x7f0600f5;
         public static final int rl_content=0x7f0600cf;
-        public static final int rl_ibeacon_push_img=0x7f06010d;
+        public static final int rl_ibeacon_push_img=0x7f06010c;
         public static final int rl_layout=0x7f0600af;
         public static final int rl_user=0x7f060086;
         public static final int rl_water=0x7f060100;
         public static final int saosao=0x7f0600de;
-        public static final int sc_img1=0x7f060127;
+        public static final int sc_img1=0x7f060125;
         public static final int scan_ercode=0x7f0600f3;
         public static final int scan_light=0x7f0600f2;
         public static final int scan_pic=0x7f0600f1;
@@ -1095,13 +1095,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int sidrbar=0x7f060106;
         public static final int slidingmenumain=0x7f060059;
         public static final int startBtn=0x7f060049;
-        public static final int start_stop_button=0x7f060119;
-        public static final int start_stop_button_text=0x7f06011a;
+        public static final int start_stop_button=0x7f060117;
+        public static final int start_stop_button_text=0x7f060118;
         public static final int stateicon=0x7f0600cc;
         public static final int sure=0x7f0600fd;
         public static final int surfaceView=0x7f0600ef;
         public static final int tack_pic=0x7f0600ed;
-        public static final int textView=0x7f060113;
+        public static final int textView=0x7f060111;
         public static final int textView1=0x7f060027;
         public static final int textview=0x7f06005b;
         public static final int textview_behind_title=0x7f060029;
@@ -1123,8 +1123,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tv_above_title=0x7f060023;
         public static final int tv_chatcontent=0x7f0600bc;
         public static final int tv_forget_password=0x7f06008b;
-        public static final int tv_ibeacon_push_content_info=0x7f06010c;
-        public static final int tv_ibeacon_push_content_title=0x7f06010b;
+        public static final int tv_ibeacon_push_content_info=0x7f06010b;
+        public static final int tv_ibeacon_push_content_title=0x7f06010a;
         public static final int tv_loading=0x7f0600bf;
         public static final int tv_n=0x7f0600e0;
         public static final int tv_sendtime=0x7f0600ba;
@@ -1134,9 +1134,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int tv_url_view=0x7f0600c6;
         public static final int tv_username=0x7f06002b;
         public static final int two=0x7f0600d7;
-        public static final int two_address=0x7f06012f;
-        public static final int two_photo=0x7f06012d;
-        public static final int two_time=0x7f06012e;
+        public static final int two_address=0x7f06012d;
+        public static final int two_photo=0x7f06012b;
+        public static final int two_time=0x7f06012c;
         public static final int tx_header_title=0x7f06002d;
         public static final int txt_empty=0x7f060058;
         public static final int txt_neterr=0x7f06004b;
@@ -1171,16 +1171,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int view_loading=0x7f06004d;
         public static final int viewfinder_view=0x7f060054;
         public static final int viewpager=0x7f060025;
-        public static final int voice_rcd_hint_loading=0x7f060128;
-        public static final int voice_rcd_hint_rcding=0x7f060122;
-        public static final int voice_rcd_hint_tooshort=0x7f06012a;
-        public static final int volume=0x7f060124;
+        public static final int voice_rcd_hint_loading=0x7f060126;
+        public static final int voice_rcd_hint_rcding=0x7f060120;
+        public static final int voice_rcd_hint_tooshort=0x7f060128;
+        public static final int volume=0x7f060122;
         public static final int waterView=0x7f060102;
         public static final int water_photo=0x7f060101;
         public static final int webview=0x7f0600c7;
         public static final int wifi=0x7f0600da;
-        public static final int wifi_state=0x7f060114;
-        public static final int wifi_state_image=0x7f060115;
+        public static final int wifi_state=0x7f060112;
+        public static final int wifi_state_image=0x7f060113;
         public static final int wiki_title=0x7f060079;
         public static final int xiangce=0x7f0600e3;
         public static final int xlistview_footer_content=0x7f06007a;
@@ -1564,17 +1564,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-
-
-
-    
+   
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
-
-
-
         
          */
         public static final int AppBaseTheme=0x7f0c0004;
@@ -1596,7 +1590,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int chat_text_name_style=0x7f0c0010;
         public static final int custom_progress_dlg=0x7f0c0011;
         public static final int horizontal_line=0x7f0c000d;
+        public static final int mystyle=0x7f0c0013;
         public static final int popwin_anim_style=0x7f0c0007;
+        public static final int pushdialog=0x7f0c0012;
         public static final int scan_dialog=0x7f0c0009;
         public static final int shape_line=0x7f0c000c;
         public static final int title_right_button=0x7f0c0003;

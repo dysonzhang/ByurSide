@@ -13,6 +13,8 @@ public class IBeaconRequest {
 	public final static String ConnectTimeOutErrorCode = "ConnectTimeOutErrorCode";
 	public final static String ReadTimeOutErrorCode = "ReadTimeOutErrorCode";
 
+	public static final String iBeaconPushUrl = "POST_URL"
+			+ "shopbeacon/shopBeaconPushService";
 	private String requestUrl;
 	private String requestParam;
 	private int connectTimeout;
@@ -26,9 +28,6 @@ public class IBeaconRequest {
 	public void setSendFinish(boolean isSendFinish) {
 		this.isSendFinish = isSendFinish;
 	}
-
-	public static final String iBeaconPushUrl = "POST_URL"
-			+ "shopbeacon/shopBeaconPushService";
 
 	private Handler mHandler;
 

@@ -1,8 +1,6 @@
 package com.ysls.imhere;
 
-import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
@@ -78,54 +76,45 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	private View title;
 
-	/* 取得默认的蓝牙适配器 */
-	public BluetoothAdapter mBtAdapter;
-
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.above_slidingmenu);
 		mContext = this;
 
 		initClass();
-		initBtContorller();
 		initControl();
 		initBelowSlidingMenu();
 		initViewPager();
-
+		initBtContorller();
+		
 	}
 
 	/**
 	 * 初始化相关类
 	 */
 	private void initClass() {
-
+		imm = ((InputMethodManager) getApplicationContext().getSystemService(
+				"input_method"));
 	}
 
 	/**
 	 * 初始化蓝牙接口
 	 */
 	private void initBtContorller() {
-
-		// If BT is not on, request that it be enabled.
-		if (!BluetoothController.getInstance(mContext).bluetoothEnablState()) {
-			Intent enableIntent = new Intent(
-					BluetoothAdapter.ACTION_REQUEST_ENABLE);
-			startActivityForResult(enableIntent, 3);
-		}
-		
+		BluetoothController.openBTAdapter();
+		BluetoothController.getInstance(mContext).startBTCheckInService();
 	}
 
 	/**
 	 * 加载界面所有布局控件
 	 */
 	private void initControl() {
-		imm = ((InputMethodManager) getApplicationContext().getSystemService(
-				"input_method"));
+
 		loadLayout = (LinearLayout) findViewById(R.id.view_loading);
 		loadFaillayout = (LinearLayout) findViewById(R.id.view_load_fail);
 
 		mAboveTitle = (TextView) findViewById(R.id.tv_above_title);
-		mAboveTitle.setText("IMHere");
+		mAboveTitle.setText("imHere");
 		mAboveTitle.setTextSize(22);
 
 		imgMore = (ImageView) findViewById(R.id.imageview_above_more);
@@ -193,7 +182,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 	 */
 	private void initViewPager() {
 
-		this.mBasePageViewAdapter = new BasePageViewAdapter(this);
+		mBasePageViewAdapter = new BasePageViewAdapter(this);
 		mViewPager.setOffscreenPageLimit(0);
 		mViewPager.setAdapter(mBasePageViewAdapter);
 		mIndicator.setViewPager(mViewPager);
@@ -213,9 +202,9 @@ public class HomeActivity extends BaseFragmentActivity implements
 		menuList.add("主页");
 		menuList.add("通讯录");
 
-		this.isShowPopupWindows = true;
-		this.mBasePageViewAdapter.Clear();
-		this.mViewPager.removeAllViews();
+		isShowPopupWindows = true;
+		mBasePageViewAdapter.Clear();
+		mViewPager.removeAllViews();
 
 		if (!menuList.isEmpty()) {
 			mBasePageViewAdapter.addFragment(menuList);

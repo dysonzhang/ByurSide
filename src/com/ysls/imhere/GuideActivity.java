@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import com.ysls.imhere.adapter.ViewPagerAdapter;
 import com.ysls.imhere.base.BaseActivity;
-import com.ysls.imhere.config.Golbal;
+import com.ysls.imhere.config.Global;
 
 import java.util.ArrayList;
 
@@ -114,7 +114,7 @@ public class GuideActivity extends BaseActivity implements OnClickListener,
 
 	private void startbutton() {
 		
-		if(Golbal.isLogin){
+		if(Global.isLogin){
 			openActivity(HomeActivity.class);
 		}else{
 			openActivity(LoginActivity.class);

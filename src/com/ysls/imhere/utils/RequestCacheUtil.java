@@ -10,7 +10,7 @@ import java.util.LinkedHashMap;
 
 import org.apache.http.util.EncodingUtils;
 
-import com.ysls.imhere.config.Configs;
+import com.ysls.imhere.config.Constants;
 import com.ysls.imhere.config.Constants;
 import com.ysls.imhere.db.DBHelper;
 import com.ysls.imhere.db.RequestCacheColumn;
@@ -88,7 +88,7 @@ public class RequestCacheUtil {
 			if (!result.equals(null) && !result.equals("")) {
 				return result;
 			}
-			result = getStringFromLocal(requestPath, requestUrl, dbHelper);
+//			result = getStringFromLocal(requestPath, requestUrl, dbHelper);
 			if (!result.equals(null) && !result.equals("")) {
 				putStringForSoftReference(requestUrl, result);
 				return result;
@@ -192,27 +192,27 @@ public class RequestCacheUtil {
 		return "";
 	}
 
-	private static String getStringFromLocal(String requestPath,
-			String requestUrl, DBHelper dbHelper) {
-		String result = "";
-		Cursor cursor = getStringFromDB(requestUrl, dbHelper);
-		if (cursor.moveToFirst()) {
-			Long timestamp = cursor.getLong(cursor
-					.getColumnIndex(RequestCacheColumn.Timestamp));
-			String strContentType = cursor.getString(cursor
-					.getColumnIndex(RequestCacheColumn.Content_type));
-			long span = getSpanTimeFromConfigs(strContentType);
-			long nowTime = System.currentTimeMillis();
-			if ((nowTime - timestamp) > span * 60 * 1000) {
-				// 过期
-				deleteFileFromLocal(requestPath);
-			} else {
-				// 没过期
-				result = getFileFromLocal(requestPath);
-			}
-		}
-		return result;
-	}
+//	private static String getStringFromLocal(String requestPath,
+//			String requestUrl, DBHelper dbHelper) {
+//		String result = "";
+//		Cursor cursor = getStringFromDB(requestUrl, dbHelper);
+//		if (cursor.moveToFirst()) {
+//			Long timestamp = cursor.getLong(cursor
+//					.getColumnIndex(RequestCacheColumn.Timestamp));
+//			String strContentType = cursor.getString(cursor
+//					.getColumnIndex(RequestCacheColumn.Content_type));
+//			long span = getSpanTimeFromConfigs(strContentType);
+//			long nowTime = System.currentTimeMillis();
+//			if ((nowTime - timestamp) > span * 60 * 1000) {
+//				// 过期
+//				deleteFileFromLocal(requestPath);
+//			} else {
+//				// 没过期
+//				result = getFileFromLocal(requestPath);
+//			}
+//		}
+//		return result;
+//	}
 
 	/**
 	 * 从db中查找数据
@@ -267,19 +267,19 @@ public class RequestCacheUtil {
 	 * @param str
 	 * @return
 	 */
-	private static long getSpanTimeFromConfigs(String str) {
-		long span = 0;
-		if (str.equals(Constants.DBContentType.Content_list)) {
-			span = Configs.Content_ListCacheTime;
-		} else if (str.equals(Constants.DBContentType.Content_content)) {
-			span = Configs.Content_ContentCacheTime;
-		} else if (str.equals(Constants.DBContentType.Discuss)) {
-			span = Configs.DiscussCacheTime;
-		} else {
-			span = Configs.Content_DefaultCacheTime;
-		}
-		return span;
-	}
+//	private static long getSpanTimeFromConfigs(String str) {
+//		long span = 0;
+//		if (str.equals(Constants.DBContentType.Content_list)) {
+//			span = Configs.Content_ListCacheTime;
+//		} else if (str.equals(Constants.DBContentType.Content_content)) {
+//			span = Configs.Content_ContentCacheTime;
+//		} else if (str.equals(Constants.DBContentType.Discuss)) {
+//			span = Configs.DiscussCacheTime;
+//		} else {
+//			span = Configs.Content_DefaultCacheTime;
+//		}
+//		return span;
+//	}
 	// [end]
 
 }

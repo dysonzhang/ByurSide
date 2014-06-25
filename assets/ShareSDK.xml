@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <DevInfor>
-
     <!--
     	说明：
     	
@@ -86,14 +85,9 @@
         ShareByAppClient="true"
         SortId="5" />
 
-    <Email
+    <ShortMessage
         Enable="true"
         Id="6"
         SortId="6" />
-
-    <ShortMessage
-        Enable="true"
-        Id="7"
-        SortId="7" />
 
 </DevInfor>

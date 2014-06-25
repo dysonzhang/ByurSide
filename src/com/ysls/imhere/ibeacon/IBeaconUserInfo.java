@@ -4,19 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class IBeaconUserInfo implements Parcelable {
-	/**
-	 * �û�ID
-	 */
+	
 	private String userID = "";
-	/**
-	 * ����
-	 */
 	private String password = "";
-	/**
-	 * user key
-	 */
 	private String userKey = "";
-
 	private String devicesId = "";
 
 	public String getUserID() {
