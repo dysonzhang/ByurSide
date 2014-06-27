@@ -77,10 +77,8 @@ public class BluetoothController {
 			LogUtil.i(TAG, "Bluetooth LE not supported");
 			// start MAC address search service
 			Global.CHECKIN_MODE = Constants.BT_GENREAL_CHECKIN_MODE;
-
-			Intent serviceIntent = new Intent(context,GeneralBluetoothService.class);
-			context.startService(serviceIntent);
 			
+			GeneralBluetoothService.startBackService(context);
 		} else {
 			if (((BluetoothManager) context
 					.getSystemService(Context.BLUETOOTH_SERVICE)).getAdapter()

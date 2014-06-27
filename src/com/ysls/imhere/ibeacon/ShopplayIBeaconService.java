@@ -7,7 +7,6 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.Service;
@@ -15,7 +14,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Binder;
-import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 
@@ -25,6 +23,7 @@ import com.radiusnetworks.ibeacon.IBeaconManager;
 import com.radiusnetworks.ibeacon.RangeNotifier;
 import com.radiusnetworks.ibeacon.Region;
 import com.ysls.imhere.MyApplication;
+import com.ysls.imhere.config.Constants;
 import com.ysls.imhere.config.Global;
 import com.ysls.imhere.utils.LogUtil;
 
@@ -48,19 +47,6 @@ public class ShopplayIBeaconService extends Service implements IBeaconConsumer {
 	private IBeaconRequest mIBeaconRequest;
 
 	public ShopBeaconPush mShopBeaconPush;
-
-	/**
-	 * UUID
-	 */
-	private static String detectedPushUUID = "25275B5C-0210-4DD5-B290-552B0AFBD80C";
-	/**
-	 * UUID
-	 */
-	private static String detectedBroadcastUUID = "25275B5C-0210-4DD5-B290-552B0AFBD80D";
-	/**
-	 * UUID
-	 */
-	private static String proximityUUID = "";
 	/**
 	 * VALID_PUSH_DISTANCE
 	 */
@@ -130,12 +116,12 @@ public class ShopplayIBeaconService extends Service implements IBeaconConsumer {
 						IBeacon mIBeacon = mIBeaconNearList.get(0);
 						mIBeaconNearList.clear();
 						if (mIBeacon.getProximityUuid().toUpperCase()
-								.equals(detectedPushUUID)) {
+								.equals(Constants.detectedPushUUID)) {
 							if (mIBeacon.getAccuracy() > VALID_PUSH_DISTANCE) {
 								return;
 							}
 						} else if (mIBeacon.getProximityUuid().toUpperCase()
-								.equals(detectedBroadcastUUID)) {
+								.equals(Constants.detectedBroadcastUUID)) {
 							if (mIBeacon.getAccuracy() > VALID_BROADCAST_DISTANCE) {
 								return;
 							}
@@ -149,7 +135,7 @@ public class ShopplayIBeaconService extends Service implements IBeaconConsumer {
 						 * praseResult(result);
 						 */
 
-						BTCheckInUtil.sentCheckInNotice(mContext);
+						BTCheckInUtil.sendCheckInNotice(mContext);
 
 					} else {
 						IBEACON_STATE = NO_ENTER_IBEACON;
@@ -208,6 +194,7 @@ public class ShopplayIBeaconService extends Service implements IBeaconConsumer {
 	public static void stopBackService(Context context) {
 		if (ShopplayIBeaconService.isServiceExisted(context,
 				ShopplayIBeaconService.class)) {
+			LogUtil.i(TAG, "ShopplayIBeaconService begin to stop...");
 			Intent intent = new Intent(context, ShopplayIBeaconService.class);
 			context.stopService(intent);
 		}
@@ -246,9 +233,9 @@ public class ShopplayIBeaconService extends Service implements IBeaconConsumer {
 			while (it.hasNext()) {
 				IBeacon beacon = (IBeacon) it.next();
 				if (beacon.getProximityUuid().toUpperCase()
-						.equals(detectedPushUUID)
+						.equals(Constants.detectedPushUUID)
 						|| beacon.getProximityUuid().toUpperCase()
-								.equals(detectedBroadcastUUID)) {
+								.equals(Constants.detectedBroadcastUUID)) {
 					copy.add(beacon);
 				}
 			}

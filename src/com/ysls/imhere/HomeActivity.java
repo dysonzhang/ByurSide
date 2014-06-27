@@ -13,6 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.adapter.BasePageViewAdapter;
 import com.ysls.imhere.base.BaseFragmentActivity;
 import com.ysls.imhere.db.DBHelper;
@@ -114,7 +116,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 		loadFaillayout = (LinearLayout) findViewById(R.id.view_load_fail);
 
 		mAboveTitle = (TextView) findViewById(R.id.tv_above_title);
-		mAboveTitle.setText("imHere");
+		mAboveTitle.setText("Imhere");
 		mAboveTitle.setTextSize(22);
 
 		imgMore = (ImageView) findViewById(R.id.imageview_above_more);
@@ -318,5 +320,10 @@ public class HomeActivity extends BaseFragmentActivity implements
 				LogUtil.i(HomeActivity.TAG, "通讯录");
 			}
 		}
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
 	}
 }

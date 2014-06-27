@@ -15,7 +15,7 @@ public class BTCheckInUtil {
 	
 	public static final String TAG = "BTCheckInUtil";
 
-	public static void sentCheckInNotice(Context mContext) {
+	public static void sendCheckInNotice(Context mContext) {
 		if (mContext != null) {
 
 			mShopBeaconPush = new ShopBeaconPush();

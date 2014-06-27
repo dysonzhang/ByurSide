@@ -16,6 +16,7 @@ import com.radiusnetworks.ibeacon.IBeaconManager;
 import com.ysls.imhere.baidu.BaiduLocation;
 import com.ysls.imhere.config.Constants;
 import com.ysls.imhere.config.Global;
+import com.ysls.imhere.ibeacon.BluetoothController;
 import com.ysls.imhere.ibeacon.ShopplayIBeaconService;
 import com.ysls.imhere.utils.LogUtil;
 
@@ -57,6 +58,7 @@ public class MyApplication extends Application {
 
 		// iBeacon service background and foreground control
 		iBeaconBackAndforeControl(ctx);
+
 	}
 
 	/**

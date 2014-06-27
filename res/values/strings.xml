@@ -91,7 +91,7 @@ eoe客户端代码已经完全开源，欢迎每个eoer们参与, 详情情况�
     <string name="user_center_e_coin">e币:%s</string>
     <string name="user_center_e_reputation">e望:%s</string>
     <!-- QQ功能 -->
-    <string name="et_account_hint">QQ号/邮箱</string>
+    <string name="et_account_hint">手机号</string>
     <string name="et_password_hint">密码</string>
     <string name="register">新用户</string>
     <string name="login">登入</string>

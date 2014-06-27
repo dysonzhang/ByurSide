@@ -8,6 +8,8 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import cn.jpush.android.api.JPushInterface;
 
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.config.Global;
 import com.ysls.imhere.test.SDManager;
@@ -82,5 +84,11 @@ public class WelcomeActivity extends BaseActivity {
 			}
 		}
 		defaultFinish();
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
 	}
 }

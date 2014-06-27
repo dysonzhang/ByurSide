@@ -1,5 +1,7 @@
 package com.ysls.imhere.ibeacon;
 
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.R;
 import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.config.Global;
@@ -127,5 +129,11 @@ public class IBeaconPushActivity extends BaseActivity {
 			return true;
 		}
 		return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
 	}
 }

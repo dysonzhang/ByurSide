@@ -8,26 +8,38 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.litesuits.http.LiteHttpClient;
+import com.litesuits.http.async.HttpAsyncExcutor;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
 import com.umeng.analytics.MobclickAgent;
 import com.ysls.imhere.MyApplication;
 import com.ysls.imhere.R;
 import com.ysls.imhere.utils.LogUtil;
 
-public class BaseActivity extends Activity {
+public abstract class BaseActivity extends Activity {
 
 	private static final String TAG = "BaseActivity";
 
 	protected AlertDialog mAlertDialog;
 	
-	protected AsyncTask mRunningTask;
+	/**************HttpClient******************/
+	protected LiteHttpClient client;
+	
+	protected HttpAsyncExcutor asyncExcutor = new HttpAsyncExcutor();
 
+	public abstract void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod);
+
+	/**************HttpClient******************/
+	
+	
 	/******************************** 【Activity LifeCycle For Debug】 *******************************************/
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +47,8 @@ public class BaseActivity extends Activity {
 				+ " onCreate() invoked!!");
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
+		client = LiteHttpClient.getInstance(this);
 		
 		MyApplication.getInstance().add(this);
 	}
@@ -83,10 +97,6 @@ public class BaseActivity extends Activity {
 				+ " onDestroy() invoked!!");
 		super.onDestroy();
 
-		if (mRunningTask != null && mRunningTask.isCancelled() == false) {
-			mRunningTask.cancel(false);
-			mRunningTask = null;
-		}
 		if (mAlertDialog != null) {
 			mAlertDialog.dismiss();
 			mAlertDialog = null;

@@ -1,5 +1,7 @@
 package com.ysls.imhere;
 
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.utils.ShareSDKUtil;
 import com.ysls.imhere.widget.TextURLView;
@@ -86,4 +88,10 @@ public class LoginActivity extends BaseActivity {
 			ShareSDKUtil.showShare(mContext);
 		}
 	};
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+	}
 }

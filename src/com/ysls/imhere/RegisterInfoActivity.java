@@ -1,5 +1,7 @@
 package com.ysls.imhere;
 
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.widget.TitleBarView;
 import android.content.Context;
@@ -52,4 +54,9 @@ public class RegisterInfoActivity extends BaseActivity {
 		   openActivity(RegisterResultActivity.class);
 		}
 	};
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+	}
 }

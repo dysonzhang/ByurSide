@@ -1,5 +1,7 @@
 package com.ysls.imhere.base;
 
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.slidingmenu.SlidingActivityBase;
 import com.ysls.imhere.slidingmenu.SlidingActivityHelper;
 import com.ysls.imhere.slidingmenu.SlidingMenu;
@@ -196,6 +198,12 @@ public class BaseSlidingFragmentActivity extends BaseFragmentActivity implements
 		if (b)
 			return b;
 		return super.onKeyUp(keyCode, event);
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.ysls.imhere;
 
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.widget.TextURLView;
 import com.ysls.imhere.widget.TitleBarView;
@@ -68,5 +70,11 @@ public class RegisterResultActivity extends BaseActivity {
 
 			}
 		});
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
 	}
 }
