@@ -8,12 +8,12 @@ import android.media.MediaPlayer;
 public class SoundManager implements
 		android.media.MediaPlayer.OnCompletionListener {
 
-	private ArrayList playerList;
+	private ArrayList<MediaPlayer> playerList;
 	public static boolean isTurnOnSound = true;
 
 	public SoundManager() {
 		super();
-		playerList = new ArrayList();
+		playerList = new ArrayList<MediaPlayer>();
 	}
 
 	@Override

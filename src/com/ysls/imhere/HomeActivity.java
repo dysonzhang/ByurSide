@@ -17,7 +17,6 @@ import com.litesuits.http.request.param.HttpMethod;
 import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.adapter.BasePageViewAdapter;
 import com.ysls.imhere.base.BaseFragmentActivity;
-import com.ysls.imhere.db.DBHelper;
 import com.ysls.imhere.ibeacon.BluetoothController;
 import com.ysls.imhere.indicator.PageIndicator;
 import com.ysls.imhere.slidingdrawer.SemiClosedSlidingDrawer;
@@ -77,7 +76,14 @@ public class HomeActivity extends BaseFragmentActivity implements
 	private LinearLayout mlinear_listview;
 
 	private View title;
-
+	
+	// 当前fragment的index
+	private int currentTabIndex = 1;
+	
+	public static int HOMEFRAGMENT = 0;
+	public static int TODOFRAGMENT = 1;
+	public static int CHATFRAGMENT = 2;
+	
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.above_slidingmenu);
@@ -88,7 +94,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 		initBelowSlidingMenu();
 		initViewPager();
 		initBtContorller();
-		
+
 	}
 
 	/**
@@ -111,7 +117,6 @@ public class HomeActivity extends BaseFragmentActivity implements
 	 * 加载界面所有布局控件
 	 */
 	private void initControl() {
-
 		loadLayout = (LinearLayout) findViewById(R.id.view_loading);
 		loadFaillayout = (LinearLayout) findViewById(R.id.view_load_fail);
 
@@ -138,7 +143,6 @@ public class HomeActivity extends BaseFragmentActivity implements
 		slidingDrawer = (SemiClosedSlidingDrawer) findViewById(R.id.sd);
 		openLayout = (LinearLayout) findViewById(R.id.open_header_layout);
 		closeLayout = (LinearLayout) findViewById(R.id.close_header_layout);
-
 	}
 
 	/**
@@ -246,8 +250,8 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	protected void onDestroy() {
 		super.onDestroy();
+
 		try {
-			DBHelper.getInstance(this).closeDb();
 			return;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -309,19 +313,22 @@ public class HomeActivity extends BaseFragmentActivity implements
 			if (selectId == 0) {
 				imgLeft.setVisibility(View.GONE);
 				LogUtil.i(HomeActivity.TAG, "任务");
+				currentTabIndex = TODOFRAGMENT;
 
 			} else if (selectId == mBasePageViewAdapter.mFragments.size() - 1) {
 				imgRight.setVisibility(View.GONE);
 				LogUtil.i(HomeActivity.TAG, "主页");
-
+				currentTabIndex = HOMEFRAGMENT;
 			} else {
 				imgRight.setVisibility(View.VISIBLE);
 				imgLeft.setVisibility(View.VISIBLE);
 				LogUtil.i(HomeActivity.TAG, "通讯录");
+				currentTabIndex = CHATFRAGMENT;
 			}
 		}
 	}
 
+	
 	@Override
 	public void refreshUI(String taskApiURL, HttpParam httpParam,
 			HttpMethod httpMethod) {

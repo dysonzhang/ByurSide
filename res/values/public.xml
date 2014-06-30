@@ -195,8 +195,6 @@
     <public id="0x7f040002" name="push_left_out" type="anim" />
     <public id="0x7f040003" name="push_right_in" type="anim" />
     <public id="0x7f040004" name="push_right_out" type="anim" />
-    <public id="0x7f040005" name="push_top_in" type="anim" />
-    <public id="0x7f040006" name="push_top_out" type="anim" />
     <public id="0x7f040008" name="umeng_fb_slide_in_from_left" type="anim" />
     <public id="0x7f040009" name="umeng_fb_slide_in_from_right" type="anim" />
     <public id="0x7f04000a" name="umeng_fb_slide_out_from_left" type="anim" />
@@ -487,6 +485,5 @@
     <public id="0x7f0c0001" name="Theme.splash" type="style" />
     <public id="0x7f0c0002" name="behind_button_style" type="style" />
     <public id="0x7f0c0003" name="title_right_button" type="style" />
-    <public id="0x7f0d0001" name="menu_main" type="menu" />
 
 </resources>

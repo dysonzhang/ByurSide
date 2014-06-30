@@ -40,4 +40,10 @@ public class Constants {
 	 */
 	public static final String proximityUUID = "";
 	
+	/**
+	 * Easemod chat
+	 */
+	public static final String NEW_FRIENDS_USERNAME = "item_new_friends";
+	public static final String GROUP_USERNAME = "item_groups";
+	
 }

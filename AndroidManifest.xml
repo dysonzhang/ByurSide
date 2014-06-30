@@ -25,22 +25,26 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!-- bluetooth permission-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- bluetooth permission -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    
+
     <application
         android:name="com.ysls.imhere.MyApplication"
         android:allowBackup="true"
@@ -95,19 +99,29 @@
             android:name="com.ysls.imhere.AboutActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        
-        <!-- BT2.0 Mac Address Found Service  start-->
+
+        <!-- 设置环信SDK start -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="leektech#imhere" />
+
+        <service android:name="com.easemob.chat.EMChatService" />
+        <!-- 设置环信SDK end -->
+
+
+        <!-- BT2.0 Mac Address Found Service  start -->
         <service android:name="com.ysls.imhere.ibeacon.GeneralBluetoothService" >
         </service>
-        <!-- BT2.0 Mac Address Found Service  end-->
-        
+        <!-- BT2.0 Mac Address Found Service  end -->
+
+
         <!-- iBeacon Service start -->
         <activity
             android:name="com.ysls.imhere.ibeacon.IBeaconPushActivity"
             android:screenOrientation="portrait"
             android:theme="@style/pushdialog" >
         </activity>
-        
+
         <service
             android:name="com.ysls.imhere.ibeacon.ShopplayIBeaconService"
             android:enabled="true"
@@ -143,7 +157,8 @@
             </intent-filter>
         </receiver>
         <!-- iBeacon Service end -->
-        
+
+
         <!-- Share SDK start -->
         <activity
             android:name="cn.sharesdk.framework.ShareSDKUIShell"
@@ -167,6 +182,7 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!-- Share SDK end -->
+
 
         <!-- Baidu SDK start -->
         <service

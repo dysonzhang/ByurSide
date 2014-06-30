@@ -20,4 +20,11 @@
         <item name="android:scaleType">fitCenter</item>
     </style>
 
+       <style name="Anim_style2" parent="android:style/Theme.Holo.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/AnimFade</item>
+    </style>
+
+    <style name="horizontal_slide" parent="android:style/Theme.Holo.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/AnimFade2</item>
+    </style>
 </resources>
