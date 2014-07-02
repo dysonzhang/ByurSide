@@ -40,8 +40,11 @@ import com.easemob.chat.EMGroupManager;
 import com.easemob.chatuidemo.widget.ExpandGridView;
 import com.easemob.util.EMLog;
 import com.easemob.util.NetUtils;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 
-public class GroupDetailsActivity extends Activity {
+public class GroupDetailsActivity extends BaseActivity {
 	private static final String TAG = "GroupDetailsActivity";
 	private static final int REQUEST_CODE_ADD_USER = 0;
 	private static final int REQUEST_CODE_EXIT = 1;
@@ -508,6 +511,15 @@ public class GroupDetailsActivity extends Activity {
 	public void onBackPressed() {
 		setResult(RESULT_OK);
 		finish();
+	}
+
+
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

@@ -73,6 +73,9 @@ import com.easemob.chatuidemo.widget.ExpandGridView;
 import com.easemob.chatuidemo.widget.PasteEditText;
 import com.easemob.util.PathUtil;
 import com.easemob.util.VoiceRecorder;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.utils.CommonUtil;
 import com.ysls.imhere.utils.ImageUtils;
 import com.ysls.imhere.utils.SmileUtils;
@@ -81,7 +84,7 @@ import com.ysls.imhere.utils.SmileUtils;
  * 聊天页面
  * 
  */
-public class ChatActivity extends Activity implements OnClickListener {
+public class ChatActivity extends BaseActivity implements OnClickListener {
 
 	private static final int REQUEST_CODE_PICK_PICTURE = 1;
 	private static final int REQUEST_CODE_EMPTY_HISTORY = 2;
@@ -963,7 +966,7 @@ public class ChatActivity extends Activity implements OnClickListener {
 	}
 
 	@Override
-	protected void onDestroy() {
+	public void onDestroy() {
 		super.onDestroy();
 		activityInstance = null;
 		// 注销广播
@@ -1083,6 +1086,13 @@ public class ChatActivity extends Activity implements OnClickListener {
 
 		}
 
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

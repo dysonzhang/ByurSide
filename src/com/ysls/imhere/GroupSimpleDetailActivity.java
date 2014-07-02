@@ -1,6 +1,5 @@
 package com.ysls.imhere;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -14,8 +13,11 @@ import com.easemob.chat.EMGroup;
 import com.easemob.chat.EMGroupInfo;
 import com.easemob.chat.EMGroupManager;
 import com.easemob.exceptions.EaseMobException;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 
-public class GroupSimpleDetailActivity extends Activity {
+public class GroupSimpleDetailActivity extends BaseActivity {
 	private Button btn_add_group;
 	private TextView tv_admin;
 	private TextView tv_name;
@@ -102,5 +104,12 @@ public class GroupSimpleDetailActivity extends Activity {
 	
 	public void back(View view){
 		finish();
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 }

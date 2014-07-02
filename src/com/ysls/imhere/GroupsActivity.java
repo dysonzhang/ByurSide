@@ -31,8 +31,11 @@ import android.widget.ListView;
 import com.easemob.chat.EMGroup;
 import com.easemob.chat.EMGroupManager;
 import com.easemob.chatuidemo.adapter.GroupAdapter;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 
-public class GroupsActivity extends Activity {
+public class GroupsActivity extends BaseActivity {
 	private ListView groupListView;
 	protected List<EMGroup> grouplist;
 	private GroupAdapter groupAdapter;
@@ -105,7 +108,7 @@ public class GroupsActivity extends Activity {
 	}
 	
 	@Override
-	protected void onDestroy() {
+	public void onDestroy() {
 		super.onDestroy();
 		instance = null;
 	}
@@ -116,5 +119,12 @@ public class GroupsActivity extends Activity {
 	 */
 	public void back(View view){
 		finish();
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -46,8 +46,11 @@ import com.baidu.mapapi.map.OverlayItem;
 import com.baidu.mapapi.utils.CoordinateConvert;
 import com.baidu.platform.comapi.basestruct.GeoPoint;
 import com.easemob.util.EMLog;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 
-public class BaiduMapActivity extends Activity {
+public class BaiduMapActivity extends BaseActivity {
 
 	private final static String TAG = "map";
 	static MapView mMapView = null;
@@ -221,7 +224,7 @@ public class BaiduMapActivity extends Activity {
 	}
 
 	@Override
-	protected void onDestroy() {
+	public void onDestroy() {
 		if (mLocClient != null)
 			mLocClient.stop();
 		mMapView.destroy();
@@ -371,5 +374,12 @@ public class BaiduMapActivity extends Activity {
 		double gcjLng = z * Math.cos(theta);
 		double gcjLat = z * Math.sin(theta);
 		return new GeoPoint((int) (gcjLat * 1e6), (int) (gcjLng * 1e6));
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 }

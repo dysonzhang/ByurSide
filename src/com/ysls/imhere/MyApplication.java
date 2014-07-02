@@ -142,8 +142,7 @@ public class MyApplication extends Application {
 	 * @return
 	 */
 	public Map<String, User> getContactList() {
-		if(getUserName() != null &&contactList == null)
-		{
+		if (getUserName() != null && contactList == null) {
 			UserDao dao = new UserDao(ctx);
 			// 获取本地好友user list到内存,方便以后获取好友list
 			contactList = dao.getContactList();
@@ -167,7 +166,8 @@ public class MyApplication extends Application {
 	 */
 	public String getUserName() {
 		if (userName == null) {
-			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
+			SharedPreferences preferences = PreferenceManager
+					.getDefaultSharedPreferences(ctx);
 			userName = preferences.getString(PREF_USERNAME, null);
 		}
 		return userName;
@@ -180,7 +180,8 @@ public class MyApplication extends Application {
 	 */
 	public String getPassword() {
 		if (password == null) {
-			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
+			SharedPreferences preferences = PreferenceManager
+					.getDefaultSharedPreferences(ctx);
 			password = preferences.getString(PREF_PWD, null);
 		}
 		return password;
@@ -193,7 +194,8 @@ public class MyApplication extends Application {
 	 */
 	public void setUserName(String username) {
 		if (username != null) {
-			SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
+			SharedPreferences preferences = PreferenceManager
+					.getDefaultSharedPreferences(ctx);
 			SharedPreferences.Editor editor = preferences.edit();
 			if (editor.putString(PREF_USERNAME, username).commit()) {
 				userName = username;
@@ -207,7 +209,8 @@ public class MyApplication extends Application {
 	 * @param pwd
 	 */
 	public void setPassword(String pwd) {
-		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(ctx);
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(ctx);
 		SharedPreferences.Editor editor = preferences.edit();
 		if (editor.putString(PREF_PWD, pwd).commit()) {
 			password = pwd;
@@ -226,6 +229,7 @@ public class MyApplication extends Application {
 		setContactList(null);
 
 	}
+
 	/**
 	 * iBeacon service background and foreground control
 	 * 

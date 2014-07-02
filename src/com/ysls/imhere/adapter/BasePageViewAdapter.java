@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.ysls.imhere.fragment.HomeFragment;
 import com.ysls.imhere.fragment.HttpErrorFragment;
-import com.ysls.imhere.fragment.NewsFatherFragment;
+import com.ysls.imhere.fragment.CommunicateFragment;
 import com.ysls.imhere.fragment.TodoFragment;
 
 /**
@@ -45,8 +45,8 @@ public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 				addTab(new TodoFragment(this.mActivity));
 			if (str.equals("主页"))
 				addTab(new HomeFragment(this.mActivity));
-			if (str.equals("通讯录"))
-				addTab(new NewsFatherFragment());
+			if (str.equals("沟通"))
+				addTab(new CommunicateFragment());
 		}
 	}
 

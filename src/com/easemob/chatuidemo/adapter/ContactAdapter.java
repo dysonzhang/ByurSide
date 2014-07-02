@@ -74,7 +74,7 @@ public class ContactAdapter extends ArrayAdapter<User>  implements SectionIndexe
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if (position == 0) {//搜索框
 			if(convertView == null){
-				convertView = layoutInflater.inflate(R.layout.search_bar_with_padding, null);
+				convertView = layoutInflater.inflate(R.layout.search_bar, null);
 				query = (EditText) convertView.findViewById(R.id.query);
 				clearSearch = (ImageButton) convertView.findViewById(R.id.search_clear);
 				query.addTextChangedListener(new TextWatcher() {
@@ -135,7 +135,7 @@ public class ContactAdapter extends ArrayAdapter<User>  implements SectionIndexe
 			//显示新的朋友item
 			if(username.equals(Constants.NEW_FRIENDS_USERNAME)){
 				nameTextview.setText(user.getNick());
-				avatar.setImageResource(R.drawable.new_friends_icon);
+				avatar.setImageResource(R.drawable.qq_leba_list_seek_myfeeds);
 				if(user.getUnreadMsgCount() > 0){
 					unreadMsgView.setVisibility(View.VISIBLE);
 					unreadMsgView.setText(user.getUnreadMsgCount()+"");
@@ -145,7 +145,7 @@ public class ContactAdapter extends ArrayAdapter<User>  implements SectionIndexe
 			}else if(username.equals(Constants.GROUP_USERNAME)){
 				//群聊item
 				nameTextview.setText(user.getNick());
-				avatar.setImageResource(R.drawable.groups_icon);
+				avatar.setImageResource(R.drawable.qq_contact_list_troop_entry_icon);
 			}else{
 				nameTextview.setText(username);
 				if(unreadMsgView != null)

@@ -1,6 +1,7 @@
 package com.ysls.imhere;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
@@ -44,6 +45,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	private SemiClosedSlidingDrawer slidingDrawer;
 	private LinearLayout openLayout, closeLayout;
+
 	private ImageViewWithText sdgl;
 	private ImageViewWithText ysbh;
 	private ImageViewWithText wdrj;
@@ -76,17 +78,17 @@ public class HomeActivity extends BaseFragmentActivity implements
 	private LinearLayout mlinear_listview;
 
 	private View title;
-	
+
 	// 当前fragment的index
 	private int currentTabIndex = 1;
-	
+
 	public static int HOMEFRAGMENT = 0;
 	public static int TODOFRAGMENT = 1;
 	public static int CHATFRAGMENT = 2;
-	
+
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
-		setContentView(R.layout.above_slidingmenu);
+		setContentView(R.layout.activity_home);
 		mContext = this;
 
 		initClass();
@@ -184,7 +186,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 	}
 
 	/**
-	 * 初始化 主页，任务，通讯录 滑动Menu菜单
+	 * 初始化 主页，任务，沟通 滑动Menu菜单
 	 */
 	private void initViewPager() {
 
@@ -206,7 +208,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 		ArrayList<String> menuList = new ArrayList<String>();
 		menuList.add("任务");
 		menuList.add("主页");
-		menuList.add("通讯录");
+		menuList.add("沟通");
 
 		isShowPopupWindows = true;
 		mBasePageViewAdapter.Clear();
@@ -227,7 +229,6 @@ public class HomeActivity extends BaseFragmentActivity implements
 		mBasePageViewAdapter.notifyDataSetChanged();
 		mViewPager.setCurrentItem(1);
 		mIndicator.notifyDataSetChanged();
-
 	}
 
 	@SuppressWarnings("unchecked")
@@ -241,6 +242,33 @@ public class HomeActivity extends BaseFragmentActivity implements
 				new PopupWindowUtil(mViewPager).showActionWindow(paramView,
 						this, mBasePageViewAdapter.tabs);
 			}
+			break;
+		case R.id.custom_sdgl:
+			ToastUtil.showMsg(mContext, "You clicked 考勤查询");
+			break;
+		case R.id.custom_ysbh:
+			ToastUtil.showMsg(mContext, "You clicked 通知公告");
+			break;
+		case R.id.custom_wdrj:
+			ToastUtil.showMsg(mContext, "You clicked 帐户设置");
+			startActivity(new Intent(mContext, SettingsActivity.class));
+			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
+					R.anim.fade_out);
+			break;
+		case R.id.custom_rjyx:
+			ToastUtil.showMsg(mContext, "You clicked 关于");
+			break;
+		case R.id.custom_sygj:
+			ToastUtil.showMsg(mContext, "You clicked 反馈");
+			break;
+		case R.id.custom_sjfd:
+			ToastUtil.showMsg(mContext, "You clicked 退出");
+			break;
+		case R.id.custom_txbf:
+			ToastUtil.showMsg(mContext, "You clicked 通讯备份");
+			break;
+		case R.id.custom_qqwp:
+			ToastUtil.showMsg(mContext, "You clicked 门禁开光");
 			break;
 		case R.id.bn_refresh:
 			ToastUtil.showMsg(mContext, "You clicked my refresh button!");
@@ -322,13 +350,12 @@ public class HomeActivity extends BaseFragmentActivity implements
 			} else {
 				imgRight.setVisibility(View.VISIBLE);
 				imgLeft.setVisibility(View.VISIBLE);
-				LogUtil.i(HomeActivity.TAG, "通讯录");
+				LogUtil.i(HomeActivity.TAG, "沟通");
 				currentTabIndex = CHATFRAGMENT;
 			}
 		}
 	}
 
-	
 	@Override
 	public void refreshUI(String taskApiURL, HttpParam httpParam,
 			HttpMethod httpMethod) {

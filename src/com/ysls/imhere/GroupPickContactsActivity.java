@@ -35,10 +35,13 @@ import com.easemob.chat.EMGroup;
 import com.easemob.chat.EMGroupManager;
 import com.easemob.chatuidemo.adapter.ContactAdapter;
 import com.easemob.chatuidemo.widget.Sidebar;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.config.Constants;
 import com.ysls.imhere.domain.User;
 
-public class GroupPickContactsActivity extends Activity {
+public class GroupPickContactsActivity extends BaseActivity {
 	private ListView listView;
 	/** 是否为一个新建的群组 */
 	protected boolean isCreatingNewGroup;
@@ -185,6 +188,13 @@ public class GroupPickContactsActivity extends Activity {
 
 	public void back(View view){
 		finish();
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

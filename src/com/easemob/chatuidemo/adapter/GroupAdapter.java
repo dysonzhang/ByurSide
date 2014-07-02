@@ -60,7 +60,7 @@ public class GroupAdapter extends ArrayAdapter<EMGroup> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 	    if(getItemViewType(position) == 0){
 	        if (convertView == null) {
-                convertView = inflater.inflate(R.layout.search_bar_with_padding, null);
+                convertView = inflater.inflate(R.layout.search_bar, null);
             }
     	    final EditText query = (EditText) convertView.findViewById(R.id.query);
             final ImageButton clearSearch = (ImageButton) convertView.findViewById(R.id.search_clear);

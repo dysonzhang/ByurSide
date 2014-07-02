@@ -12,8 +12,7 @@
  * limitations under the License.
  */
 package com.ysls.imhere;
-
-import android.app.Activity;
+ 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,8 +23,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.easemob.chat.EMGroupManager;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 
-public class NewGroupActivity extends Activity {
+public class NewGroupActivity extends BaseActivity {
 	private EditText groupNameEditText;
 	private ProgressDialog progressDialog;
 	private EditText introductionEditText;
@@ -100,5 +102,12 @@ public class NewGroupActivity extends Activity {
 
 	public void back(View view) {
 		finish();
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 }

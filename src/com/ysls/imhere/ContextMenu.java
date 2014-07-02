@@ -13,15 +13,17 @@
  */
 package com.ysls.imhere;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 
 import com.easemob.chat.EMMessage;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 
-public class ContextMenu extends Activity {
+public class ContextMenu extends BaseActivity {
 
 	private int position;
 	
@@ -98,6 +100,13 @@ public class ContextMenu extends Activity {
 	public void toCloud(View v){
 	    setResult(ChatActivity.RESULT_CODE_TO_CLOUD, new Intent().putExtra("position", position));
         finish();
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

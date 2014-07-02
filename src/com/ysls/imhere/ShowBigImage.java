@@ -38,13 +38,16 @@ import com.easemob.cloud.CloudOperationCallback;
 import com.easemob.cloud.HttpFileManager;
 import com.easemob.util.ImageUtils;
 import com.easemob.util.PathUtil;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.utils.ImageCache;
 
 /**
  * 下载显示大图
  * 
  */
-public class ShowBigImage extends Activity {
+public class ShowBigImage extends BaseActivity {
 
 	private ProgressDialog pd;
 	private PhotoView image;
@@ -210,5 +213,12 @@ public class ShowBigImage extends Activity {
 		if (isDownloaded)
 			setResult(RESULT_OK);
 		finish();
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 }

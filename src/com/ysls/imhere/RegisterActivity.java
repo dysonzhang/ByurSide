@@ -13,7 +13,6 @@
  */
 package com.ysls.imhere;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,12 +21,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.easemob.chat.EMChatManager;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 
 /**
  * 注册页
  *
  */
-public class RegisterActivity extends Activity{
+public class RegisterActivity extends BaseActivity{
 	private EditText userNameEditText;
 	private EditText passwordEditText;
 	private EditText confirmPwdEditText;
@@ -125,6 +127,14 @@ public class RegisterActivity extends Activity{
 	
 	public void back(View view){
 		finish();
+	}
+
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

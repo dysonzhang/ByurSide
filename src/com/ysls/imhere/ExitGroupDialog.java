@@ -13,6 +13,10 @@
  */
 package com.ysls.imhere;
 
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -21,7 +25,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-public class ExitGroupDialog extends Activity{
+public class ExitGroupDialog extends BaseActivity{
     private TextView text;
     private Button exitBtn;
 
@@ -55,4 +59,11 @@ public class ExitGroupDialog extends Activity{
         finish();
         return true;
     }
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
+	}
 }

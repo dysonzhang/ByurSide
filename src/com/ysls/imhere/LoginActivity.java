@@ -81,10 +81,10 @@ public class LoginActivity extends BaseActivity {
 		account = (EditText) findViewById(R.id.account);
 		pwd = (EditText) findViewById(R.id.password);
 
-		//测试帐户
+		// 测试帐户
 		account.setText("dyson");
 		pwd.setText("123456");
-		
+
 		mLogin = (Button) findViewById(R.id.login);
 		register = (Button) findViewById(R.id.register);
 
@@ -143,10 +143,11 @@ public class LoginActivity extends BaseActivity {
 			openActivity(RegisterPhoneActivity.class);
 		}
 	};
-	
+
 	private OnClickListener fogetOnClickListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
+			// 测试
 			ShareSDKUtil.showShare(mContext);
 		}
 	};
@@ -193,8 +194,7 @@ public class LoginActivity extends BaseActivity {
 								}
 								// 添加user"新的朋友"
 								User newFriends = new User();
-								newFriends
-										.setUsername(Constants.NEW_FRIENDS_USERNAME);
+								newFriends.setUsername(Constants.NEW_FRIENDS_USERNAME);
 								newFriends.setNick("新的朋友");
 								newFriends.setHeader("");
 								userlist.put(Constants.NEW_FRIENDS_USERNAME,

@@ -152,7 +152,7 @@
     <public id="0x7f020071" name="welcome_background" type="drawable" />
     <public id="0x7f020072" name="xlistview_arrow" type="drawable" />
     <public id="0x7f030000" name="activity_about" type="layout" />
-    <public id="0x7f030001" name="above_slidingmenu" type="layout" />
+    <public id="0x7f030001" name="activity_home" type="layout" />
     <public id="0x7f030002" name="above_title" type="layout" />
     <public id="0x7f030003" name="activity_guide" type="layout" />
     <public id="0x7f030004" name="activity_main" type="layout" />

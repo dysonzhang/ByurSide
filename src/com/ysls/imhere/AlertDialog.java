@@ -28,9 +28,12 @@ import android.widget.TextView;
 
 import com.easemob.chatuidemo.task.DownloadImageTask;
 import com.easemob.util.ImageUtils;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.utils.ImageCache;
 
-public class AlertDialog extends Activity {
+public class AlertDialog extends BaseActivity {
 	private TextView mTextView;
 	private Button mButton;
 	private int position;
@@ -109,6 +112,13 @@ public class AlertDialog extends Activity {
 	public boolean onTouchEvent(MotionEvent event){
 		finish();
 		return true;
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	 

@@ -31,10 +31,13 @@ import android.widget.ListView;
 
 import com.easemob.chatuidemo.adapter.ContactAdapter;
 import com.easemob.chatuidemo.widget.Sidebar;
+import com.litesuits.http.request.param.HttpMethod;
+import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.config.Constants;
 import com.ysls.imhere.domain.User;
 
-public class PickContactNoCheckboxActivity extends Activity {
+public class PickContactNoCheckboxActivity extends BaseActivity {
 
 	private ListView listView;
 	private Sidebar sidebar;
@@ -93,6 +96,13 @@ public class PickContactNoCheckboxActivity extends Activity {
 				return lhs.getUsername().compareTo(rhs.getUsername());
 			}
 		});
+	}
+
+	@Override
+	public void refreshUI(String taskApiURL, HttpParam httpParam,
+			HttpMethod httpMethod) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
