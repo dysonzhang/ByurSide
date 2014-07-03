@@ -35,13 +35,13 @@
         android:visibility="invisible" />
 
     <FrameLayout
-        android:id="@+id/child_fragment"
+        android:id="@+id/child_communicate_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/title_bar" />
 
     <RelativeLayout
-        android:id="@+id/rl_canvers"
+        android:id="@+id/rl_communicate_canvers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/title_bar"

@@ -17,7 +17,6 @@ import com.ysls.imhere.config.Constants;
 import com.ysls.imhere.db.UserDao;
 import com.ysls.imhere.domain.User;
 import com.ysls.imhere.utils.ShareSDKUtil;
-import com.ysls.imhere.utils.ToastUtil;
 import com.ysls.imhere.widget.TextURLView;
 
 import android.app.ProgressDialog;
@@ -82,7 +81,7 @@ public class LoginActivity extends BaseActivity {
 		pwd = (EditText) findViewById(R.id.password);
 
 		// 测试帐户
-		account.setText("dyson");
+		account.setText("imhere");
 		pwd.setText("123456");
 
 		mLogin = (Button) findViewById(R.id.login);
@@ -147,8 +146,11 @@ public class LoginActivity extends BaseActivity {
 	private OnClickListener fogetOnClickListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
+			showLongToast("分享接口测试，你可以点击分享");
 			// 测试
 			ShareSDKUtil.showShare(mContext);
+			
+			openActivity(FindPasswordActivity.class);
 		}
 	};
 
@@ -239,7 +241,7 @@ public class LoginActivity extends BaseActivity {
 							runOnUiThread(new Runnable() {
 								public void run() {
 									pd.dismiss();
-									ToastUtil.showMsg(mContext, "登录失败: "
+									showLongToast("登录失败: "
 											+ message);
 								}
 							});

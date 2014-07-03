@@ -20,31 +20,31 @@ import com.ysls.imhere.fragment.TodoFragment;
  * 
  */
 public class BasePageViewAdapter extends FragmentStatePagerAdapter {
-	
+
 	private Activity mActivity;
-	
+
 	public ArrayList<Fragment> mFragments = new ArrayList<Fragment>();
-	
+
 	public List<String> tabs = new ArrayList<String>();
 
-	public BasePageViewAdapter(FragmentActivity paramFragmentActivity) {
-		super(paramFragmentActivity.getSupportFragmentManager());
-		this.mActivity = paramFragmentActivity;
+	public BasePageViewAdapter(FragmentActivity fragmentActivity) {
+		super(fragmentActivity.getSupportFragmentManager());
+		mActivity = fragmentActivity;
 	}
 
 	public void Clear() {
-		this.mFragments.clear();
-		this.tabs.clear();
+		mFragments.clear();
+		tabs.clear();
 	}
 
 	public void addFragment(List<String> paramList) {
 		tabs.addAll(paramList);
 		for (int i = 0; i < tabs.size(); i++) {
 			String str = (String) this.tabs.get(i);
-			if (str.equals("任务"))
-				addTab(new TodoFragment(this.mActivity));
 			if (str.equals("主页"))
 				addTab(new HomeFragment(this.mActivity));
+			if (str.equals("任务"))
+				addTab(new TodoFragment());
 			if (str.equals("沟通"))
 				addTab(new CommunicateFragment());
 		}

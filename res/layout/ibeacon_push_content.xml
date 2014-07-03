@@ -3,54 +3,79 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content" >
 
-   
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#dc5bb4e5" >
+        android:background="#dc000000" >
 
         <TextView
             android:id="@+id/tv_ibeacon_push_content_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/ibeacon_push_title_margin_top"
-            android:gravity="center"
-            android:text="Welcome"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Hi,Dyson！"
             android:textColor="@color/white"
-            android:textSize="50sp" />
+            android:textSize="40sp" />
 
         <TextView
             android:id="@+id/tv_ibeacon_push_content_info"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_ibeacon_push_content_title"
             android:layout_centerHorizontal="true"
-            android:layout_marginLeft="10dp"  
+            android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_marginTop="@dimen/ibeacon_push_subtitle_margin_top"
-            android:gravity="center"
-            android:lines="2"
-            android:text="this is the info  this is the info this is the infothis is the infothis is the info"
+            android:layout_marginTop="20dp"
+            android:text="今天你又是第一个到公司哦，Very good！\n您有4项任务需要今天完成。您还有5条消息未读。"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
         <RelativeLayout
+            android:id="@+id/rl_ibeacon_push_img"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_ibeacon_push_content_info"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="@dimen/ibeacon_push_image_margin_top" >
+            android:layout_marginTop="20dp" >
 
-            <ImageView
-                android:id="@+id/rl_ibeacon_push_img"
+            <TextView
+                android:id="@+id/ibeacon_push_img"
                 android:layout_width="@dimen/ibeacon_push_img_width"
                 android:layout_height="@dimen/ibeacon_push_img_heigh"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/logo_circle"
-                android:padding="10dp" />
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="打卡"
+                android:textColor="@color/logocolor"
+                android:textSize="40dp" />
         </RelativeLayout>
-    </RelativeLayout>
 
-</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_ibeacon_push_img"
+            android:layout_centerHorizontal="true"
+           >
+
+            <TextView
+                android:id="@+id/tv_time_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                 android:layout_marginBottom="50dp"
+                android:gravity="bottom|right"
+                android:lines="2"
+                android:text="2014-07-10 8:30 星期四"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+            </RelativeLayout>
+            
+        </RelativeLayout>
+        
+    </RelativeLayout>

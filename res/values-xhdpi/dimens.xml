@@ -9,7 +9,7 @@
     <dimen name="ibeacon_push_subtitle_margin_top">-5dp</dimen>
     <dimen name="ibeacon_push_img_width">220dp</dimen>
     <dimen name="ibeacon_push_img_heigh">220dp</dimen>
-    <dimen name="ibeacon_push_title_margin_top">2dp</dimen>
+    <dimen name="ibeacon_push_title_margin_top">10dp</dimen>
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="padding_large">16dp</dimen>

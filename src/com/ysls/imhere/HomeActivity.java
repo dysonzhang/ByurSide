@@ -23,7 +23,6 @@ import com.ysls.imhere.indicator.PageIndicator;
 import com.ysls.imhere.slidingdrawer.SemiClosedSlidingDrawer;
 import com.ysls.imhere.utils.LogUtil;
 import com.ysls.imhere.utils.PopupWindowUtil;
-import com.ysls.imhere.utils.ToastUtil;
 import com.ysls.imhere.widget.ImageViewWithText;
 
 import java.util.ArrayList;
@@ -235,7 +234,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 	public void onClick(View paramView) {
 		switch (paramView.getId()) {
 		case R.id.Linear_above_toHome:
-			ToastUtil.showMsg(mContext, "You clicked my logo!");
+			showLongToast("你点击了LOGO");
 			break;
 		case R.id.imageview_above_more:
 			if (isShowPopupWindows) {
@@ -244,34 +243,34 @@ public class HomeActivity extends BaseFragmentActivity implements
 			}
 			break;
 		case R.id.custom_sdgl:
-			ToastUtil.showMsg(mContext, "You clicked 考勤查询");
+			showLongToast("你点击了 考勤查询");
 			break;
 		case R.id.custom_ysbh:
-			ToastUtil.showMsg(mContext, "You clicked 通知公告");
+			showLongToast("你点击了 通知公告");
 			break;
 		case R.id.custom_wdrj:
-			ToastUtil.showMsg(mContext, "You clicked 帐户设置");
+			showLongToast("你点击了 帐户设置");
 			startActivity(new Intent(mContext, SettingsActivity.class));
 			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
 					R.anim.fade_out);
 			break;
 		case R.id.custom_rjyx:
-			ToastUtil.showMsg(mContext, "You clicked 关于");
+			showLongToast("你点击了 关于");
 			break;
 		case R.id.custom_sygj:
-			ToastUtil.showMsg(mContext, "You clicked 反馈");
+			showLongToast("你点击了 反馈");
 			break;
 		case R.id.custom_sjfd:
-			ToastUtil.showMsg(mContext, "You clicked 退出");
+			showLongToast("你点击了 退出");
 			break;
 		case R.id.custom_txbf:
-			ToastUtil.showMsg(mContext, "You clicked 通讯备份");
+			showLongToast("你点击了 通讯备份");
 			break;
 		case R.id.custom_qqwp:
-			ToastUtil.showMsg(mContext, "You clicked 门禁开光");
+			showLongToast("你点击了 门禁开光");
 			break;
 		case R.id.bn_refresh:
-			ToastUtil.showMsg(mContext, "You clicked my refresh button!");
+			showLongToast("You clicked my refresh button!");
 			break;
 		}
 	}

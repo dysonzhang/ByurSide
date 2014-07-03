@@ -135,7 +135,7 @@ public class CommunicateFragment extends Fragment {
 	private void findView() {
 		mTitleBarView = (TitleBarView) mBaseView.findViewById(R.id.title_bar);
 		mCanversLayout = (RelativeLayout) mBaseView
-				.findViewById(R.id.rl_canvers);
+				.findViewById(R.id.rl_communicate_canvers);
 		unreadLabel = (TextView) mBaseView.findViewById(R.id.unread_msg_number);
 		unreadAddressLable = (TextView) mBaseView
 				.findViewById(R.id.unread_address_number);
@@ -145,6 +145,7 @@ public class CommunicateFragment extends Fragment {
 		mTitleBarView.setCommonTitle(View.GONE, View.GONE, View.VISIBLE,
 				View.VISIBLE);
 
+		mTitleBarView.setBtnRight(R.drawable.qq_contact_list_add_bt_common);
 		mTitleBarView.setTitleLeft(R.string.cnews);
 		mTitleBarView.setTitleRight(R.string.contacter);
 
@@ -160,7 +161,7 @@ public class CommunicateFragment extends Fragment {
 
 					FragmentTransaction ft = getFragmentManager()
 							.beginTransaction();
-					ft.replace(R.id.child_fragment, chatHistoryFragment,
+					ft.replace(R.id.child_communicate_fragment, chatHistoryFragment,
 							CommunicateFragment.TAG);
 
 					ft.commit();
@@ -181,7 +182,7 @@ public class CommunicateFragment extends Fragment {
 					FragmentTransaction ft = getFragmentManager()
 							.beginTransaction();
 
-					ft.replace(R.id.child_fragment, contactListFragment,
+					ft.replace(R.id.child_communicate_fragment, contactListFragment,
 							CommunicateFragment.TAG);
 					ft.setCustomAnimations(R.anim.activity_up,
 							R.anim.activity_down);

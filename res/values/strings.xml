@@ -20,6 +20,10 @@
     <string name="menuFeedback">反馈</string>
     <string name="menuAbout">关于</string>
     <string name="menuExit">退出</string>
+    
+    <string name="todo_doing">进行中</string>
+    <string name="todo_end">已结束</string>
+    
     <string name="DetailsGood">太棒了</string>
     <string name="DetailsBed">一般般</string>
     <string name="DetailsCollect">收藏</string>
@@ -93,26 +97,33 @@ eoe客户端代码已经完全开源，欢迎每个eoer们参与, 详情情况�
     <!-- QQ功能 -->
     <string name="et_account_hint">手机号</string>
     <string name="et_password_hint">密码</string>
+    <string name="et_password_repeat_hint">重复密码</string>
+    <string name="et_sex_hint">性别</string>
+    <string name="find_password">找回密码</string>
     <string name="register">新用户</string>
     <string name="login">登入</string>
     <string name="forget_password">忘记密码?</string>
     <string name="tv_country">中国+86</string>
     <string name="et_phoneNumber_hint">请输入你的手机号码</string>
+    <string name="forget_password_tip">请输入您的注册手机号</string>
+    <string name="register_phoneNumber_tip">请输入您的有效手机号，该手机号将作为您的登录帐户</string>
+    <string name="et_phoneVerifyCode_hint">填入手机验证码</string>
+    <string name="send_phoneVerifyCode">发送验证码</string>
     <string name="title_phoneNumber">请填写手机号码</string>
     <string name="btn_next">下一步</string>
     <string name="tv_xieyi">我已阅读并同意</string>
     <string name="tv_xieyi_url">使用条款和隐私政策</string>
-    <string name="tv_tips_password">密码由6-16位数字,字母或符号组成,不能是9位一下纯数字组成</string>
-    <string name="tv_tips_name">建议填写你的真实姓名,让你的朋友更容易人出你,此昵称以后可以随时修改</string>
-    <string name="et_name_hint">昵称</string>
+    <string name="tv_tips_password">请输入您的登录密码，6至15位数字或字符</string>
+    <string name="tv_tips_name">请输入您的真实姓名，以便有效的管理个人信息</string>
+    <string name="et_name_hint">真实姓名</string>
     <string name="register_complete">完成</string>
     <string name="title_register_info">设置密码和昵称</string>
-    <string name="tv_qq">你已获得QQ号码</string>
-    <string name="tv_qq_number">525203053</string>
-    <string name="tv_register_result">启用通讯录查找更多好友,直接发起QQ聊天,我已阅读并同意</string>
+    <string name="tv_qq">你已获得我在体验帐号：</string>
+    <string name="tv_qq_number">帐号：imhere \n密码：123456</string>
+    <string name="tv_register_result">请用以上我在帐户登录体验！</string>
     <string name="tv_tiaokuan">服务声明</string>
     <string name="tv_register_success">注册成功</string>
-    <string name="register_success">进入QQ</string>
+    <string name="register_success">进入我在</string>
     <string name="tv_search">搜索</string>
     <string name="news">消息</string>
     <string name="user_name">开心一刻</string>
@@ -171,8 +182,8 @@ eoe客户端代码已经完全开源，欢迎每个eoer们参与, 详情情况�
     <string name="device">我的设备</string>
     <string name="group_count">1/2</string>
     <string name="child_feel">[在线]好好学习天天向上</string>
-    <string name="tv_call1">你通话过的联系人都会在这里出现</string>
-    <string name="tv_call2">快和朋友开始语音通话吧</string>
+    <string name="tv_call1">你联系过同事朋友的聊天记录都会在这里出现</string>
+    <string name="tv_call2">快和同事朋友开始沟通吧！</string>
     <string name="btn_call">找人聊聊</string>
     <string name="recentchat">最近聊天</string>
     <string name="choose_constact">选择联系人</string>

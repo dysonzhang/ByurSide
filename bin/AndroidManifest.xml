@@ -75,6 +75,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
+         <activity
+            android:name="com.ysls.imhere.FindPasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
         <activity
             android:name="com.ysls.imhere.RegisterPhoneActivity"
             android:launchMode="singleTask"
@@ -96,6 +101,10 @@
             android:screenOrientation="portrait" />
          <activity
             android:name="com.ysls.imhere.SettingsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+          <activity
+            android:name="com.ysls.imhere.WebViewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 

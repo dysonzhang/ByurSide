@@ -7,7 +7,6 @@ import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.config.Global;
 import com.ysls.imhere.utils.AsyncImageLoader;
 import com.ysls.imhere.utils.ImageCallback;
-import com.ysls.imhere.utils.ToastUtil;
 import com.ysls.ysls.sound.SoundManager;
 
 import android.content.Context;
@@ -30,7 +29,7 @@ public class IBeaconPushActivity extends BaseActivity {
 	private Context mContext;
 
 	private TextView tv_ibeacon_push_dialog_subtitle;
-	private ImageView iv_ibeacon_push_dialog_img;
+	private TextView iv_ibeacon_push_dialog_img;
 	private ShopBeaconPush mShopBeaconPush;
 	private AsyncImageLoader mAsyncImageLoader;
 
@@ -93,29 +92,16 @@ public class IBeaconPushActivity extends BaseActivity {
 	public void initView() {
 
 		tv_ibeacon_push_dialog_subtitle = (TextView) findViewById(R.id.tv_ibeacon_push_content_info);
-		iv_ibeacon_push_dialog_img = (ImageView) findViewById(R.id.rl_ibeacon_push_img);
+		iv_ibeacon_push_dialog_img = (TextView) findViewById(R.id.ibeacon_push_img);
 
 		mAsyncImageLoader = new AsyncImageLoader();
-		tv_ibeacon_push_dialog_subtitle.setText(mShopBeaconPush
-				.getPushContent());
-		
-		mAsyncImageLoader.loadDrawable(mShopBeaconPush.getProPic(),
-				iv_ibeacon_push_dialog_img, new ImageCallback() {
-
-					@Override
-					public void imageLoaded(Drawable imageDrawable,
-							ImageView imageView, String imageUrl) {
-						if (imageDrawable != null) {
-							iv_ibeacon_push_dialog_img
-									.setBackgroundDrawable(imageDrawable);
-						}
-					}
-				});
+//		tv_ibeacon_push_dialog_subtitle.setText(mShopBeaconPush
+//				.getPushContent());
 
 		iv_ibeacon_push_dialog_img.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				ToastUtil.showMsg(mContext, "You clicked checkin view");
+				showLongToast("你点击了打卡");
 				isShowing = false;
 				defaultFinish();
 			}

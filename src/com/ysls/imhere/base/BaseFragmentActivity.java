@@ -3,6 +3,7 @@ package com.ysls.imhere.base;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Window;
+import android.widget.Toast;
 
 import com.litesuits.http.LiteHttpClient;
 import com.litesuits.http.async.HttpAsyncExcutor;
@@ -34,6 +35,18 @@ public abstract class BaseFragmentActivity extends FragmentActivity {
 		MyApplication.getInstance().add(this);
 	}
 
+	protected void showLongToast(String pMsg) {
+		Toast localToast = Toast.makeText(this, pMsg, Toast.LENGTH_LONG);
+		localToast.setGravity(1, 0, 0);
+		localToast.show();
+	}
+
+	protected void showShortToast(String pMsg) {
+		Toast localToast = Toast.makeText(this, pMsg, Toast.LENGTH_SHORT);
+		localToast.setGravity(1, 0, 0);
+		localToast.show();
+	}
+	
 	@Override
 	protected void onPause() {
 		super.onPause();

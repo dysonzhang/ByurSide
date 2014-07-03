@@ -27,10 +27,10 @@
         <Button 
             android:id="@+id/title_btn_right"
             android:layout_height="30dp"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="15dp"
             android:background="@color/common_title"/>
         
         <LinearLayout
@@ -38,7 +38,9 @@
             android:layout_height="wrap_content"
             android:layout_width="150dp"
             android:orientation="horizontal"
-            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="left"
+            android:layout_centerVertical="true"
             android:background="@drawable/ll_top_bg">
             <Button 
                 android:id="@+id/constact_group"

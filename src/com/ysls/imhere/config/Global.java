@@ -11,5 +11,7 @@ public class Global {
 	public static Boolean isHavePushed = false;
 
 	public static int CHECKIN_MODE = Constants.BT_NULL_CHECKIN_MODE;
+	
+	public static String WebView_URL = "http://www.baidu.com";
 
 }

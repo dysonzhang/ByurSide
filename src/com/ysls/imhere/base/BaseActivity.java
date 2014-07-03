@@ -103,14 +103,6 @@ public abstract class BaseActivity extends Activity {
 		}
 	}
 
-	public void recommandToYourFriend(String url, String shareTitle) {
-		Intent intent = new Intent(Intent.ACTION_SEND);
-		intent.setType("text/plain");
-		intent.putExtra(Intent.EXTRA_TEXT, shareTitle + "   " + url);
-
-		Intent itn = Intent.createChooser(intent, "分享");
-		startActivity(itn);
-	}
 
 	/******************************** 【Activity LifeCycle For Debug】 *******************************************/
 
@@ -119,11 +111,15 @@ public abstract class BaseActivity extends Activity {
 	}
 
 	protected void showLongToast(String pMsg) {
-		Toast.makeText(this, pMsg, Toast.LENGTH_LONG).show();
+		Toast localToast = Toast.makeText(this, pMsg, Toast.LENGTH_LONG);
+		localToast.setGravity(1, 0, 0);
+		localToast.show();
 	}
 
 	protected void showShortToast(String pMsg) {
-		Toast.makeText(this, pMsg, Toast.LENGTH_SHORT).show();
+		Toast localToast = Toast.makeText(this, pMsg, Toast.LENGTH_SHORT);
+		localToast.setGravity(1, 0, 0);
+		localToast.show();
 	}
 
 	protected boolean hasExtra(String pExtraKey) {

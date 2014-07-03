@@ -11,9 +11,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class RegisterInfoActivity extends BaseActivity {
+	
 	private Context mContext;
 	private Button btn_complete;
 	private TitleBarView mTitleBarView;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,7 +43,7 @@ public class RegisterInfoActivity extends BaseActivity {
 		mTitleBarView.setBtnLeftOnclickListener(new OnClickListener() {	
 			@Override
 			public void onClick(View v) {
-				defaultFinish();
+				finish();
 			}
 		});
 	}

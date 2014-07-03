@@ -1,18 +1,12 @@
 package com.ysls.imhere.adapter;
 
-import java.lang.ref.SoftReference;
-import java.util.HashMap;
 import java.util.List;
 
 import com.ysls.imhere.R;
 import com.ysls.imhere.bean.RecentChat;
-import com.ysls.imhere.utils.ImgUtil;
-import com.ysls.imhere.utils.ImgUtil.OnLoadBitmapListener;
-import com.ysls.imhere.utils.SystemMethod;
 import com.ysls.imhere.widget.CustomListView;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -24,7 +18,6 @@ public class NewsAdapter extends BaseAdapter {
 	private Context mContext;
 	private List<RecentChat> lists;
 	private CustomListView mCustomListView;
-	private HashMap<String, SoftReference<Bitmap>> hashMaps = new HashMap<String, SoftReference<Bitmap>>();
 
 	public NewsAdapter(Context context, List<RecentChat> lists,
 			CustomListView customListView) {
@@ -56,7 +49,7 @@ public class NewsAdapter extends BaseAdapter {
 		final Holder holder;
 		RecentChat chat = lists.get(position);
 		if (convertView == null) {
-			convertView = View.inflate(mContext, R.layout.fragment_news_item,
+			convertView = View.inflate(mContext, R.layout.fragment_todolist_item,
 					null);
 			holder = new Holder();
 			holder.iv = (ImageView) convertView.findViewById(R.id.user_picture);
@@ -70,36 +63,13 @@ public class NewsAdapter extends BaseAdapter {
 		} else {
 			holder = (Holder) convertView.getTag();
 		}
-		String path = chat.getImgPath();
-		if (hashMaps.containsKey(path)) {
-			holder.iv.setImageBitmap(hashMaps.get(path).get());
-			// 另一个地方缓存释放资源
-			ImgUtil.getInstance().reomoveCache(path);
-		} else {
-			holder.iv.setTag(chat.getImgPath());
-			ImgUtil.getInstance().loadBitmap(chat.getImgPath(),
-					new OnLoadBitmapListener() {
-						@Override
-						public void loadImage(Bitmap bitmap, String path) {
-							ImageView iv = (ImageView) mCustomListView
-									.findViewWithTag(path);
-							if (bitmap != null && iv != null) {
-								bitmap = SystemMethod.toRoundCorner(bitmap, 15);
-								iv.setImageBitmap(bitmap);
 
-								if (!hashMaps.containsKey(path)) {
-									hashMaps.put(path,
-											new SoftReference<Bitmap>(bitmap));
-								}
-							}
-						}
-					});
-
-		}
+		holder.iv.setBackgroundResource(R.drawable.point_select);
 
 		holder.tv_name.setText(chat.getUserName());
 		holder.tv_feel.setText(chat.getUserFeel());
 		holder.tv_time.setText(chat.getUserTime());
+
 		return convertView;
 	}
 
