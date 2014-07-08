@@ -6,7 +6,7 @@
     <com.ysls.imhere.widget.TitleBarView
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="60dp" />
 
     <TextView
         android:id="@+id/unread_msg_number"

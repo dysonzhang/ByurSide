@@ -2,25 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="@color/common_bg"
+     android:background="@color/white"
     android:orientation="vertical" >
-
-    <RelativeLayout
+    
+    <com.ysls.imhere.widget.TitleBarView
+        android:id="@+id/title_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_top_bar"
-        android:background="@color/logocolor"
-        android:gravity="center_vertical" >
-
-        <TextView
-            android:id="@+id/message_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="设置"
-            android:textColor="#fff"
-            android:textSize="18sp" />
-
-    </RelativeLayout>
+        android:layout_height="50dp" />
+    
      <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

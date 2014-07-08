@@ -21,6 +21,7 @@ import com.easemob.chat.EMMessage.Type;
 
 import com.easemob.util.HanziToPinyin;
 
+import com.ysls.imhere.AddContactActivity;
 import com.ysls.imhere.GroupsActivity;
 import com.ysls.imhere.HomeActivity;
 import com.ysls.imhere.LoginActivity;
@@ -52,6 +53,7 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CommunicateFragment extends Fragment {
 
@@ -63,6 +65,7 @@ public class CommunicateFragment extends Fragment {
 
 	// 未读消息textview
 	private TextView unreadLabel;
+	
 	// 未读通讯录textview
 	private TextView unreadAddressLable;
 
@@ -146,6 +149,15 @@ public class CommunicateFragment extends Fragment {
 				View.VISIBLE);
 
 		mTitleBarView.setBtnRight(R.drawable.qq_contact_list_add_bt_common);
+		
+		mTitleBarView.setBtnRightOnclickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getActivity(), AddContactActivity.class));
+				getActivity().overridePendingTransition(R.anim.activity_up, R.anim.fade_out);
+			}
+		});
+		
 		mTitleBarView.setTitleLeft(R.string.cnews);
 		mTitleBarView.setTitleRight(R.string.contacter);
 

@@ -40,8 +40,7 @@ public class PopupWindowUtil<T> implements OnClickListener {
 		popupWindow.setFocusable(true);
 		popupWindow.setOutsideTouchable(true);
 		popupWindow.setBackgroundDrawable(new BitmapDrawable());
-		WindowManager windowManager = (WindowManager) context
-				.getSystemService(Context.WINDOW_SERVICE);
+		WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 		// 显示的位置为:屏幕的最右端
 		int xPos = (int) (windowManager.getDefaultDisplay().getWidth()
 				- popupWindow.getWidth() - context.getResources().getDimension(
@@ -60,7 +59,7 @@ public class PopupWindowUtil<T> implements OnClickListener {
 		layout.setOrientation(LinearLayout.VERTICAL);
 		// layout.setBackgroundResource(R.drawable.back_popup_more);
 		layout.setBackgroundColor(context.getResources().getColor(
-				R.color.logocolor));
+				R.color.popwincolor));
 
 		for (int i = 0; i < tabs.size(); i++) {
 			if (i == 0) {
@@ -102,9 +101,9 @@ public class PopupWindowUtil<T> implements OnClickListener {
 
 	private static ImageView getImageView(Context context) {
 		ImageView img = new ImageView(context);
-		img.setBackgroundResource(R.drawable.dis_behind_side);
-		img.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,
-				LayoutParams.WRAP_CONTENT));
+		img.setBackgroundColor(context.getResources().getColor(R.color.gray));
+//		img.setBackgroundResource(R.drawable.dis_behind_side);
+		img.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,1));
 		return img;
 	}
 

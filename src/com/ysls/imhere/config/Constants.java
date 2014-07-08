@@ -25,7 +25,7 @@ public class Constants {
 	/**
 	 * MAC address filter "60:36:DD:3A:6D:CF"
 	 */
-	public static final String DEVICE_MAC = "60:36:DD:3A:6D:CE";
+	public static final String DEVICE_MAC = "60:36:DD:3A:6D:CF";
 	public static final int BT_GENREAL_SCAN_TIME = 3000;
 	/**
 	 * UUID filter

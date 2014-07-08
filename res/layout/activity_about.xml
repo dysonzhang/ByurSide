@@ -2,30 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#fff5f5f5"
+    android:background="@color/whites"
     android:orientation="vertical" >
 
-    <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="@dimen/title_height"
-        android:background="#ff2477ab" >
-
-        <ImageView
-            android:id="@id/about_imageview_gohome"
-            style="@style/title_right_button"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:src="@drawable/button_details_gohome" />
-
-        <TextView
-            android:id="@id/textview_details_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="关于"
-            android:textColor="#ffffffff"
-            android:textSize="20.0sp" />
-    </FrameLayout>
+    <com.ysls.imhere.widget.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 
     <ScrollView
         android:layout_width="fill_parent"

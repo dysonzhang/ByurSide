@@ -75,7 +75,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
-         <activity
+        <activity
             android:name="com.ysls.imhere.FindPasswordActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
@@ -98,16 +98,33 @@
         <activity
             android:name="com.ysls.imhere.AboutActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-         <activity
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
             android:name="com.ysls.imhere.SettingsActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-          <activity
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
             android:name="com.ysls.imhere.WebViewActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.ysls.imhere.CheckinHistoryActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.ysls.imhere.FeedbackActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.ysls.imhere.PublicationActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
         <!-- 聊天页面 -->
         <activity
             android:name="com.ysls.imhere.ChatActivity"
@@ -189,8 +206,7 @@
             android:name="com.ysls.imhere.GroupSimpleDetailActivity"
             android:theme="@style/horizontal_slide" >
         </activity>
-        
-        
+
         <!-- 设置环信SDK start -->
         <meta-data
             android:name="EASEMOB_APPKEY"

@@ -105,45 +105,45 @@
                 android:orientation="horizontal" >
 
                 <com.ysls.imhere.widget.ImageViewWithText
-                    android:id="@+id/custom_sdgl"
+                    android:id="@+id/custom_checkin_history"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     ImageSrc="@drawable/main_icon_battery"
-                    Text="@string/sdgl" >
+                    Text="@string/menu_checkin_history" >
                 </com.ysls.imhere.widget.ImageViewWithText>
 
                 <View style="@style/shape_line" />
 
                 <com.ysls.imhere.widget.ImageViewWithText
-                    android:id="@+id/custom_ysbh"
+                    android:id="@+id/custom_publication"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     ImageSrc="@drawable/main_icon_private"
-                    Text="@string/ysbh" >
+                    Text="@string/menu_publication" >
                 </com.ysls.imhere.widget.ImageViewWithText>
 
                 <View style="@style/shape_line" />
 
                 <com.ysls.imhere.widget.ImageViewWithText
-                    android:id="@+id/custom_wdrj"
+                    android:id="@+id/custom_account_setting"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     ImageSrc="@drawable/main_icon_mysoftware"
-                    Text="@string/wdrj" >
+                    Text="@string/menu_account_setting" >
                 </com.ysls.imhere.widget.ImageViewWithText>
 
                 <View style="@style/shape_line" />
 
                 <com.ysls.imhere.widget.ImageViewWithText
-                    android:id="@+id/custom_rjyx"
+                    android:id="@+id/custom_about"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     ImageSrc="@drawable/main_icon_software"
-                    Text="@string/rjyx" >
+                    Text="@string/menu_about" >
                 </com.ysls.imhere.widget.ImageViewWithText>
             </LinearLayout>
 
@@ -161,45 +161,45 @@
                 android:orientation="horizontal" >
 
                 <com.ysls.imhere.widget.ImageViewWithText
-                    android:id="@+id/custom_sygj"
+                    android:id="@+id/custom_feedback"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     ImageSrc="@drawable/main_icon_commonnum"
-                    Text="@string/sygj" >
+                    Text="@string/menu_feedback" >
                 </com.ysls.imhere.widget.ImageViewWithText>
 
                 <View style="@style/shape_line" />
 
                 <com.ysls.imhere.widget.ImageViewWithText
-                    android:id="@+id/custom_sjfd"
+                    android:id="@+id/custom_exit"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     ImageSrc="@drawable/main_icon_security"
-                    Text="@string/sjfd" >
+                    Text="@string/menu_exit" >
                 </com.ysls.imhere.widget.ImageViewWithText>
 
                 <View style="@style/shape_line" />
 
                 <com.ysls.imhere.widget.ImageViewWithText
-                    android:id="@+id/custom_txbf"
+                    android:id="@+id/custom_phonebook_backup"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     ImageSrc="@drawable/main_icon_synchronous"
-                    Text="@string/txbf" >
+                    Text="@string/menu_phonebook_backup" >
                 </com.ysls.imhere.widget.ImageViewWithText>
 
                 <View style="@style/shape_line" />
 
                 <com.ysls.imhere.widget.ImageViewWithText
-                    android:id="@+id/custom_qqwp"
+                    android:id="@+id/custom_door_control"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.25"
                     ImageSrc="@drawable/main_icon_software"
-                    Text="@string/qqwp" >
+                    Text="@string/menu_door_control" >
                 </com.ysls.imhere.widget.ImageViewWithText>
             </LinearLayout>
         </RelativeLayout>

@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#fff5f5f5" >
-
+    
     <LinearLayout
         android:id="@id/main_linear_listview"
         android:layout_width="fill_parent"
@@ -31,7 +31,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_gravity="right|center"
-                android:src="@drawable/dis_indicate_right" />
+                android:src="@drawable/dis_indicate_right"
+                android:visibility="gone" />
 
             <com.ysls.imhere.indicator.TitlePageIndicator
                 android:id="@id/above_indicator"
@@ -40,7 +41,7 @@
                 android:layout_gravity="center"
                 android:textColor="#ff666666"
                 android:textSize="17.0sp"
-                app:selectedColor="@color/logocolor"
+                app:selectedColor="@color/btn_green_pressed"
                 app:selectedBold="false"/>
         </FrameLayout>
 

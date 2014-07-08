@@ -15,6 +15,7 @@ import com.litesuits.http.request.param.HttpMethod;
 import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.utils.PreferenceUtils;
+import com.ysls.imhere.widget.TitleBarView;
 
 /**
  * 设置界面
@@ -87,16 +88,19 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 
 	private Context mContext;
 
+	private TitleBarView mTitleBarView;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_conversation_settings);
+		setContentView(R.layout.actviity_settings);
 		mContext = this;
 
-		initView();
+		findView();
+		initTitleView();
 	}
 
-	private void initView() {
+	private void findView() {
 		rl_switch_notification = (RelativeLayout) findViewById(R.id.rl_switch_notification);
 		rl_switch_sound = (RelativeLayout) findViewById(R.id.rl_switch_sound);
 		rl_switch_vibrate = (RelativeLayout) findViewById(R.id.rl_switch_vibrate);
@@ -120,6 +124,7 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 		rl_switch_vibrate.setOnClickListener(this);
 		rl_switch_speaker.setOnClickListener(this);
 		logoutBtn.setOnClickListener(this);
+		mTitleBarView = (TitleBarView) findViewById(R.id.title_bar);
 
 		chatOptions = EMChatManager.getInstance().getChatOptions();
 		if (chatOptions.getNotificationEnable()) {
@@ -153,6 +158,21 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 		}
 	}
 
+	private void initTitleView() {
+		mTitleBarView.setCommonTitle(View.VISIBLE, View.VISIBLE, View.GONE,
+				View.GONE);
+		mTitleBarView.setBtnLeft(R.drawable.boss_unipay_icon_back,
+				R.string.back);
+		mTitleBarView.setTitleText(R.string.menu_account_setting);
+		mTitleBarView.setBtnLeftOnclickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				defaultFinish();
+			}
+		});
+
+	}
+
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
@@ -178,8 +198,8 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 				chatOptions.setNotificationEnable(false);
 				EMChatManager.getInstance().setChatOptions(chatOptions);
 
-				PreferenceUtils.getInstance(mContext).setSettingMsgNotification(
-						false);
+				PreferenceUtils.getInstance(mContext)
+						.setSettingMsgNotification(false);
 			} else {
 				iv_switch_open_notification.setVisibility(View.VISIBLE);
 				iv_switch_close_notification.setVisibility(View.INVISIBLE);
@@ -189,8 +209,8 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 				textview2.setVisibility(View.VISIBLE);
 				chatOptions.setNotificationEnable(true);
 				EMChatManager.getInstance().setChatOptions(chatOptions);
-				PreferenceUtils.getInstance(mContext).setSettingMsgNotification(
-						true);
+				PreferenceUtils.getInstance(mContext)
+						.setSettingMsgNotification(true);
 			}
 			break;
 		case R.id.rl_switch_sound:
@@ -214,13 +234,15 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 				iv_switch_close_vibrate.setVisibility(View.VISIBLE);
 				chatOptions.setNoticedByVibrate(false);
 				EMChatManager.getInstance().setChatOptions(chatOptions);
-				PreferenceUtils.getInstance(mContext).setSettingMsgVibrate(false);
+				PreferenceUtils.getInstance(mContext).setSettingMsgVibrate(
+						false);
 			} else {
 				iv_switch_open_vibrate.setVisibility(View.VISIBLE);
 				iv_switch_close_vibrate.setVisibility(View.INVISIBLE);
 				chatOptions.setNoticedByVibrate(true);
 				EMChatManager.getInstance().setChatOptions(chatOptions);
-				PreferenceUtils.getInstance(mContext).setSettingMsgVibrate(true);
+				PreferenceUtils.getInstance(mContext)
+						.setSettingMsgVibrate(true);
 			}
 			break;
 		case R.id.rl_switch_speaker:
@@ -229,13 +251,15 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 				iv_switch_close_speaker.setVisibility(View.VISIBLE);
 				chatOptions.setUseSpeaker(false);
 				EMChatManager.getInstance().setChatOptions(chatOptions);
-				PreferenceUtils.getInstance(mContext).setSettingMsgSpeaker(false);
+				PreferenceUtils.getInstance(mContext).setSettingMsgSpeaker(
+						false);
 			} else {
 				iv_switch_open_speaker.setVisibility(View.VISIBLE);
 				iv_switch_close_speaker.setVisibility(View.INVISIBLE);
 				chatOptions.setUseSpeaker(true);
 				EMChatManager.getInstance().setChatOptions(chatOptions);
-				PreferenceUtils.getInstance(mContext).setSettingMsgVibrate(true);
+				PreferenceUtils.getInstance(mContext)
+						.setSettingMsgVibrate(true);
 			}
 			break;
 		case R.id.btn_logout:

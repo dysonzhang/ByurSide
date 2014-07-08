@@ -45,14 +45,14 @@ public class HomeActivity extends BaseFragmentActivity implements
 	private SemiClosedSlidingDrawer slidingDrawer;
 	private LinearLayout openLayout, closeLayout;
 
-	private ImageViewWithText sdgl;
-	private ImageViewWithText ysbh;
-	private ImageViewWithText wdrj;
-	private ImageViewWithText rjyx;
-	private ImageViewWithText sygj;
-	private ImageViewWithText sjfd;
-	private ImageViewWithText txbf;
-	private ImageViewWithText qqwp;
+	private ImageViewWithText custom_checkin_history;
+	private ImageViewWithText custom_publication;
+	private ImageViewWithText custom_account_setting;
+	private ImageViewWithText custom_about;
+	private ImageViewWithText custom_feedback;
+	private ImageViewWithText custom_exit;
+	private ImageViewWithText custom_phonebook_backup;
+	private ImageViewWithText custom_door_control;
 
 	private Button bn_refresh;
 
@@ -92,8 +92,8 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 		initClass();
 		initControl();
-		initBelowSlidingMenu();
 		initViewPager();
+		initBelowSlidingMenu();
 		initBtContorller();
 
 	}
@@ -122,7 +122,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 		loadFaillayout = (LinearLayout) findViewById(R.id.view_load_fail);
 
 		mAboveTitle = (TextView) findViewById(R.id.tv_above_title);
-		mAboveTitle.setText("Imhere");
+		mAboveTitle.setText("imhere");
 		mAboveTitle.setTextSize(22);
 
 		imgMore = (ImageView) findViewById(R.id.imageview_above_more);
@@ -166,22 +166,22 @@ public class HomeActivity extends BaseFragmentActivity implements
 					}
 				});
 
-		sdgl = (ImageViewWithText) findViewById(R.id.custom_sdgl);
-		sdgl.setOnClickListener(this);
-		ysbh = (ImageViewWithText) findViewById(R.id.custom_ysbh);
-		ysbh.setOnClickListener(this);
-		wdrj = (ImageViewWithText) findViewById(R.id.custom_wdrj);
-		wdrj.setOnClickListener(this);
-		rjyx = (ImageViewWithText) findViewById(R.id.custom_rjyx);
-		rjyx.setOnClickListener(this);
-		sygj = (ImageViewWithText) findViewById(R.id.custom_sygj);
-		sygj.setOnClickListener(this);
-		sjfd = (ImageViewWithText) findViewById(R.id.custom_sjfd);
-		sjfd.setOnClickListener(this);
-		txbf = (ImageViewWithText) findViewById(R.id.custom_txbf);
-		txbf.setOnClickListener(this);
-		qqwp = (ImageViewWithText) findViewById(R.id.custom_qqwp);
-		qqwp.setOnClickListener(this);
+		custom_checkin_history = (ImageViewWithText) findViewById(R.id.custom_checkin_history);
+		custom_checkin_history.setOnClickListener(this);
+		custom_publication = (ImageViewWithText) findViewById(R.id.custom_publication);
+		custom_publication.setOnClickListener(this);
+		custom_account_setting = (ImageViewWithText) findViewById(R.id.custom_account_setting);
+		custom_account_setting.setOnClickListener(this);
+		custom_about = (ImageViewWithText) findViewById(R.id.custom_about);
+		custom_about.setOnClickListener(this);
+		custom_feedback = (ImageViewWithText) findViewById(R.id.custom_feedback);
+		custom_feedback.setOnClickListener(this);
+		custom_exit = (ImageViewWithText) findViewById(R.id.custom_exit);
+		custom_exit.setOnClickListener(this);
+		custom_phonebook_backup = (ImageViewWithText) findViewById(R.id.custom_phonebook_backup);
+		custom_phonebook_backup.setOnClickListener(this);
+		custom_door_control = (ImageViewWithText) findViewById(R.id.custom_door_control);
+		custom_door_control.setOnClickListener(this);
 	}
 
 	/**
@@ -215,7 +215,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 		if (!menuList.isEmpty()) {
 			mBasePageViewAdapter.addFragment(menuList);
-			imgRight.setVisibility(View.VISIBLE);
+//			imgRight.setVisibility(View.VISIBLE);
 			loadLayout.setVisibility(View.GONE);
 			loadFaillayout.setVisibility(View.GONE);
 		} else {
@@ -242,32 +242,39 @@ public class HomeActivity extends BaseFragmentActivity implements
 						this, mBasePageViewAdapter.tabs);
 			}
 			break;
-		case R.id.custom_sdgl:
-			showLongToast("你点击了 考勤查询");
+		case R.id.custom_checkin_history: 
+			startActivity(new Intent(mContext, CheckinHistoryActivity.class));
+			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
+					R.anim.fade_out);
 			break;
-		case R.id.custom_ysbh:
-			showLongToast("你点击了 通知公告");
+		case R.id.custom_publication: 
+			startActivity(new Intent(mContext, PublicationActivity.class));
+			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
+					R.anim.fade_out);
 			break;
-		case R.id.custom_wdrj:
-			showLongToast("你点击了 帐户设置");
+		case R.id.custom_account_setting:
 			startActivity(new Intent(mContext, SettingsActivity.class));
 			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
 					R.anim.fade_out);
 			break;
-		case R.id.custom_rjyx:
-			showLongToast("你点击了 关于");
+		case R.id.custom_about:
+			startActivity(new Intent(mContext, AboutActivity.class));
+			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
+					R.anim.fade_out);
 			break;
-		case R.id.custom_sygj:
-			showLongToast("你点击了 反馈");
+		case R.id.custom_feedback: 
+			startActivity(new Intent(mContext, FeedbackActivity.class));
+			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
+					R.anim.fade_out);
 			break;
-		case R.id.custom_sjfd:
+		case R.id.custom_exit:
 			showLongToast("你点击了 退出");
 			break;
-		case R.id.custom_txbf:
+		case R.id.custom_phonebook_backup:
 			showLongToast("你点击了 通讯备份");
 			break;
-		case R.id.custom_qqwp:
-			showLongToast("你点击了 门禁开光");
+		case R.id.custom_door_control:
+			showLongToast("你点击了 门禁开关");
 			break;
 		case R.id.bn_refresh:
 			showLongToast("You clicked my refresh button!");
@@ -347,8 +354,8 @@ public class HomeActivity extends BaseFragmentActivity implements
 				LogUtil.i(HomeActivity.TAG, "主页");
 				currentTabIndex = HOMEFRAGMENT;
 			} else {
-				imgRight.setVisibility(View.VISIBLE);
-				imgLeft.setVisibility(View.VISIBLE);
+//				imgRight.setVisibility(View.VISIBLE);
+//				imgLeft.setVisibility(View.VISIBLE);
 				LogUtil.i(HomeActivity.TAG, "沟通");
 				currentTabIndex = CHATFRAGMENT;
 			}

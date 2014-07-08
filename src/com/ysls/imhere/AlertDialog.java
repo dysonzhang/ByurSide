@@ -120,9 +120,4 @@ public class AlertDialog extends BaseActivity {
 		// TODO Auto-generated method stub
 		
 	}
-
-	 
-
-	
-
 }

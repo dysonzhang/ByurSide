@@ -19,8 +19,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
+import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager; 
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,107 +31,141 @@ import com.easemob.chat.EMContactManager;
 import com.litesuits.http.request.param.HttpMethod;
 import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.base.BaseActivity;
+import com.ysls.imhere.widget.TitleBarView;
 
-public class AddContactActivity extends BaseActivity{
+public class AddContactActivity extends BaseActivity {
 	private EditText editText;
 	private LinearLayout searchedUserLayout;
 	private TextView nameText;
-	private Button searchBtn;
 	private ImageView avatar;
 	private InputMethodManager inputMethodManager;
 	private String toAddUsername;
 	private ProgressDialog progressDialog;
+	private TitleBarView mTitleBarView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_contact);
-		
+
+		findView();
+		initTitleView();
+	}
+
+	private void findView() {
 		editText = (EditText) findViewById(R.id.edit_note);
 		searchedUserLayout = (LinearLayout) findViewById(R.id.ll_user);
 		nameText = (TextView) findViewById(R.id.name);
-		searchBtn = (Button) findViewById(R.id.search);
 		avatar = (ImageView) findViewById(R.id.avatar);
 		inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		mTitleBarView = (TitleBarView) findViewById(R.id.title_bar);
 	}
-	
-	
+
+	private void initTitleView() {
+		mTitleBarView.setCommonTitle(View.VISIBLE, View.VISIBLE, View.GONE,
+				View.VISIBLE);
+		mTitleBarView.setBtnLeft(R.drawable.boss_unipay_icon_back,
+				R.string.back);
+		mTitleBarView.setBtnRight(R.drawable.skin_conversation_title_right_btn);
+		mTitleBarView.setTitleText(R.string.add_friends);
+		mTitleBarView.setBtnLeftOnclickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				defaultFinish();
+			}
+		});
+		mTitleBarView.setBtnRightOnclickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				searchContact(v);
+			}
+		});
+	}
+
 	/**
 	 * 查找contact
+	 * 
 	 * @param v
 	 */
 	public void searchContact(View v) {
 		final String name = editText.getText().toString();
-		String saveText = searchBtn.getText().toString();
-		
-		if (getString(R.string.button_search).equals(saveText)) {
+
+		if (getString(R.string.button_search).equals("查找")) {
 			toAddUsername = name;
-			if(TextUtils.isEmpty(name)) {
-				startActivity(new Intent(this, AlertDialog.class).putExtra("msg", "请输入用户名"));
+			if (TextUtils.isEmpty(name)) {
+				startActivity(new Intent(this, AlertDialog.class).putExtra(
+						"msg", "请输入用户名"));
 				return;
 			}
-			
+
 			// TODO 从服务器获取此contact,如果不存在提示不存在此用户
-			//服务器存在此用户，显示此用户和添加按钮
+			// 服务器存在此用户，显示此用户和添加按钮
 			searchedUserLayout.setVisibility(View.VISIBLE);
 			nameText.setText(toAddUsername);
-			
-		} 
-	}	
-	
+
+		}
+	}
+
 	/**
-	 *  添加contact
+	 * 添加contact
+	 * 
 	 * @param view
 	 */
-	public void addContact(View view){
-		if(MyApplication.getInstance().getUserName().equals(nameText.getText().toString())){
-			startActivity(new Intent(this, AlertDialog.class).putExtra("msg", "不能添加自己"));
+	public void addContact(View view) {
+		if (MyApplication.getInstance().getUserName()
+				.equals(nameText.getText().toString())) {
+			startActivity(new Intent(this, AlertDialog.class).putExtra("msg",
+					"不能添加自己"));
 			return;
 		}
-		
-		if(MyApplication.getInstance().getContactList().containsKey(nameText.getText().toString())){
-			startActivity(new Intent(this, AlertDialog.class).putExtra("msg", "此用户已是你的好友"));
+
+		if (MyApplication.getInstance().getContactList()
+				.containsKey(nameText.getText().toString())) {
+			startActivity(new Intent(this, AlertDialog.class).putExtra("msg",
+					"此用户已是你的好友"));
 			return;
 		}
-		
+
 		progressDialog = new ProgressDialog(this);
 		progressDialog.setMessage("正在发送请求...");
 		progressDialog.setCanceledOnTouchOutside(false);
 		progressDialog.show();
-		
+
 		new Thread(new Runnable() {
 			public void run() {
-				
+
 				try {
-					//demo写死了个reason，实际应该让用户手动填入
-					EMContactManager.getInstance().addContact(toAddUsername, "加个好友呗");
+					// demo写死了个reason，实际应该让用户手动填入
+					EMContactManager.getInstance().addContact(toAddUsername,
+							"加个好友呗");
 					runOnUiThread(new Runnable() {
 						public void run() {
 							progressDialog.dismiss();
-							Toast.makeText(getApplicationContext(), "发送请求成功,等待对方验证", 1).show();
+							Toast.makeText(getApplicationContext(),
+									"发送请求成功,等待对方验证", 1).show();
 						}
 					});
 				} catch (final Exception e) {
 					runOnUiThread(new Runnable() {
 						public void run() {
 							progressDialog.dismiss();
-							Toast.makeText(getApplicationContext(), "请求添加好友失败:" + e.getMessage(), 1).show();
+							Toast.makeText(getApplicationContext(),
+									"请求添加好友失败:" + e.getMessage(), 1).show();
 						}
 					});
 				}
 			}
 		}).start();
 	}
-	
+
 	public void back(View v) {
 		finish();
 	}
-
 
 	@Override
 	public void refreshUI(String taskApiURL, HttpParam httpParam,
 			HttpMethod httpMethod) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

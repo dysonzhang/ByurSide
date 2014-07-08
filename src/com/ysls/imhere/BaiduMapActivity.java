@@ -13,7 +13,6 @@
  */
 package com.ysls.imhere;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,6 +23,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -49,12 +49,15 @@ import com.easemob.util.EMLog;
 import com.litesuits.http.request.param.HttpMethod;
 import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.base.BaseActivity;
+import com.ysls.imhere.widget.TitleBarView;
 
 public class BaiduMapActivity extends BaseActivity {
 
 	private final static String TAG = "map";
 	static MapView mMapView = null;
 
+	private TitleBarView mTitleBarView;
+	
 	private MapController mMapController = null;
 
 	public MKMapViewListener mMapListener = null;
@@ -65,7 +68,7 @@ public class BaiduMapActivity extends BaseActivity {
 	public MyLocationListenner myListener = new MyLocationListenner();
 	public NotifyLister mNotifyer = null;
 
-	Button sendButton = null;
+//	Button sendButton = null;
 
 	EditText indexText = null;
 	int index = 0;
@@ -91,9 +94,11 @@ public class BaiduMapActivity extends BaseActivity {
 			initEngineManager(this.getApplicationContext());
 		}
 		setContentView(R.layout.activity_baidumap);
+		
+		mTitleBarView = (TitleBarView) findViewById(R.id.title_bar);
+		initTitleView();
 		mMapView = (MapView) findViewById(R.id.bmapView);
 		mMapController = mMapView.getController();
-		sendButton = (Button) findViewById(R.id.btn_location_send);
 		initMapView();
 
 		mMapView.getController().setZoom(17);
@@ -110,8 +115,29 @@ public class BaiduMapActivity extends BaseActivity {
 		}
 	}
 
+	private void initTitleView() {
+		mTitleBarView.setCommonTitle(View.VISIBLE, View.VISIBLE, View.GONE,
+				View.VISIBLE);
+		mTitleBarView.setBtnLeft(R.drawable.boss_unipay_icon_back,
+				R.string.back);
+		mTitleBarView.setBtnRight(R.drawable.skin_conversation_title_right_btn_selected);
+		mTitleBarView.setTitleText(R.string.location_message);
+		mTitleBarView.setBtnLeftOnclickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				defaultFinish();
+			}
+		});
+		mTitleBarView.setBtnRightOnclickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				sendLocation(v);
+			}
+		});
+	}
+	
 	private void showMap(double latitude, double longtitude, String address) {
-		sendButton.setVisibility(View.GONE);
+//		sendButton.setVisibility(View.GONE);
 
 		GeoPoint point1 = new GeoPoint((int) (latitude * 1e6), (int) (longtitude * 1e6));
 		point1 = CoordinateConvert.fromGcjToBaidu(point1);
@@ -264,7 +290,7 @@ public class BaiduMapActivity extends BaseActivity {
 			}
 			Log.d("map", "On location change received:" + location);
 			Log.d("map", "addr:" + location.getAddrStr());
-			sendButton.setEnabled(true);
+//			sendButton.setEnabled(true);
 			if (progressDialog != null) {
 				progressDialog.dismiss();
 			}

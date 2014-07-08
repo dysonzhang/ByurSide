@@ -29,6 +29,7 @@ public class ImageViewWithText extends LinearLayout {
 		imageId = attrs.getAttributeResourceValue(null, "ImageSrc", 0);
 		if (textId > 0) {
 			textView.setText(context.getResources().getText(textId));
+			textView.setTextColor(context.getResources().getColor(R.color.gray_font));
 		} else {
 		}
 		if (imageId > 0) {

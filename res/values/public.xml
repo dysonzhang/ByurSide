@@ -406,17 +406,6 @@
     <public id="0x7f0b0000" name="app_name" type="string" />
     <public id="0x7f0b0002" name="hello_world" type="string" />
     <public id="0x7f0b0004" name="title_activity_main" type="string" />
-    <public id="0x7f0b0008" name="menuGood" type="string" />
-    <public id="0x7f0b0009" name="menuNews" type="string" />
-    <public id="0x7f0b000a" name="menuStudio" type="string" />
-    <public id="0x7f0b000b" name="menuBlog" type="string" />
-    <public id="0x7f0b000c" name="menuHome" type="string" />
-    <public id="0x7f0b000d" name="menuNotice" type="string" />
-    <public id="0x7f0b000e" name="menuSetting" type="string" />
-    <public id="0x7f0b000f" name="menuPasswordModify" type="string" />
-    <public id="0x7f0b0010" name="menuFeedback" type="string" />
-    <public id="0x7f0b0011" name="menuAbout" type="string" />
-    <public id="0x7f0b0012" name="menuExit" type="string" />
     <public id="0x7f0b0013" name="DetailsGood" type="string" />
     <public id="0x7f0b0014" name="DetailsBed" type="string" />
     <public id="0x7f0b0015" name="DetailsCollect" type="string" />
@@ -476,8 +465,6 @@
     <public id="0x7f0b004b" name="user_center_my_Collect" type="string" />
     <public id="0x7f0b004c" name="user_center_my_Intro" type="string" />
     <public id="0x7f0b004d" name="user_center_exit" type="string" />
-    <public id="0x7f0b004e" name="user_center_e_coin" type="string" />
-    <public id="0x7f0b004f" name="user_center_e_reputation" type="string" />
     <public id="0x7f0b0050" name="scan_tip" type="string" />
     <public id="0x7f0b0051" name="scan_retry" type="string" />
     <public id="0x7f0b0052" name="scan_title" type="string" />

@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
     <com.ysls.imhere.widget.TitleBarView 
         android:id="@+id/title_bar"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_width="match_parent"/>
     <FrameLayout 
         android:id="@+id/rl_content"

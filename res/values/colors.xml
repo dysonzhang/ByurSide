@@ -6,14 +6,15 @@
     <color name="default_circle_indicator_fill_color">#ffffffff</color>
     <color name="default_circle_indicator_page_color">#00000000</color>
     <color name="default_circle_indicator_stroke_color">#ffdddddd</color>
-    <color name="default_line_indicator_selected_color">#ff33b5e5</color>
+    <color name="default_line_indicator_selected_color">#ff6FCD78</color>
     <color name="default_line_indicator_unselected_color">#ffbbbbbb</color>
-    <color name="default_title_indicator_footer_color">#ff4ec5d5</color>
+    <color name="default_title_indicator_footer_color">#ff6FCD78</color>
     <color name="default_title_indicator_selected_color">#ffffffff</color>
     <color name="default_title_indicator_text_color">#bbffffff</color>
     <color name="default_underline_indicator_selected_color">#ff33b5e5</color>
     <color name="devide_line">#CBCED2</color>
     <color name="blue">#499BF7</color>
+    <color name="popwincolor">#ff333333</color>
     <color name="whites">#ffffff</color>
     <color name="grays">#818181</color>
     <color name="gray_font">#818181</color>

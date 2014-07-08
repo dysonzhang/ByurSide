@@ -2,13 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="@dimen/title_height"
-    android:background="#ff4ec5d5" >
+    android:background="@color/shadowcolor" >
 
     <LinearLayout
         android:id="@id/Linear_above_toHome"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
-        android:layout_margin="5.0dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:layout_marginRight="5dip"
         android:clickable="true"
         android:gravity="center"
         android:orientation="horizontal" >
@@ -17,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:scaleType="centerInside"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/ic_launcher_no_bg" />
 
         <TextView
             android:id="@id/tv_above_title"

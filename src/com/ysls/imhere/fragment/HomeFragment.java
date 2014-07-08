@@ -38,7 +38,9 @@ public class HomeFragment extends Fragment {
 		// 绑定控件
 		webview = (ProgressWebView) view.findViewById(R.id.webview);
 
-		webview.loadUrl("http://a.m.taobao.com/i17166586737.htm?sid=7fabde721d3199f9&show_id=1&pds=fromtop%23h%23shop");
+//		webview.loadUrl("http://a.m.taobao.com/i17166586737.htm?sid=7fabde721d3199f9&show_id=1&pds=fromtop%23h%23shop");
+		webview.loadUrl("http://www.protoshop.io");
+//		webview.loadUrl("http://www.leektech.com");
 
 		return view;
 	}

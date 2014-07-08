@@ -9,18 +9,7 @@
     <string name="button_setting">设置</string>
     <string name="button_feedback">反馈</string>
     <string name="button_about">关于</string>
-    <string name="menuGood">我在</string>
-    <string name="menuNews">新闻资讯</string>
-    <string name="menuStudio">学习教程</string>
-    <string name="menuBlog">社区博客</string>
-    <string name="menuHome">我在</string>
-    <string name="menuNotice">通知公告</string>
-    <string name="menuSetting">帐号设置</string>
-    <string name="menuPasswordModify">密码修改</string>
-    <string name="menuFeedback">反馈</string>
-    <string name="menuAbout">关于</string>
-    <string name="menuExit">退出</string>
-    
+
     <string name="todo_doing">进行中</string>
     <string name="todo_end">已结束</string>
     
@@ -66,9 +55,9 @@ http://my.eoe.cn/admin/profile/auth.html
     <string name="user_loginInfo_error">"获取信息失败，
 请尝试重新登录。"</string>
     <string name="about">关于我们</string>
-    <string name="about_title">"名称:eoe
+    <string name="about_title">"名称:我在
 版本:1.1.0
-基于:www.eoe.cn"</string>
+基于:www.leektech.com"</string>
     <string name="about_intro">"[应用简介]
 eoe客户端是一款专为移动开发者提供帮助的软件。依靠www.eoe.cn开发者社区，将高质量的移动开发资讯、学习教程、代码库等信息提供给移动开发者，以方便大家能更好更快的学习移动开发的相关知识，尽快成长。"</string>
     <string name="about_story">"[应用故事]
@@ -92,8 +81,6 @@ eoe客户端代码已经完全开源，欢迎每个eoer们参与, 详情情况�
     <string name="user_center_my_Collect">我的收藏</string>
     <string name="user_center_my_Intro">个人简介</string>
     <string name="user_center_exit">退出功能</string>
-    <string name="user_center_e_coin">e币:%s</string>
-    <string name="user_center_e_reputation">e望:%s</string>
     <!-- QQ功能 -->
     <string name="et_account_hint">手机号</string>
     <string name="et_password_hint">密码</string>
@@ -204,14 +191,16 @@ eoe客户端代码已经完全开源，欢迎每个eoer们参与, 详情情况�
     <string name="no_wifi">没有WLAN网络</string>
     <string name="storage_warning">没有外部存储设备或SD卡不可用</string>
     <string name="wifi">文件管理</string>
-    <string name="sdgl">考勤查询</string>
-    <string name="ysbh">通知公告</string>
-    <string name="wdrj">帐号设置</string>
-    <string name="rjyx">关于</string>
-    <string name="sygj">反馈</string>
-    <string name="sjfd">退出</string>
-    <string name="txbf">通讯备份</string>
-    <string name="qqwp">门禁开门</string>
+    
+    <string name="menu_checkin_history">考勤查询</string>
+    <string name="menu_publication">通知公告</string>
+    <string name="menu_account_setting">帐号设置</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_feedback">反馈</string>
+    <string name="menu_exit">退出</string>
+    <string name="menu_phonebook_backup">通讯备份</string>
+    <string name="menu_door_control">门禁开门</string>
+    
     <string name="text_ack_msg">已读</string>
     <string name="back">返回</string>
     <string name="save">保存</string>
@@ -251,6 +240,7 @@ eoe客户端代码已经完全开源，欢迎每个eoer们参与, 详情情况�
     <string name="button_save">保存</string>
     <string name="button_search">查找</string>
     <string name="button_add">添加</string>
+    <string name="add_friends">添加好友</string>
     <string name="search_header">S</string>
     <string name="network_isnot_available">网络不可用</string>
     <string name="recoding_fail">录音失败，请重试！</string>
