@@ -101,7 +101,7 @@ public class IBeaconPushActivity extends BaseActivity {
 		iv_ibeacon_push_dialog_img.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				showLongToast("你点击了打卡");
+				showLongToast("恭喜你打卡成功！");
 				isShowing = false;
 				defaultFinish();
 			}
