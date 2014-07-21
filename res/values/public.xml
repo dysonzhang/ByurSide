@@ -145,11 +145,11 @@
     <public id="0x7f020061" name="point_normal" type="drawable" />
     <public id="0x7f020062" name="point_select" type="drawable" />
     <public id="0x7f020063" name="qrcode_scan_line" type="drawable" />
-    <public id="0x7f020067" name="splash_load" type="drawable" />
+     
     <public id="0x7f02006e" name="umeng_update_close_bg_normal" type="drawable" />
     <public id="0x7f02006f" name="umeng_update_close_bg_tap" type="drawable" />
     <public id="0x7f020070" name="webview_load_default" type="drawable" />
-    <public id="0x7f020071" name="welcome_background" type="drawable" />
+   
     <public id="0x7f020072" name="xlistview_arrow" type="drawable" />
     <public id="0x7f030000" name="activity_about" type="layout" />
     <public id="0x7f030001" name="activity_home" type="layout" />
@@ -175,7 +175,6 @@
     <public id="0x7f030019" name="qr_code_scan" type="layout" />
     <public id="0x7f03001a" name="search_layout" type="layout" />
     <public id="0x7f03001b" name="slidingmenumain" type="layout" />
-    <public id="0x7f03001c" name="start_activity" type="layout" />
     <public id="0x7f03001d" name="tab_item_view" type="layout" />
     <public id="0x7f03001e" name="user_center_activity" type="layout" />
     <public id="0x7f03001f" name="user_center_intro_fragment" type="layout" />

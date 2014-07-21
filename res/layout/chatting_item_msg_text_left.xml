@@ -30,9 +30,8 @@
             android:layout_height="52dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:background="@drawable/abaose"
-            android:clickable="true"
-             />
+            android:background="@color/blue"
+            android:clickable="true" />
 
         <TextView
             android:id="@+id/tv_chatcontent"

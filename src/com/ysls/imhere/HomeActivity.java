@@ -198,6 +198,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 		imgLeft.setVisibility(View.GONE);
 		imgRight.setVisibility(View.GONE);
 		loadLayout.setVisibility(View.VISIBLE);
+
 		mViewPager.setVisibility(View.GONE);
 		mViewPager.removeAllViews();
 		mBasePageViewAdapter.Clear();
@@ -234,7 +235,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 	public void onClick(View paramView) {
 		switch (paramView.getId()) {
 		case R.id.Linear_above_toHome:
-			showLongToast("你点击了LOGO");
+//			showLongToast("你点击了LOGO");
 			break;
 		case R.id.imageview_above_more:
 			if (isShowPopupWindows) {
@@ -257,24 +258,25 @@ public class HomeActivity extends BaseFragmentActivity implements
 			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
 					R.anim.fade_out);
 			break;
-		case R.id.custom_about:
-			startActivity(new Intent(mContext, AboutActivity.class));
-			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
-					R.anim.fade_out);
-			break;
 		case R.id.custom_feedback: 
 			startActivity(new Intent(mContext, FeedbackActivity.class));
 			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
 					R.anim.fade_out);
 			break;
+		case R.id.custom_about:
+			startActivity(new Intent(mContext, AboutActivity.class));
+			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
+					R.anim.fade_out);
+			break;
+		
 		case R.id.custom_exit:
-			showLongToast("你点击了 退出");
+			showLongToast("服务尚未开通，敬请期待！");
 			break;
 		case R.id.custom_phonebook_backup:
-			showLongToast("你点击了 通讯备份");
+			showLongToast("服务尚未开通，敬请期待！");
 			break;
 		case R.id.custom_door_control:
-			showLongToast("你点击了 门禁开关");
+			showLongToast("服务尚未开通，敬请期待！");
 			break;
 		case R.id.bn_refresh:
 			showLongToast("You clicked my refresh button!");

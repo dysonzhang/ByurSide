@@ -50,11 +50,11 @@ public class ShopplayIBeaconService extends Service implements IBeaconConsumer {
 	/**
 	 * VALID_PUSH_DISTANCE
 	 */
-	private static double VALID_PUSH_DISTANCE = 50;
+	private static double VALID_PUSH_DISTANCE = 10;
 	/**
 	 * VALID_BROADCAST_DISTANCE
 	 */
-	private static double VALID_BROADCAST_DISTANCE = 50;
+	private static double VALID_BROADCAST_DISTANCE = 10;
 
 	private IBeaconUserInfo mIBeaconUserInfo = new IBeaconUserInfo();
 
@@ -102,6 +102,9 @@ public class ShopplayIBeaconService extends Service implements IBeaconConsumer {
 			public void didRangeBeaconsInRegion(Collection<IBeacon> iBeacons,
 					Region region) {
 
+				LogUtil.i(TAG,
+						"Collection<IBeacon> is ---->" + iBeacons.size());
+				
 				List<IBeacon> mIBeaconNearList = getSortIbeacon(iBeacons);
 
 				LogUtil.i(TAG,

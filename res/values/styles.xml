@@ -285,4 +285,8 @@
         <item name="android:background">@drawable/edit_text_bg</item>
     </style>
 
+    <style name="Theme.Light" parent="@android:style/Theme.Light">
+		<item name="android:windowBackground">@drawable/bg</item>
+		<item name="android:textColor">@color/Text</item>
+	</style>
 </resources>

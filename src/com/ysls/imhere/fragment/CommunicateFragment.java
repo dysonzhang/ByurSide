@@ -62,6 +62,7 @@ public class CommunicateFragment extends Fragment {
 
 	private View mBaseView;
 	private TitleBarView mTitleBarView;
+	private View mTitleBarLineView;
 
 	// 未读消息textview
 	private TextView unreadLabel;
@@ -137,6 +138,8 @@ public class CommunicateFragment extends Fragment {
 
 	private void findView() {
 		mTitleBarView = (TitleBarView) mBaseView.findViewById(R.id.title_bar);
+		mTitleBarLineView = (View) mBaseView.findViewById(R.id.devide_line);
+		
 		mCanversLayout = (RelativeLayout) mBaseView
 				.findViewById(R.id.rl_communicate_canvers);
 		unreadLabel = (TextView) mBaseView.findViewById(R.id.unread_msg_number);
@@ -147,7 +150,8 @@ public class CommunicateFragment extends Fragment {
 	private void init() {
 		mTitleBarView.setCommonTitle(View.GONE, View.GONE, View.VISIBLE,
 				View.VISIBLE);
-
+		mTitleBarLineView.setVisibility(View.GONE);
+		
 		mTitleBarView.setBtnRight(R.drawable.qq_contact_list_add_bt_common);
 		
 		mTitleBarView.setBtnRightOnclickListener(new OnClickListener() {

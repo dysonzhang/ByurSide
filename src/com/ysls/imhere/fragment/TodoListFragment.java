@@ -11,17 +11,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 
 import com.ysls.imhere.R;
-import com.ysls.imhere.adapter.NewsAdapter;
-import com.ysls.imhere.bean.RecentChat;
+import com.ysls.imhere.adapter.TodoListAdapter;
+import com.ysls.imhere.bean.TodoModel;
 import com.ysls.imhere.http.AsyncTaskBase;
 import com.ysls.imhere.test.TestData;
 import com.ysls.imhere.widget.CustomListView;
 import com.ysls.imhere.widget.CustomListView.OnRefreshListener;
 import com.ysls.imhere.widget.LoadingView;
 
-public class TodoListFragment extends Fragment {
+public class TodoListFragment extends Fragment  {
 	
 	private static final String TAG = "TodoListFragment";
 	
@@ -30,8 +31,8 @@ public class TodoListFragment extends Fragment {
 	private CustomListView mCustomListView;
 	private LoadingView mLoadingView;
  
-	private NewsAdapter adapter;
-	private LinkedList<RecentChat> chats = new LinkedList<RecentChat>();
+	private TodoListAdapter adapter;
+	private LinkedList<TodoModel> todolist = new LinkedList<TodoModel>();
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,7 +52,7 @@ public class TodoListFragment extends Fragment {
 	}
 
 	private void init() {
-		adapter = new NewsAdapter(mContext, chats, mCustomListView);
+		adapter = new TodoListAdapter(mContext, todolist, mCustomListView);
 		mCustomListView.setAdapter(adapter);
 		mCustomListView.setOnRefreshListener(new OnRefreshListener() {
 			@Override
@@ -60,11 +61,12 @@ public class TodoListFragment extends Fragment {
 			}
 		});
 		mCustomListView.setCanLoadMore(false);
+		mCustomListView.setCanRefresh(false);
 		new NewsAsyncTask(mLoadingView).execute(0);
 	}
 
 	private class NewsAsyncTask extends AsyncTaskBase {
-		List<RecentChat> recentChats = new ArrayList<RecentChat>();
+		List<TodoModel> recentTodoLsit = new ArrayList<TodoModel>();
 
 		public NewsAsyncTask(LoadingView loadingView) {
 			super(loadingView);
@@ -73,8 +75,8 @@ public class TodoListFragment extends Fragment {
 		@Override
 		protected Integer doInBackground(Integer... params) {
 			int result = -1;
-			recentChats = TestData.getRecentChats();
-			if (recentChats.size() > 0) {
+			recentTodoLsit = TestData.getRecentChats();
+			if (recentTodoLsit.size() > 0) {
 				result = 1;
 			}
 			return result;
@@ -83,7 +85,7 @@ public class TodoListFragment extends Fragment {
 		@Override
 		protected void onPostExecute(Integer result) {
 			super.onPostExecute(result);
-			chats.addAll(recentChats);
+			todolist.addAll(recentTodoLsit);
 			adapter.notifyDataSetChanged();
 		}
 
@@ -95,21 +97,21 @@ public class TodoListFragment extends Fragment {
 	}
 
 	private class AsyncRefresh extends
-			AsyncTask<Integer, Integer, List<RecentChat>> {
-		private List<RecentChat> recentchats = new ArrayList<RecentChat>();
+			AsyncTask<Integer, Integer, List<TodoModel>> {
+		private List<TodoModel> recentTodos = new ArrayList<TodoModel>();
 
 		@Override
-		protected List<RecentChat> doInBackground(Integer... params) {
-			recentchats = TestData.getRecentChats();
-			return recentchats;
+		protected List<TodoModel> doInBackground(Integer... params) {
+			recentTodos = TestData.getRecentChats();
+			return recentTodos;
 		}
 
 		@Override
-		protected void onPostExecute(List<RecentChat> result) {
+		protected void onPostExecute(List<TodoModel> result) {
 			super.onPostExecute(result);
 			if (result != null) {
-				for (RecentChat rc : recentchats) {
-					chats.addFirst(rc);
+				for (TodoModel td : recentTodos) {
+					todolist.addFirst(td);
 				}
 				adapter.notifyDataSetChanged();
 				mCustomListView.onRefreshComplete();

@@ -101,7 +101,7 @@ public class PopupWindowUtil<T> implements OnClickListener {
 
 	private static ImageView getImageView(Context context) {
 		ImageView img = new ImageView(context);
-		img.setBackgroundColor(context.getResources().getColor(R.color.gray));
+		img.setBackgroundColor(context.getResources().getColor(R.color.white));
 //		img.setBackgroundResource(R.drawable.dis_behind_side);
 		img.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,1));
 		return img;

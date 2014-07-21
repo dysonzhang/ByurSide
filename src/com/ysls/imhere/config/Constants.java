@@ -23,9 +23,10 @@ public class Constants {
 	public static int BT_NULL_CHECKIN_MODE = 2;
 	
 	/**
-	 * MAC address filter "60:36:DD:3A:6D:CF"
+	 * MAC address filter "60:36:DD:3A:6D:CF" J-PC
+	 * MacBook Air PRO B8:E8:56:0A:A6:C7
 	 */
-	public static final String DEVICE_MAC = "60:36:DD:3A:6D:CF";
+	public static final String DEVICE_MAC = "B8:E8:56:0A:A6:C";
 	public static final int BT_GENREAL_SCAN_TIME = 3000;
 	/**
 	 * UUID filter

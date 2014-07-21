@@ -10,57 +10,71 @@
 
         <ImageView
             android:id="@+id/user_picture"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_width="40dp"
             android:background="@drawable/login_picture_bg"
             android:contentDescription="@string/app_name"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
              android:layout_marginRight="10dp"
             android:scaleType="fitXY"
           />
 
         <TextView
-            android:id="@+id/user_time"
+            android:id="@+id/todo_time"
             android:layout_width="80dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:gravity="center_horizontal"
-            android:padding="10dp"
-            android:text="@string/user_time"
+            android:gravity="right"
+            android:paddingTop="10dp"
+             android:paddingRight="10dp"
+            android:text="todo_time"
             android:textColor="@color/gray_font"
-            android:textSize="16sp"
-            android:layout_marginLeft="5dp"/>
+            android:textSize="14sp"/>
+        
+         <TextView
+            android:id="@+id/todo_out_time"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+             android:layout_alignParentBottom="true"
+            android:gravity="right"
+            android:paddingBottom="10dp"
+             android:paddingRight="10dp"
+            android:text="outtime"
+            android:textColor="@color/gray_font"
+            android:textSize="14sp"/>
+        
 
         <LinearLayout
-            android:id="@+id/ll_news"
+            android:id="@+id/ll_todos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/user_time"
+            android:layout_toLeftOf="@id/todo_time"
             android:layout_toRightOf="@id/user_picture"
-            android:orientation="vertical" 
-            android:layout_marginLeft="5dp">
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/user_name"
+                android:id="@+id/todo_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="@string/user_name"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/user_feel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:text="@string/user_feel"
+                android:text="todo_title"
                 android:textColor="@color/gray_font"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/todo_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="todo_content"
+                android:textSize="14sp"/>
         </LinearLayout>
     </RelativeLayout>
 

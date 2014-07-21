@@ -12,7 +12,6 @@ import com.litesuits.http.request.param.HttpMethod;
 import com.litesuits.http.request.param.HttpParam;
 import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.config.Global;
-import com.ysls.imhere.test.SDManager;
 import com.ysls.imhere.utils.SharedPreferencesUtil;
 
 /**
@@ -71,8 +70,6 @@ public class WelcomeActivity extends BaseActivity {
 		
 		if (isFirstUse) {
 			
-			SDManager manager = new SDManager(this);
-			manager.moveUserIcon();
 			
 			SharedPreferencesUtil.setParam(this, "isFirstUse", false);
 			openActivity(GuideActivity.class);

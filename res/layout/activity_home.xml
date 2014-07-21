@@ -59,7 +59,8 @@
 
     <include
         android:id="@id/main_title"
-        layout="@layout/above_title" />
+        layout="@layout/above_title"
+         />
 
     <include layout="@layout/below_slidingmenu" />
 

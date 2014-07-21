@@ -30,6 +30,7 @@ import com.ysls.imhere.config.Global;
 import com.ysls.imhere.db.DbOpenHelper;
 import com.ysls.imhere.db.UserDao;
 import com.ysls.imhere.domain.User;
+import com.ysls.imhere.ibeacon.BluetoothController;
 import com.ysls.imhere.ibeacon.ShopplayIBeaconService;
 import com.ysls.imhere.utils.LogUtil;
 import com.ysls.imhere.utils.PreferenceUtils;
@@ -68,6 +69,7 @@ public class MyApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 		ctx = getApplicationContext();
+		BluetoothController.openBTAdapter();
 		iBeaconManager = IBeaconManager.getInstanceForApplication(ctx);
 
 		int pid = android.os.Process.myPid();

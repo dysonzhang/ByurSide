@@ -1,10 +1,13 @@
 package com.ysls.imhere.fragment;
 
+import com.ysls.imhere.AddContactActivity;
 import com.ysls.imhere.R;
+import com.ysls.imhere.TodoAddActivity;
 import com.ysls.imhere.widget.TitleBarView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -21,6 +24,7 @@ public class TodoFragment extends Fragment {
 	private View mBaseView;
 
 	private TitleBarView mTitleBarView;
+	private View mTitleBarLineView;
 	private RelativeLayout mCanversLayout;
 
 	@Override
@@ -37,6 +41,7 @@ public class TodoFragment extends Fragment {
 
 	private void findView() {
 		mTitleBarView = (TitleBarView) mBaseView.findViewById(R.id.title_bar);
+		mTitleBarLineView = (View) mBaseView.findViewById(R.id.devide_line);
 		mCanversLayout = (RelativeLayout) mBaseView
 				.findViewById(R.id.rl_todo_canvers);
 
@@ -45,11 +50,12 @@ public class TodoFragment extends Fragment {
 	private void init() {
 		mTitleBarView.setCommonTitle(View.GONE, View.GONE, View.VISIBLE,
 				View.VISIBLE);
-		mTitleBarView.setBtnRight(R.drawable.skin_conversation_title_right_btn);
+		mTitleBarLineView.setVisibility(View.GONE);
+		mTitleBarView.setBtnRight(R.drawable.btn_add_friend);
 		mTitleBarView.setBtnRightOnclickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(mContext, "你点击了 添加任务", Toast.LENGTH_LONG).show();
+				startActivity(new Intent(mContext, TodoAddActivity.class));
 			}
 		});
 

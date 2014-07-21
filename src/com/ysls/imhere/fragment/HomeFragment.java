@@ -1,20 +1,41 @@
 package com.ysls.imhere.fragment;
-
-import com.ysls.imhere.R;
+ 
+import com.ysls.imhere.R; 
+import com.ysls.imhere.TodoDetailActivity;
 import com.ysls.imhere.widget.ProgressWebView;
+import com.ysls.imhere.widget.RoundImageView;
 
-import android.annotation.SuppressLint;
-import android.app.Activity;
+import android.annotation.SuppressLint; 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton; 
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 @SuppressLint("ValidFragment")
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnClickListener {
 
-	private Activity mActivity;
+	private Context mContext;
+	
+	private ImageButton ib_user_state;
+	private ImageButton ib_reward;
+	private RoundImageView iv_user_logo;
+
+	private RelativeLayout rl_todo_no_read;
+	private RelativeLayout rl_msg_no_read;
+
+	private RelativeLayout rl_todo_one;
+	private RelativeLayout rl_todo_two;
+	private RelativeLayout rl_todo_three;
+
+	private RelativeLayout rl_msg_one;
+	private RelativeLayout rl_msg_two;
 
 	protected View view;
 	private ProgressWebView webview;
@@ -22,26 +43,90 @@ public class HomeFragment extends Fragment {
 	public HomeFragment() {
 	}
 
-	public HomeFragment(Activity paramActivity) {
-		this.mActivity = paramActivity;
-	}
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-	}
 
 	public View onCreateView(LayoutInflater layoutInflater,
 			ViewGroup viewGroup, Bundle bundle) {
-		view = layoutInflater.inflate(R.layout.common_web, null);
+		view = layoutInflater.inflate(R.layout.activity_main, null);
+		mContext = getActivity();
+		
+		findView(view);
 
-		// 绑定控件
-		webview = (ProgressWebView) view.findViewById(R.id.webview);
-
-//		webview.loadUrl("http://a.m.taobao.com/i17166586737.htm?sid=7fabde721d3199f9&show_id=1&pds=fromtop%23h%23shop");
-		webview.loadUrl("http://www.protoshop.io");
-//		webview.loadUrl("http://www.leektech.com");
+		// // 绑定控件
+		// webview = (ProgressWebView) view.findViewById(R.id.webview);
+		// webview.loadUrl("http://www.protoshop.io");
 
 		return view;
+	}
+
+	private void findView(View view) {
+		ib_user_state = (ImageButton) view.findViewById(R.id.ib_user_state);
+		ib_reward = (ImageButton) view.findViewById(R.id.ib_reward);
+		iv_user_logo = (RoundImageView) view.findViewById(R.id.iv_user_logo);
+
+		rl_todo_no_read = (RelativeLayout) view
+				.findViewById(R.id.rl_todo_no_read);
+		rl_msg_no_read = (RelativeLayout) view
+				.findViewById(R.id.rl_msg_no_read);
+
+		rl_todo_one = (RelativeLayout) view.findViewById(R.id.rl_todo_one);
+		rl_todo_two = (RelativeLayout) view.findViewById(R.id.rl_todo_two);
+		rl_todo_three = (RelativeLayout) view.findViewById(R.id.rl_todo_three);
+
+		rl_msg_one = (RelativeLayout) view.findViewById(R.id.rl_msg_one);
+		rl_msg_two = (RelativeLayout) view.findViewById(R.id.rl_msg_two);
+
+		ib_user_state.setOnClickListener(this);
+		ib_reward.setOnClickListener(this);
+		iv_user_logo.setOnClickListener(this);
+
+		rl_todo_no_read.setOnClickListener(this);
+		rl_msg_no_read.setOnClickListener(this);
+
+		rl_todo_one.setOnClickListener(this);
+		rl_todo_two.setOnClickListener(this);
+		rl_todo_three.setOnClickListener(this);
+
+		rl_msg_one.setOnClickListener(this);
+		rl_msg_two.setOnClickListener(this);
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.ib_user_state:
+			Toast.makeText(mContext, "下班打卡中...", Toast.LENGTH_LONG).show();
+			break;
+		case R.id.ib_reward:
+			Toast.makeText(mContext, "我获得的荣誉奖励！", Toast.LENGTH_LONG).show();
+			break;
+		case R.id.iv_user_logo:
+			Toast.makeText(mContext, "进入个人信息中心", Toast.LENGTH_LONG).show();
+			break;
+		case R.id.rl_todo_no_read:
+//			mContext.mViewPager.setCurrentItem(0);
+			Toast.makeText(mContext, "进入任务主页", Toast.LENGTH_LONG).show();
+			break;
+		case R.id.rl_msg_no_read:
+//			mContext.mViewPager.setCurrentItem(2);
+			Toast.makeText(mContext, "进入消息主页", Toast.LENGTH_LONG).show();
+			break;
+		case R.id.rl_todo_one:
+			mContext.startActivity(new Intent(mContext, TodoDetailActivity.class));
+			break;
+		case R.id.rl_todo_two:
+			mContext.startActivity(new Intent(mContext, TodoDetailActivity.class));
+			break;
+		case R.id.rl_todo_three:
+			mContext.startActivity(new Intent(mContext, TodoDetailActivity.class));
+			break;
+		case R.id.rl_msg_one:
+//			mContext.mViewPager.setCurrentItem(0);
+			Toast.makeText(mContext, "进入任务主页", Toast.LENGTH_LONG).show();
+			break;
+		case R.id.rl_msg_two:
+//			mContext.mViewPager.setCurrentItem(2);
+			Toast.makeText(mContext, "进入消息主页", Toast.LENGTH_LONG).show();
+			break;
+		}
 	}
 }
