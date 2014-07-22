@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,13 +24,16 @@ public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 
 	private Activity mActivity;
 
+	public ViewPager mViewPager;
+	
 	public ArrayList<Fragment> mFragments = new ArrayList<Fragment>();
 
 	public List<String> tabs = new ArrayList<String>();
 
-	public BasePageViewAdapter(FragmentActivity fragmentActivity) {
+	public BasePageViewAdapter(FragmentActivity fragmentActivity, ViewPager mViewPager) {
 		super(fragmentActivity.getSupportFragmentManager());
 		mActivity = fragmentActivity;
+		this.mViewPager = mViewPager;
 	}
 
 	public void Clear() {
@@ -42,7 +46,7 @@ public class BasePageViewAdapter extends FragmentStatePagerAdapter {
 		for (int i = 0; i < tabs.size(); i++) {
 			String str = (String) this.tabs.get(i);
 			if (str.equals("主页"))
-				addTab(new HomeFragment());
+				addTab(new HomeFragment(mViewPager));
 			if (str.equals("任务"))
 				addTab(new TodoFragment());
 			if (str.equals("沟通"))

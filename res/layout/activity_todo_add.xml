@@ -304,7 +304,7 @@
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"
-                        ImageSrc="@drawable/todo_add_member"
+                        ImageSrc="@drawable/smiley_add_btn"
                         Text="@string/todo_space" />
 
                     <com.ysls.imhere.widget.ImageViewWithText
@@ -312,7 +312,7 @@
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"
-                        ImageSrc="@drawable/todo_cut_member"
+                        ImageSrc="@drawable/smiley_minus_btn"
                         Text="@string/todo_space" />
                 </LinearLayout>
             </RelativeLayout>

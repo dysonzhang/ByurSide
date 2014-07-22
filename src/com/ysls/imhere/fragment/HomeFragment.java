@@ -1,20 +1,23 @@
 package com.ysls.imhere.fragment;
- 
-import com.ysls.imhere.R; 
+
+import com.ysls.imhere.ChatActivity;
+import com.ysls.imhere.R;
 import com.ysls.imhere.TodoDetailActivity;
+import com.ysls.imhere.UserInfoActivity;
 import com.ysls.imhere.widget.ProgressWebView;
 import com.ysls.imhere.widget.RoundImageView;
 
-import android.annotation.SuppressLint; 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.ImageButton; 
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -22,7 +25,7 @@ import android.widget.Toast;
 public class HomeFragment extends Fragment implements OnClickListener {
 
 	private Context mContext;
-	
+
 	private ImageButton ib_user_state;
 	private ImageButton ib_reward;
 	private RoundImageView iv_user_logo;
@@ -39,16 +42,20 @@ public class HomeFragment extends Fragment implements OnClickListener {
 
 	protected View view;
 	private ProgressWebView webview;
+	private ViewPager mViewPager;
 
 	public HomeFragment() {
 	}
 
+	public HomeFragment(ViewPager mViewPager) {
+		this.mViewPager = mViewPager;
+	}
 
 	public View onCreateView(LayoutInflater layoutInflater,
 			ViewGroup viewGroup, Bundle bundle) {
 		view = layoutInflater.inflate(R.layout.activity_main, null);
 		mContext = getActivity();
-		
+
 		findView(view);
 
 		// // 绑定控件
@@ -100,32 +107,33 @@ public class HomeFragment extends Fragment implements OnClickListener {
 			Toast.makeText(mContext, "我获得的荣誉奖励！", Toast.LENGTH_LONG).show();
 			break;
 		case R.id.iv_user_logo:
-			Toast.makeText(mContext, "进入个人信息中心", Toast.LENGTH_LONG).show();
+			mContext.startActivity(new Intent(mContext, UserInfoActivity.class));
 			break;
 		case R.id.rl_todo_no_read:
-//			mContext.mViewPager.setCurrentItem(0);
-			Toast.makeText(mContext, "进入任务主页", Toast.LENGTH_LONG).show();
+			mViewPager.setCurrentItem(0);
 			break;
 		case R.id.rl_msg_no_read:
-//			mContext.mViewPager.setCurrentItem(2);
-			Toast.makeText(mContext, "进入消息主页", Toast.LENGTH_LONG).show();
+			mViewPager.setCurrentItem(2);
 			break;
 		case R.id.rl_todo_one:
-			mContext.startActivity(new Intent(mContext, TodoDetailActivity.class));
+			mContext.startActivity(new Intent(mContext,
+					TodoDetailActivity.class));
 			break;
 		case R.id.rl_todo_two:
-			mContext.startActivity(new Intent(mContext, TodoDetailActivity.class));
+			mContext.startActivity(new Intent(mContext,
+					TodoDetailActivity.class));
 			break;
 		case R.id.rl_todo_three:
-			mContext.startActivity(new Intent(mContext, TodoDetailActivity.class));
+			mContext.startActivity(new Intent(mContext,
+					TodoDetailActivity.class));
 			break;
 		case R.id.rl_msg_one:
-//			mContext.mViewPager.setCurrentItem(0);
-			Toast.makeText(mContext, "进入任务主页", Toast.LENGTH_LONG).show();
+			mContext.startActivity(new Intent(mContext,
+					TodoDetailActivity.class));
 			break;
 		case R.id.rl_msg_two:
-//			mContext.mViewPager.setCurrentItem(2);
-			Toast.makeText(mContext, "进入消息主页", Toast.LENGTH_LONG).show();
+			mContext.startActivity(new Intent(getActivity(), ChatActivity.class)
+					.putExtra("userId", "bill"));
 			break;
 		}
 	}

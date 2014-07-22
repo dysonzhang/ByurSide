@@ -135,6 +135,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Light.NoTitleBar" />
+          <activity
+            android:name="com.ysls.imhere.UserInfoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
         <!-- 聊天页面 -->
         <activity
             android:name="com.ysls.imhere.ChatActivity"

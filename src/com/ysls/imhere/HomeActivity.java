@@ -43,6 +43,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 	private Context mContext;
 
 	private SemiClosedSlidingDrawer slidingDrawer;
+	private boolean isHaveInit = false;
 	private LinearLayout openLayout, closeLayout;
 
 	private ImageViewWithText custom_checkin_history;
@@ -73,7 +74,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 	private PageIndicator mIndicator;
 
-	private ViewPager mViewPager;
+	public ViewPager mViewPager;
 	private LinearLayout mlinear_listview;
 
 	private View title;
@@ -163,25 +164,36 @@ public class HomeActivity extends BaseFragmentActivity implements
 					public void onDrawerOpened() {
 						openLayout.setVisibility(View.VISIBLE);
 						closeLayout.setVisibility(View.INVISIBLE);
+
+						if (!isHaveInit) {
+							custom_checkin_history = (ImageViewWithText) findViewById(R.id.custom_checkin_history);
+							custom_checkin_history
+									.setOnClickListener(HomeActivity.this);
+							custom_publication = (ImageViewWithText) findViewById(R.id.custom_publication);
+							custom_publication
+									.setOnClickListener(HomeActivity.this);
+							custom_account_setting = (ImageViewWithText) findViewById(R.id.custom_account_setting);
+							custom_account_setting
+									.setOnClickListener(HomeActivity.this);
+							custom_about = (ImageViewWithText) findViewById(R.id.custom_about);
+							custom_about.setOnClickListener(HomeActivity.this);
+							custom_feedback = (ImageViewWithText) findViewById(R.id.custom_feedback);
+							custom_feedback
+									.setOnClickListener(HomeActivity.this);
+							custom_exit = (ImageViewWithText) findViewById(R.id.custom_exit);
+							custom_exit.setOnClickListener(HomeActivity.this);
+							custom_phonebook_backup = (ImageViewWithText) findViewById(R.id.custom_phonebook_backup);
+							custom_phonebook_backup
+									.setOnClickListener(HomeActivity.this);
+							custom_door_control = (ImageViewWithText) findViewById(R.id.custom_door_control);
+							custom_door_control
+									.setOnClickListener(HomeActivity.this);
+
+							isHaveInit = true;
+						}
 					}
 				});
 
-		custom_checkin_history = (ImageViewWithText) findViewById(R.id.custom_checkin_history);
-		custom_checkin_history.setOnClickListener(this);
-		custom_publication = (ImageViewWithText) findViewById(R.id.custom_publication);
-		custom_publication.setOnClickListener(this);
-		custom_account_setting = (ImageViewWithText) findViewById(R.id.custom_account_setting);
-		custom_account_setting.setOnClickListener(this);
-		custom_about = (ImageViewWithText) findViewById(R.id.custom_about);
-		custom_about.setOnClickListener(this);
-		custom_feedback = (ImageViewWithText) findViewById(R.id.custom_feedback);
-		custom_feedback.setOnClickListener(this);
-		custom_exit = (ImageViewWithText) findViewById(R.id.custom_exit);
-		custom_exit.setOnClickListener(this);
-		custom_phonebook_backup = (ImageViewWithText) findViewById(R.id.custom_phonebook_backup);
-		custom_phonebook_backup.setOnClickListener(this);
-		custom_door_control = (ImageViewWithText) findViewById(R.id.custom_door_control);
-		custom_door_control.setOnClickListener(this);
 	}
 
 	/**
@@ -189,7 +201,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 	 */
 	private void initViewPager() {
 
-		mBasePageViewAdapter = new BasePageViewAdapter(this);
+		mBasePageViewAdapter = new BasePageViewAdapter(this, mViewPager);
 		mViewPager.setOffscreenPageLimit(0);
 		mViewPager.setAdapter(mBasePageViewAdapter);
 		mIndicator.setViewPager(mViewPager);
@@ -216,7 +228,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 
 		if (!menuList.isEmpty()) {
 			mBasePageViewAdapter.addFragment(menuList);
-//			imgRight.setVisibility(View.VISIBLE);
+			// imgRight.setVisibility(View.VISIBLE);
 			loadLayout.setVisibility(View.GONE);
 			loadFaillayout.setVisibility(View.GONE);
 		} else {
@@ -235,7 +247,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 	public void onClick(View paramView) {
 		switch (paramView.getId()) {
 		case R.id.Linear_above_toHome:
-//			showLongToast("你点击了LOGO");
+			// showLongToast("你点击了LOGO");
 			break;
 		case R.id.imageview_above_more:
 			if (isShowPopupWindows) {
@@ -243,12 +255,12 @@ public class HomeActivity extends BaseFragmentActivity implements
 						this, mBasePageViewAdapter.tabs);
 			}
 			break;
-		case R.id.custom_checkin_history: 
+		case R.id.custom_checkin_history:
 			startActivity(new Intent(mContext, CheckinHistoryActivity.class));
 			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
 					R.anim.fade_out);
 			break;
-		case R.id.custom_publication: 
+		case R.id.custom_publication:
 			startActivity(new Intent(mContext, PublicationActivity.class));
 			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
 					R.anim.fade_out);
@@ -258,7 +270,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
 					R.anim.fade_out);
 			break;
-		case R.id.custom_feedback: 
+		case R.id.custom_feedback:
 			startActivity(new Intent(mContext, FeedbackActivity.class));
 			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
 					R.anim.fade_out);
@@ -268,7 +280,7 @@ public class HomeActivity extends BaseFragmentActivity implements
 			HomeActivity.this.overridePendingTransition(R.anim.activity_up,
 					R.anim.fade_out);
 			break;
-		
+
 		case R.id.custom_exit:
 			showLongToast("服务尚未开通，敬请期待！");
 			break;
@@ -356,8 +368,8 @@ public class HomeActivity extends BaseFragmentActivity implements
 				LogUtil.i(HomeActivity.TAG, "主页");
 				currentTabIndex = HOMEFRAGMENT;
 			} else {
-//				imgRight.setVisibility(View.VISIBLE);
-//				imgLeft.setVisibility(View.VISIBLE);
+				// imgRight.setVisibility(View.VISIBLE);
+				// imgLeft.setVisibility(View.VISIBLE);
 				LogUtil.i(HomeActivity.TAG, "沟通");
 				currentTabIndex = CHATFRAGMENT;
 			}

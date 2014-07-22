@@ -78,7 +78,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
-                    android:text="DysonZhang"
+                    android:text="Stefan"
                     android:textColor="@color/gray"
                     android:textSize="16sp" />
             </RelativeLayout>
@@ -272,7 +272,7 @@
                     android:orientation="horizontal" >
 
                     <com.ysls.imhere.widget.ImageViewWithText
-                        android:id="@+id/custom_checkin_history"
+                        android:id="@+id/member_one"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"
@@ -280,7 +280,7 @@
                         Text="@string/todo_doing" />
 
                     <com.ysls.imhere.widget.ImageViewWithText
-                        android:id="@+id/custom_checkin_history"
+                        android:id="@+id/member_two"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"
@@ -288,7 +288,7 @@
                         Text="@string/todo_doing" />
 
                     <com.ysls.imhere.widget.ImageViewWithText
-                        android:id="@+id/custom_checkin_history"
+                        android:id="@+id/member_three"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"
@@ -296,7 +296,7 @@
                         Text="@string/todo_complete" />
 
                     <com.ysls.imhere.widget.ImageViewWithText
-                        android:id="@+id/custom_checkin_history"
+                        android:id="@+id/member_four"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"

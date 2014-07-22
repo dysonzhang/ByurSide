@@ -94,20 +94,13 @@
     <public id="0x7f02002b" name="button_userlogin" type="drawable" />
     <public id="0x7f02002c" name="button_userlogin_white" type="drawable" />
     <public id="0x7f02002d" name="dis_about_logo" type="drawable" />
-    <public id="0x7f02002e" name="dis_about_sina" type="drawable" />
-    <public id="0x7f02002f" name="dis_about_weixin" type="drawable" />
     <public id="0x7f020030" name="dis_behind_side" type="drawable" />
     <public id="0x7f020031" name="dis_behind_verticalside" type="drawable" />
-    <public id="0x7f020032" name="dis_details_show" type="drawable" />
-    <public id="0x7f020033" name="dis_eoelogo" type="drawable" />
+    <public id="0x7f020032" name="dis_details_show" type="drawable" /> 
     <public id="0x7f020034" name="dis_error" type="drawable" />
     <public id="0x7f020035" name="dis_icon" type="drawable" />
     <public id="0x7f020036" name="dis_indicate_left" type="drawable" />
-    <public id="0x7f020037" name="dis_indicate_right" type="drawable" />
-    <public id="0x7f020038" name="dis_menu_blog" type="drawable" />
-    <public id="0x7f020039" name="dis_menu_handpick" type="drawable" />
-    <public id="0x7f02003a" name="dis_menu_news" type="drawable" />
-    <public id="0x7f02003b" name="dis_menu_studio" type="drawable" />
+    <public id="0x7f020037" name="dis_indicate_right" type="drawable" /> 
     <public id="0x7f02003c" name="dis_popup_side" type="drawable" />
     <public id="0x7f02003d" name="dis_search" type="drawable" />
     <public id="0x7f02003e" name="dis_slide_normal" type="drawable" />
@@ -446,9 +439,6 @@
     <public id="0x7f0b0039" name="about" type="string" />
     <public id="0x7f0b003a" name="about_title" type="string" />
     <public id="0x7f0b003b" name="about_intro" type="string" />
-    <public id="0x7f0b003c" name="about_story" type="string" />
-    <public id="0x7f0b003d" name="about_thanks" type="string" />
-    <public id="0x7f0b003e" name="about_opensource" type="string" />
     <public id="0x7f0b003f" name="about_tontact" type="string" />
     <public id="0x7f0b0040" name="about_sina" type="string" />
     <public id="0x7f0b0041" name="about_weixin" type="string" />
