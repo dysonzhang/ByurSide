@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:alpha="0.9" >
+
+    <LinearLayout
+        android:id="@+id/ll_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/pop_bg"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/todo_very_emergency"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="非常紧急"
+            android:textColor="@color/yellow"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:alpha="0.5"
+            android:background="@color/devide_line" />
+
+        <TextView
+            android:id="@+id/todo_emergency"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="紧急"
+            android:textColor="@color/yellow"
+            android:textSize="16sp" />
+          <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:alpha="0.5"
+            android:background="@color/devide_line" />
+         <TextView
+            android:id="@+id/todo_general"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:text="普通"
+            android:textColor="@color/yellow"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/todo_priority_cancle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/ll_exit"
+        android:layout_margin="10dp"
+        android:background="@drawable/pop_bg"
+        android:gravity="center"
+        android:text="@string/app_cancle"
+        android:textColor="@color/blue"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/todo_priority_cancle"
+        android:layout_marginTop="5dp" />
+
+</RelativeLayout>

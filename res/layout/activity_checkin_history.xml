@@ -10,42 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="50dp" />
 
-     <RelativeLayout
-        android:id="@+id/title_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/title_bg" >
-
-        <Button
-            android:id="@+id/today_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dip"
-            android:layout_marginTop="6dip"
-            android:background="@drawable/today_selector"
-            android:text="今天" >
-        </Button>
-
-        <TextView
-            android:id="@+id/today_message"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="日历"
-            android:textColor="@color/white"
-            android:textSize="19dip" >
-        </TextView>
-    </RelativeLayout>
-
     <RelativeLayout
         android:id="@+id/message_layout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title_layout" >
+        android:layout_height="wrap_content" >
 
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="60dp"
             android:background="@drawable/week_bg" >
         </ImageView>
 
@@ -53,8 +26,8 @@
             android:id="@+id/left_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/left_selector"
-            android:paddingTop="7dip" >
+            android:layout_marginTop="15dp"
+            android:background="@drawable/left_selector" >
         </ImageView>
 
         <TextView
@@ -62,9 +35,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:paddingTop="7dip"
+            android:layout_marginTop="15dp"
             android:text="2012年11月13号"
-            android:textSize="18dip" >
+            android:textColor="@color/gray_font"
+            android:textSize="18sp" >
         </TextView>
 
         <ImageView
@@ -72,16 +46,173 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:background="@drawable/right_selector"
-            android:paddingTop="7dip" >
+            android:layout_marginTop="15dp"
+            android:background="@drawable/right_selector" >
         </ImageView>
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/calendar_main"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/message_layout" >
+        android:layout_height="wrap_content" >
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_checkin_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="当月考勤数据统计"
+            android:textColor="@color/gray_font"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/devide_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_checkin_later"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="迟到次数"
+            android:textColor="@color/gray_font"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_checkin_later"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="1"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/devide_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_checkin_earlier"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="早退次数"
+            android:textColor="@color/gray_font"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_checkin_earlier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="1"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/devide_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_checkin_reward"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="获取荣誉奖励数"
+            android:textColor="@color/gray_font"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_checkin_reward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="2"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/devide_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_checkin_point"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="综合评分"
+            android:textColor="@color/yellow"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_checkin_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="75"
+            android:textColor="@color/yellow"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/devide_line" />
 
 </LinearLayout>

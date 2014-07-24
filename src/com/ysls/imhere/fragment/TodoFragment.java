@@ -1,6 +1,5 @@
 package com.ysls.imhere.fragment;
 
-import com.ysls.imhere.AddContactActivity;
 import com.ysls.imhere.R;
 import com.ysls.imhere.TodoAddActivity;
 import com.ysls.imhere.widget.TitleBarView;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 public class TodoFragment extends Fragment {
 	private static final String TAG = "TodoFragment";
@@ -51,7 +49,7 @@ public class TodoFragment extends Fragment {
 		mTitleBarView.setCommonTitle(View.GONE, View.GONE, View.VISIBLE,
 				View.VISIBLE);
 		mTitleBarLineView.setVisibility(View.GONE);
-		mTitleBarView.setBtnRight(R.drawable.btn_add_friend);
+		mTitleBarView.setBtnRight("发布任务");
 		mTitleBarView.setBtnRightOnclickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -71,8 +69,8 @@ public class TodoFragment extends Fragment {
 					mTitleBarView.getTitleRight().setEnabled(true);
 					FragmentTransaction ft = getFragmentManager()
 							.beginTransaction();
-					TodoListFragment newsFragment = new TodoListFragment();
-					ft.replace(R.id.child_todo_fragment, newsFragment,
+					DoingTodoListFragment newFragment = new DoingTodoListFragment();
+					ft.replace(R.id.child_todo_fragment, newFragment,
 							TodoFragment.TAG);
 					ft.commit();
 				}
@@ -88,8 +86,8 @@ public class TodoFragment extends Fragment {
 					mTitleBarView.getTitleRight().setEnabled(false);
 					FragmentTransaction ft = getFragmentManager()
 							.beginTransaction();
-					TodoListFragment newsFragment = new TodoListFragment();
-					ft.replace(R.id.child_todo_fragment, newsFragment,
+					FinishTodoListFragment newFragment = new FinishTodoListFragment();
+					ft.replace(R.id.child_todo_fragment, newFragment,
 							TodoFragment.TAG);
 					ft.commit();
 				}

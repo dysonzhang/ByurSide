@@ -117,7 +117,7 @@ public class GuideActivity extends BaseActivity implements OnClickListener,
 	private void startbutton() {
 		
 		if(Global.isLogin){
-			openActivity(HomeActivity.class);
+			openActivity(MainActivity.class);
 		}else{
 			openActivity(LoginActivity.class);
 		}

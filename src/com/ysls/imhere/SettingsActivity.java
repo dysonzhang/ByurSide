@@ -24,6 +24,10 @@ import com.ysls.imhere.widget.TitleBarView;
  * 
  */
 public class SettingsActivity extends BaseActivity implements OnClickListener {
+
+	private RelativeLayout rl_user_info_modify;
+	private RelativeLayout rl_user_password_modify;
+	private RelativeLayout rl_app_version;
 	/**
 	 * 设置新消息通知布局
 	 */
@@ -101,6 +105,10 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 	}
 
 	private void findView() {
+		rl_user_info_modify = (RelativeLayout) findViewById(R.id.rl_user_info_modify);
+		rl_user_password_modify = (RelativeLayout) findViewById(R.id.rl_user_password_modify);
+		rl_app_version = (RelativeLayout) findViewById(R.id.rl_app_version);
+
 		rl_switch_notification = (RelativeLayout) findViewById(R.id.rl_switch_notification);
 		rl_switch_sound = (RelativeLayout) findViewById(R.id.rl_switch_sound);
 		rl_switch_vibrate = (RelativeLayout) findViewById(R.id.rl_switch_vibrate);
@@ -118,6 +126,10 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 
 		textview1 = (TextView) findViewById(R.id.textview1);
 		textview2 = (TextView) findViewById(R.id.textview2);
+
+		rl_user_info_modify.setOnClickListener(this);
+		rl_user_password_modify.setOnClickListener(this);
+		rl_app_version.setOnClickListener(this);
 
 		rl_switch_notification.setOnClickListener(this);
 		rl_switch_sound.setOnClickListener(this);
@@ -266,7 +278,7 @@ public class SettingsActivity extends BaseActivity implements OnClickListener {
 			MyApplication.getInstance().logout();
 			// 重新显示登陆页面
 			MyApplication.getInstance().finishActivityByName(
-					HomeActivity.class.getName());
+					MainActivity.class.getName());
 			openActivity(LoginActivity.class);
 			defaultFinish();
 			break;

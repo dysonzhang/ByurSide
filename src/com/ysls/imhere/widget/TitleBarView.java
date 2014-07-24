@@ -79,7 +79,11 @@ public class TitleBarView extends RelativeLayout {
 		img.setBounds(0, 0, width, height);
 		btnRight.setCompoundDrawables(img, null, null, null);
 	}
-
+	
+	public void setBtnRight(String txtRes) {
+		btnRight.setText(txtRes);
+	}
+	
 	public void setTitleLeft(int resId) {
 		btn_titleLeft.setText(resId);
 	}

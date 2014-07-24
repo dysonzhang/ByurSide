@@ -23,7 +23,7 @@ import com.easemob.util.HanziToPinyin;
 
 import com.ysls.imhere.AddContactActivity;
 import com.ysls.imhere.GroupsActivity;
-import com.ysls.imhere.HomeActivity;
+import com.ysls.imhere.MainActivity;
 import com.ysls.imhere.LoginActivity;
 import com.ysls.imhere.MyApplication;
 import com.ysls.imhere.R;
@@ -57,7 +57,7 @@ import android.widget.Toast;
 
 public class CommunicateFragment extends Fragment {
 
-	private static final String TAG = "NewsFatherFragment";
+	private static final String TAG = "CommunicateFragment";
 	private Context mContext;
 
 	private View mBaseView;
@@ -152,7 +152,7 @@ public class CommunicateFragment extends Fragment {
 				View.VISIBLE);
 		mTitleBarLineView.setVisibility(View.GONE);
 		
-		mTitleBarView.setBtnRight(R.drawable.qq_contact_list_add_bt_common);
+		mTitleBarView.setBtnRight("添加好友");
 		
 		mTitleBarView.setBtnRightOnclickListener(new OnClickListener() {
 			@Override
@@ -601,7 +601,7 @@ public class CommunicateFragment extends Fragment {
 							conflictBuilder = null;
 							// 进入主页面
 							MyApplication.getInstance().finishActivityByName(
-									HomeActivity.class.getName());
+									MainActivity.class.getName());
 							startActivity(new Intent(mContext,
 									LoginActivity.class));
 						}

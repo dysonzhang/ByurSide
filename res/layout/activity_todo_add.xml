@@ -16,6 +16,7 @@
         android:scrollbars="vertical" >
 
         <LinearLayout
+            android:id="@+id/ll_add_from"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
@@ -106,8 +107,8 @@
                     android:textColor="@color/gray_font"
                     android:textSize="16sp" />
 
-                <EditText
-                    android:id="@+id/tv_todo_start_time"
+                <TextView
+                    android:id="@+id/et_todo_start_time"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:layout_alignParentRight="true"
@@ -116,7 +117,6 @@
                     android:layout_marginRight="10dp"
                     android:background="#00000000"
                     android:gravity="right|center"
-                    android:hint="选择任务结束时间"
                     android:textColor="@color/gray"
                     android:textSize="16sp" />
             </RelativeLayout>
@@ -142,8 +142,8 @@
                     android:textColor="@color/gray_font"
                     android:textSize="16sp" />
 
-                <EditText
-                    android:id="@+id/tv_todo_end_time"
+                <TextView
+                    android:id="@+id/et_todo_end_time"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
                     android:layout_alignParentRight="true"
@@ -152,7 +152,6 @@
                     android:layout_marginRight="10dp"
                     android:background="#00000000"
                     android:gravity="right|center"
-                    android:hint="选择任务完成时间"
                     android:textColor="@color/gray"
                     android:textSize="16sp" />
             </RelativeLayout>
@@ -178,7 +177,7 @@
                     android:textColor="@color/gray_font"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/tv_todo_priority"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
@@ -188,8 +187,8 @@
                     android:layout_marginRight="10dp"
                     android:background="#00000000"
                     android:gravity="right|center"
-                    android:hint="选择任务优先级"
-                    android:textColor="@color/red"
+                    android:text="非常紧急"
+                    android:textColor="@color/yellow"
                     android:textSize="16sp" />
             </RelativeLayout>
 
@@ -214,7 +213,7 @@
                     android:textColor="@color/gray_font"
                     android:textSize="16sp" />
 
-                <EditText
+                <TextView
                     android:id="@+id/tv_todo_state"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
@@ -224,8 +223,8 @@
                     android:layout_marginRight="10dp"
                     android:background="#00000000"
                     android:gravity="right|center"
-                    android:hint="选择当前任务状态"
-                    android:textColor="@color/red"
+                    android:text="进行中"
+                    android:textColor="@color/yellow"
                     android:textSize="16sp" />
             </RelativeLayout>
 
@@ -284,23 +283,23 @@
                     android:orientation="horizontal" >
 
                     <com.ysls.imhere.widget.ImageViewWithText
-                        android:id="@+id/custom_checkin_history"
+                        android:id="@+id/addone"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"
                         ImageSrc="@drawable/head_e2"
-                        Text="@string/todo_doing" />
+                        Text="@string/todo_space" />
 
                     <com.ysls.imhere.widget.ImageViewWithText
-                        android:id="@+id/custom_checkin_history"
+                        android:id="@+id/addtwo"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"
                         ImageSrc="@drawable/head_s"
-                        Text="@string/todo_doing" />
+                        Text="@string/todo_space" />
 
                     <com.ysls.imhere.widget.ImageViewWithText
-                        android:id="@+id/custom_checkin_history"
+                        android:id="@+id/addthree"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"
@@ -308,7 +307,7 @@
                         Text="@string/todo_space" />
 
                     <com.ysls.imhere.widget.ImageViewWithText
-                        android:id="@+id/custom_checkin_history"
+                        android:id="@+id/addfour"
                         android:layout_width="0dip"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.25"

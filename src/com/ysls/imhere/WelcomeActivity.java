@@ -75,7 +75,7 @@ public class WelcomeActivity extends BaseActivity {
 			openActivity(GuideActivity.class);
 		} else {
 			if(isLogin){
-				openActivity(HomeActivity.class);
+				openActivity(MainActivity.class);
 			}else{
 				openActivity(LoginActivity.class);
 			}

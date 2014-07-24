@@ -120,7 +120,7 @@ public class BaiduMapActivity extends BaseActivity {
 				View.VISIBLE);
 		mTitleBarView.setBtnLeft(R.drawable.boss_unipay_icon_back,
 				R.string.back);
-		mTitleBarView.setBtnRight(R.drawable.btn_ok_send);
+		mTitleBarView.setBtnRight("发送");
 		mTitleBarView.setTitleText(R.string.location_message);
 		mTitleBarView.setBtnLeftOnclickListener(new OnClickListener() {
 			@Override

@@ -66,7 +66,7 @@ public class AddContactActivity extends BaseActivity {
 				View.VISIBLE);
 		mTitleBarView.setBtnLeft(R.drawable.boss_unipay_icon_back,
 				R.string.back);
-		mTitleBarView.setBtnRight(R.drawable.skin_conversation_title_right_btn);
+		mTitleBarView.setBtnRight("搜索");
 		mTitleBarView.setTitleText(R.string.add_friends);
 		mTitleBarView.setBtnLeftOnclickListener(new OnClickListener() {
 			@Override

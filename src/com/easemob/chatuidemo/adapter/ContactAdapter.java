@@ -115,6 +115,8 @@ public class ContactAdapter extends ArrayAdapter<User>  implements SectionIndexe
 			}
 			
 			ImageView avatar = (ImageView) convertView.findViewById(R.id.avatar);
+			ImageView toMsg = (ImageView) convertView.findViewById(R.id.iv_to_msg);
+			ImageView toCall = (ImageView) convertView.findViewById(R.id.iv_to_call);
 			TextView unreadMsgView = (TextView) convertView.findViewById(R.id.unread_msg_number);
 			TextView nameTextview = (TextView) convertView.findViewById(R.id.name);
 			TextView tvHeader = (TextView) convertView.findViewById(R.id.header);
@@ -136,6 +138,10 @@ public class ContactAdapter extends ArrayAdapter<User>  implements SectionIndexe
 			if(username.equals(Constants.NEW_FRIENDS_USERNAME)){
 				nameTextview.setText(user.getNick());
 				avatar.setImageResource(R.drawable.qq_leba_list_seek_myfeeds);
+				
+				toMsg.setVisibility(View.GONE);
+				toCall.setVisibility(View.GONE);
+				
 				if(user.getUnreadMsgCount() > 0){
 					unreadMsgView.setVisibility(View.VISIBLE);
 					unreadMsgView.setText(user.getUnreadMsgCount()+"");
@@ -146,6 +152,9 @@ public class ContactAdapter extends ArrayAdapter<User>  implements SectionIndexe
 				//群聊item
 				nameTextview.setText(user.getNick());
 				avatar.setImageResource(R.drawable.qq_contact_list_troop_entry_icon);
+				
+				toMsg.setVisibility(View.GONE);
+				toCall.setVisibility(View.GONE);
 			}else{
 				nameTextview.setText(username);
 				if(unreadMsgView != null)

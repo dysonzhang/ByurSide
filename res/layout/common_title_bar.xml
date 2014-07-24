@@ -15,7 +15,7 @@
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:background="@color/common_title"
+            android:background="@color/white"
             android:textColor="@color/blue"
             android:textSize="16sp" />
 
@@ -25,17 +25,18 @@
             android:layout_height="40dp"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/title_btn_right"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:background="@color/common_title" />
+            android:layout_marginRight="10dp"
+            android:background="@color/white"
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:id="@+id/common_constact"
@@ -57,13 +58,13 @@
                 style="@style/top_all"
                 android:text="@string/all" />
         </LinearLayout>
-        
+
         <View
-        android:id="@+id/devide_line"
-        android:layout_width="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_height="0.5dp"
-        android:background="@color/devide_line" />
+            android:id="@+id/devide_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/devide_line" />
     </RelativeLayout>
 
     <View

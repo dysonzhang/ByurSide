@@ -20,20 +20,40 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/text1"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20.0dip"
-                android:gravity="center_vertical" >
-   
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Feedback"
-                    android:textColor="#ff000000"
-                    android:textSize="20.0sp" />
-            </LinearLayout>
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginTop="10dip" >
+
+                <EditText
+                    android:id="@+id/et_feedback_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="150.0dip"
+                    android:layout_marginLeft="10.0dp"
+                    android:layout_marginRight="10.0dp"
+                    android:layout_marginTop="10.0dp"
+                    android:textColor="@color/gray_font"
+                    android:background="@drawable/text_bg"
+                    android:gravity="top"
+                    android:hint="请输入您的反馈内容"
+                    android:maxLength="140"
+                    android:paddingLeft="10.0dp"
+                    android:paddingTop="10.0dp" />
+
+                <Button
+                    android:id="@+id/feedback_btn"
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/et_feedback_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/login_btn"
+                    android:text="提交"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
         </LinearLayout>
     </ScrollView>
 

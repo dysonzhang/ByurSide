@@ -12,7 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.ysls.imhere.HomeActivity;
+import com.ysls.imhere.MainActivity;
 import com.ysls.imhere.MyApplication;
 import com.ysls.imhere.WelcomeActivity;
 
@@ -42,7 +42,7 @@ public class IBeaconPushReceiver extends BroadcastReceiver {
 				Log.i("State", "--------->" + " app has started...");
 
 				if (isApplicationBroughtToBackground(context)) {
-					intent2 = new Intent(context, HomeActivity.class);
+					intent2 = new Intent(context, MainActivity.class);
 					intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					context.startActivity(intent2);
 

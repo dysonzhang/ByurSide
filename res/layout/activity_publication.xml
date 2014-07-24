@@ -20,20 +20,227 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20.0dip"
-                android:gravity="center_vertical" >
-   
+            <RelativeLayout
+                android:id="@+id/rl_notice_one"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/btn_bottom_selector" >
+
+                <ImageView
+                    android:id="@+id/user_picture"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/qq_contact_list_pbaccount_entry_icon"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY" />
+
                 <TextView
+                    android:id="@+id/todo_time"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="10dp"
+                    android:text="12:05"
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/qzone_list_icon_arrow" />
+
+                <LinearLayout
+                    android:id="@+id/ll_todos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Publication"
-                    android:textColor="#ff000000"
-                    android:textSize="20.0sp" />
-            </LinearLayout>
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/todo_time"
+                    android:layout_toRightOf="@id/user_picture"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/todo_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="园区通知"
+                        android:textColor="@color/gray_font"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/todo_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="园区通知各个企业公司员工在..."
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/devide_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_notice_two"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/btn_bottom_selector" >
+
+                <ImageView
+                    android:id="@+id/user_picture"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/qq_leba_list_seek_individuation"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/todo_time"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="10dp"
+                    android:text="昨天"
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/qzone_list_icon_arrow" />
+
+                <LinearLayout
+                    android:id="@+id/ll_todos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/todo_time"
+                    android:layout_toRightOf="@id/user_picture"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/todo_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="公司通知"
+                        android:textColor="@color/gray_font"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/todo_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="关于公司中秋节放假的通知..."
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/devide_line" />
+
+            <RelativeLayout
+                android:id="@+id/rl_notice_three"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@drawable/btn_bottom_selector" >
+
+                <ImageView
+                    android:id="@+id/user_picture"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/qq_leba_list_seek_individuation"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:id="@+id/todo_time"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="right"
+                    android:paddingRight="30dp"
+                    android:paddingTop="10dp"
+                    android:text="星期二"
+                    android:textColor="@color/gray_font"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/qzone_list_icon_arrow" />
+
+                <LinearLayout
+                    android:id="@+id/ll_todos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/todo_time"
+                    android:layout_toRightOf="@id/user_picture"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/todo_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="公司通知"
+                        android:textColor="@color/gray_font"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/todo_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="关于公司开展活动的通知..."
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/devide_line" />
         </LinearLayout>
     </ScrollView>
 

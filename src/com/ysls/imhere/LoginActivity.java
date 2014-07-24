@@ -61,7 +61,7 @@ public class LoginActivity extends BaseActivity {
 		// 如果用户名密码都有，直接进入主页面
 		if (MyApplication.getInstance().getUserName() != null
 				&& MyApplication.getInstance().getPassword() != null) {
-			openActivity(HomeActivity.class);
+			openActivity(MainActivity.class);
 			defaultFinish();
 		}
 
@@ -81,8 +81,8 @@ public class LoginActivity extends BaseActivity {
 		pwd = (EditText) findViewById(R.id.password);
 
 		// 测试帐户
-		account.setText("imhere");
-		pwd.setText("123456");
+//		account.setText("imhere");
+//		pwd.setText("123456");
 
 		mLogin = (Button) findViewById(R.id.login);
 		register = (Button) findViewById(R.id.register);
@@ -228,7 +228,7 @@ public class LoginActivity extends BaseActivity {
 							if (!LoginActivity.this.isFinishing())
 								pd.dismiss();
 							// 进入主页面
-							openActivity(HomeActivity.class);
+							openActivity(MainActivity.class);
 							defaultFinish();
 						}
 

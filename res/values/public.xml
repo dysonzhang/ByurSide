@@ -113,7 +113,6 @@
     <public id="0x7f020045" name="guide2" type="drawable" />
     <public id="0x7f020046" name="guide3" type="drawable" />
     <public id="0x7f020047" name="guide4" type="drawable" />
-    <public id="0x7f020048" name="guide5" type="drawable" />
     <public id="0x7f020049" name="home_btn_bg" type="drawable" />
     <public id="0x7f02004b" name="ic_compose" type="drawable" />
     <public id="0x7f02004c" name="ic_compose_inverse" type="drawable" />
@@ -145,7 +144,7 @@
    
     <public id="0x7f020072" name="xlistview_arrow" type="drawable" />
     <public id="0x7f030000" name="activity_about" type="layout" />
-    <public id="0x7f030001" name="activity_home" type="layout" />
+    <public id="0x7f030001" name="fragment_home" type="layout" />
     <public id="0x7f030002" name="above_title" type="layout" />
     <public id="0x7f030003" name="activity_guide" type="layout" />
     <public id="0x7f030004" name="activity_main" type="layout" />
@@ -165,7 +164,6 @@
     <public id="0x7f030015" name="main" type="layout" />
     <public id="0x7f030017" name="merge_verticalside" type="layout" />
     <public id="0x7f030018" name="news_item_layout" type="layout" />
-    <public id="0x7f030019" name="qr_code_scan" type="layout" />
     <public id="0x7f03001a" name="search_layout" type="layout" />
     <public id="0x7f03001b" name="slidingmenumain" type="layout" />
     <public id="0x7f03001d" name="tab_item_view" type="layout" />

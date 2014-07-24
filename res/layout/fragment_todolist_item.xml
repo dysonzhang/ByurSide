@@ -6,7 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp">
+        android:layout_height="65dp"
+        android:background="@drawable/btn_bottom_selector">
 
         <ImageView
             android:id="@+id/user_picture"
@@ -73,6 +74,7 @@
                 android:layout_marginTop="5dp"
                 android:ellipsize="end"
                 android:singleLine="true"
+                 android:textColor="@color/gray"
                 android:text="todo_content"
                 android:textSize="14sp"/>
         </LinearLayout>

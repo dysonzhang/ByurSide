@@ -37,7 +37,7 @@
                         android:id="@+id/iv_user_logo"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="30dp"
                         android:layout_marginTop="10dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/girl"
@@ -50,9 +50,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/iv_user_logo"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="45dp"
                         android:layout_marginTop="5dp"
-                        android:text="Katherine"
+                        android:text="戴玉达"
                         android:textColor="@color/whites"
                         android:textSize="20sp" />
                 </LinearLayout>
@@ -115,7 +115,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:text="职位"
                     android:textColor="@color/gray_font"
                     android:textSize="16sp" />
@@ -127,7 +127,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:text="Sales"
                     android:textColor="@color/gray"
                     android:textSize="16sp" />
@@ -149,7 +149,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:text="工号"
                     android:textColor="@color/gray_font"
                     android:textSize="16sp" />
@@ -161,7 +161,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:text="EA086453"
                     android:textColor="@color/gray"
                     android:textSize="16sp" />
@@ -183,7 +183,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:text="Email"
                     android:textColor="@color/gray_font"
                     android:textSize="16sp" />
@@ -195,7 +195,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:text="katherine@leektech.com.cn"
                     android:textColor="@color/gray"
                     android:textSize="16sp" />
@@ -217,7 +217,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:text="电话"
                     android:textColor="@color/gray_font"
                     android:textSize="16sp" />
@@ -229,7 +229,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:text="18623456789"
                     android:textColor="@color/gray"
                     android:textSize="16sp" />
@@ -251,7 +251,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:text="生日"
                     android:textColor="@color/gray_font"
                     android:textSize="16sp" />
@@ -263,7 +263,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="20dp"
                     android:text="1989-07-25"
                     android:textColor="@color/gray"
                     android:textSize="16sp" />
