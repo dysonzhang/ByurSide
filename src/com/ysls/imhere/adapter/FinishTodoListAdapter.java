@@ -4,7 +4,7 @@ import java.util.List;
  
 import com.ysls.imhere.R;
 import com.ysls.imhere.TodoDetailActivity;
-import com.ysls.imhere.bean.TodoModel; 
+import com.ysls.imhere.domain.TodoModel;
 import com.ysls.imhere.widget.CustomListView; 
 import android.content.Context;
 import android.content.Intent;

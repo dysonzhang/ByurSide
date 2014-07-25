@@ -17,8 +17,7 @@ public class SoundManager implements
 	}
 
 	@Override
-	public void onCompletion(MediaPlayer mp) {
-		// TODO Auto-generated method stub
+	public void onCompletion(MediaPlayer mp) { 
 		mp.release();
 		playerList.remove(mp);
 	}

@@ -40,7 +40,7 @@ public class PublicationActivity extends BaseActivity implements OnClickListener
 		
 		rl_notice_one.setOnClickListener(this);
 		rl_notice_two.setOnClickListener(this);
-		rl_notice_two.setOnClickListener(this);
+		rl_notice_three.setOnClickListener(this);
 	}
 
 	private void initTitleView() {

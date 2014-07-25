@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 
 import com.ysls.imhere.R;
 import com.ysls.imhere.adapter.DoingTodoListAdapter;
-import com.ysls.imhere.bean.TodoModel;
+import com.ysls.imhere.domain.TodoModel;
 import com.ysls.imhere.http.AsyncTaskBase;
 import com.ysls.imhere.test.TestData;
 import com.ysls.imhere.widget.CustomListView;

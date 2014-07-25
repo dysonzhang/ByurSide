@@ -114,17 +114,7 @@
     <item name="edittext_user_pwd" type="id">false</item>
     <item name="button_user_login" type="id">false</item>
     <item name="wiki_title" type="id">false</item>
-    <item name="xlistview_footer_content" type="id">false</item>
-    <item name="xlistview_footer_progressbar" type="id">false</item>
-    <item name="xlistview_footer_hint_textview" type="id">false</item>
-    <item name="xlistview_header_content" type="id">false</item>
-    <item name="xlistview_header_text" type="id">false</item>
-    <item name="xlistview_header_hint_textview" type="id">false</item>
-    <item name="xlistview_header_time" type="id">false</item>
-    <item name="xlistview_header_arrow" type="id">false</item>
-    <item name="xlistview_header_progressbar" type="id">false</item>
     <item name="action_settings" type="id">false</item>
     <item name="menu_settings" type="id">false</item>
 
-    
 </resources>

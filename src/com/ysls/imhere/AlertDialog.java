@@ -30,6 +30,8 @@ import com.easemob.chatuidemo.task.DownloadImageTask;
 import com.easemob.util.ImageUtils;
 import com.litesuits.http.request.param.HttpMethod;
 import com.litesuits.http.request.param.HttpParam;
+import com.ysls.imhere.ChatActivity;
+import com.ysls.imhere.R;
 import com.ysls.imhere.base.BaseActivity;
 import com.ysls.imhere.utils.ImageCache;
 

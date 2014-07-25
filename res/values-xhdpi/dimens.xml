@@ -2,7 +2,7 @@
 
     <!--
          Customize dimensions originally defined in res/values/dimens.xml (such as
-         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
+         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     -->
     <dimen name="activity_horizontal_margin">128dp</dimen>
     <dimen name="ibeacon_push_image_margin_top">5dp</dimen>
@@ -13,12 +13,12 @@
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="padding_large">16dp</dimen>
-    
     <dimen name="week_top_margin">74px</dimen>
-<dimen name="week_left_margin">116px</dimen>
-<dimen name="cell_width">58px</dimen>
-<dimen name="cell_heigh">53px</dimen>
-<dimen name="cell_margin_top">92px</dimen>
-<dimen name="cell_margin_left">115px</dimen>
-<dimen name="cell_text_size">26px</dimen>
+    <dimen name="week_left_margin">116px</dimen>
+    <dimen name="cell_width">58px</dimen>
+    <dimen name="cell_heigh">53px</dimen>
+    <dimen name="cell_margin_top">92px</dimen>
+    <dimen name="cell_margin_left">115px</dimen>
+    <dimen name="cell_text_size">26px</dimen>
+
 </resources>

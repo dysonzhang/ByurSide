@@ -41,7 +41,6 @@
     <public id="0x7f020005" name="back_behind_usershow_style" type="drawable" />
     <public id="0x7f020006" name="back_button_default_style" type="drawable" />
     <public id="0x7f020009" name="back_collect_bottom_corner" type="drawable" />
-    <public id="0x7f02000a" name="back_defails_good_style" type="drawable" />
     <public id="0x7f02000e" name="back_submit_style" type="drawable" />
     <public id="0x7f020011" name="back_textview_style" type="drawable" />
     <public id="0x7f020014" name="back_user_uid_style" type="drawable" />
@@ -51,11 +50,7 @@
     <public id="0x7f020065" name="shape_corner_border" type="drawable" />
     <public id="0x7f020066" name="slidingmenu_shadow" type="drawable" />
     <public id="0x7f020068" name="start_btn" type="drawable" />
-    <public id="0x7f020069" name="tab_home_btn" type="drawable" />
-    <public id="0x7f02006a" name="tab_message_btn" type="drawable" />
-    <public id="0x7f02006b" name="tab_more_btn" type="drawable" />
-    <public id="0x7f02006c" name="tab_selfinfo_btn" type="drawable" />
-    <public id="0x7f02006d" name="tab_square_btn" type="drawable" />
+    
     <public id="0x7f02004a" name="ic_action_search" type="drawable" />
     <public id="0x7f02004d" name="ic_launcher" type="drawable" />
     <public id="0x7f020001" name="back_above_second_title" type="drawable" />
@@ -71,23 +66,10 @@
     <public id="0x7f020012" name="back_title" type="drawable" />
     <public id="0x7f020013" name="back_user_icon" type="drawable" />
     <public id="0x7f020016" name="bg_load_default" type="drawable" />
-    <public id="0x7f020017" name="button_about" type="drawable" />
     <public id="0x7f020018" name="button_above_more" type="drawable" />
     <public id="0x7f020019" name="button_above_showmenu" type="drawable" />
-    <public id="0x7f02001a" name="button_details_bed_default" type="drawable" />
-    <public id="0x7f02001b" name="button_details_bed_selected" type="drawable" />
-    <public id="0x7f02001c" name="button_details_collect_default" type="drawable" />
-    <public id="0x7f02001d" name="button_details_collect_selected" type="drawable" />
-    <public id="0x7f02001e" name="button_details_discuss_default" type="drawable" />
-    <public id="0x7f02001f" name="button_details_discuss_selected" type="drawable" />
-    <public id="0x7f020020" name="button_details_gohome" type="drawable" />
-    <public id="0x7f020021" name="button_details_good_default" type="drawable" />
-    <public id="0x7f020022" name="button_details_good_selected" type="drawable" />
-    <public id="0x7f020023" name="button_details_share_default" type="drawable" />
-    <public id="0x7f020024" name="button_details_share_selected" type="drawable" />
-    <public id="0x7f020025" name="button_feedback" type="drawable" />
-    <public id="0x7f020026" name="button_setting" type="drawable" />
-    <public id="0x7f020027" name="button_title_more" type="drawable" />
+     <public id="0x7f020020" name="button_details_gohome" type="drawable" />
+     <public id="0x7f020027" name="button_title_more" type="drawable" />
     <public id="0x7f020028" name="button_title_query" type="drawable" />
     <public id="0x7f020029" name="button_user_help" type="drawable" />
     <public id="0x7f02002a" name="button_user_more" type="drawable" />
@@ -96,17 +78,14 @@
     <public id="0x7f02002d" name="dis_about_logo" type="drawable" />
     <public id="0x7f020030" name="dis_behind_side" type="drawable" />
     <public id="0x7f020031" name="dis_behind_verticalside" type="drawable" />
-    <public id="0x7f020032" name="dis_details_show" type="drawable" /> 
+    <public id="0x7f020032" name="dis_details_show" type="drawable" />
     <public id="0x7f020034" name="dis_error" type="drawable" />
     <public id="0x7f020035" name="dis_icon" type="drawable" />
     <public id="0x7f020036" name="dis_indicate_left" type="drawable" />
-    <public id="0x7f020037" name="dis_indicate_right" type="drawable" /> 
+    <public id="0x7f020037" name="dis_indicate_right" type="drawable" />
     <public id="0x7f02003c" name="dis_popup_side" type="drawable" />
     <public id="0x7f02003d" name="dis_search" type="drawable" />
-    <public id="0x7f02003e" name="dis_slide_normal" type="drawable" />
-    <public id="0x7f02003f" name="dis_slide_selected" type="drawable" />
-    <public id="0x7f020040" name="dis_user_example" type="drawable" />
-    <public id="0x7f020041" name="dis_usercollect_left" type="drawable" />
+     <public id="0x7f020041" name="dis_usercollect_left" type="drawable" />
     <public id="0x7f020042" name="dis_usercollect_menu" type="drawable" />
     <public id="0x7f020043" name="dis_usercollect_right" type="drawable" />
     <public id="0x7f020044" name="guide1" type="drawable" />
@@ -120,40 +99,22 @@
     <public id="0x7f02004f" name="ic_refresh_inverse" type="drawable" />
     <public id="0x7f020050" name="ic_search" type="drawable" />
     <public id="0x7f020051" name="ic_search_inverse" type="drawable" />
-    <public id="0x7f020052" name="icon_home_nor" type="drawable" />
-    <public id="0x7f020053" name="icon_home_sel" type="drawable" />
-    <public id="0x7f020054" name="icon_meassage_nor" type="drawable" />
-    <public id="0x7f020055" name="icon_meassage_sel" type="drawable" />
-    <public id="0x7f020056" name="icon_more_nor" type="drawable" />
-    <public id="0x7f020057" name="icon_more_sel" type="drawable" />
-    <public id="0x7f020058" name="icon_selfinfo_nor" type="drawable" />
-    <public id="0x7f020059" name="icon_selfinfo_sel" type="drawable" />
-    <public id="0x7f02005a" name="icon_square_nor" type="drawable" />
-    <public id="0x7f02005b" name="icon_square_sel" type="drawable" />
-    <public id="0x7f02005c" name="login_button" type="drawable" />
+     <public id="0x7f02005c" name="login_button" type="drawable" />
     <public id="0x7f02005d" name="login_button_select" type="drawable" />
     <public id="0x7f02005e" name="maintab_toolbar_bg" type="drawable" />
     <public id="0x7f02005f" name="messagescenter_notice" type="drawable" />
     <public id="0x7f020061" name="point_normal" type="drawable" />
     <public id="0x7f020062" name="point_select" type="drawable" />
     <public id="0x7f020063" name="qrcode_scan_line" type="drawable" />
-     
     <public id="0x7f02006e" name="umeng_update_close_bg_normal" type="drawable" />
     <public id="0x7f02006f" name="umeng_update_close_bg_tap" type="drawable" />
     <public id="0x7f020070" name="webview_load_default" type="drawable" />
-   
-    <public id="0x7f020072" name="xlistview_arrow" type="drawable" />
     <public id="0x7f030000" name="activity_about" type="layout" />
     <public id="0x7f030001" name="fragment_home" type="layout" />
     <public id="0x7f030002" name="above_title" type="layout" />
     <public id="0x7f030003" name="activity_guide" type="layout" />
     <public id="0x7f030004" name="activity_main" type="layout" />
     <public id="0x7f030005" name="activity_welcome" type="layout" />
-    <public id="0x7f030009" name="blogs_item_layout" type="layout" />
-    <public id="0x7f03000a" name="details_activity" type="layout" />
-    <public id="0x7f03000b" name="details_discuss_activity" type="layout" />
-    <public id="0x7f03000c" name="details_discuss_item" type="layout" />
-    <public id="0x7f03000d" name="details_title" type="layout" />
     <public id="0x7f03000e" name="guide_view01" type="layout" />
     <public id="0x7f03000f" name="guide_view02" type="layout" />
     <public id="0x7f030010" name="guide_view03" type="layout" />
@@ -161,35 +122,13 @@
     <public id="0x7f030012" name="http_error_fragment" type="layout" />
     <public id="0x7f030013" name="load_failed_layout" type="layout" />
     <public id="0x7f030014" name="loading_layout" type="layout" />
-    <public id="0x7f030015" name="main" type="layout" />
     <public id="0x7f030017" name="merge_verticalside" type="layout" />
-    <public id="0x7f030018" name="news_item_layout" type="layout" />
     <public id="0x7f03001a" name="search_layout" type="layout" />
-    <public id="0x7f03001b" name="slidingmenumain" type="layout" />
-    <public id="0x7f03001d" name="tab_item_view" type="layout" />
-    <public id="0x7f03001e" name="user_center_activity" type="layout" />
-    <public id="0x7f03001f" name="user_center_intro_fragment" type="layout" />
-    <public id="0x7f030020" name="user_collect_fragment" type="layout" />
-    <public id="0x7f030021" name="user_collect_list" type="layout" />
-    <public id="0x7f030022" name="user_collect_list_item" type="layout" />
-    <public id="0x7f030023" name="user_gridview_item_medal" type="layout" />
-    <public id="0x7f030024" name="user_login_activity" type="layout" />
-    <public id="0x7f030025" name="user_login_log_out" type="layout" />
-    <public id="0x7f030026" name="user_login_title" type="layout" />
-    <public id="0x7f030027" name="user_login_uid" type="layout" />
-    <public id="0x7f030028" name="wiki_item_layout" type="layout" />
-    <public id="0x7f030029" name="xlistview_footer" type="layout" />
-    <public id="0x7f03002a" name="xlistview_header" type="layout" />
     <public id="0x7f040000" name="alpha" type="anim" />
     <public id="0x7f040001" name="push_left_in" type="anim" />
     <public id="0x7f040002" name="push_left_out" type="anim" />
     <public id="0x7f040003" name="push_right_in" type="anim" />
-    <public id="0x7f040004" name="push_right_out" type="anim" />
-    <public id="0x7f040008" name="umeng_fb_slide_in_from_left" type="anim" />
-    <public id="0x7f040009" name="umeng_fb_slide_in_from_right" type="anim" />
-    <public id="0x7f04000a" name="umeng_fb_slide_out_from_left" type="anim" />
-    <public id="0x7f04000b" name="umeng_fb_slide_out_from_right" type="anim" />
-    <public id="0x7f050000" name="accelerate_quint" type="interpolator" />
+    <public id="0x7f040004" name="push_right_out" type="anim" /> 
     <public id="0x7f060000" name="left" type="id" />
     <public id="0x7f060001" name="right" type="id" />
     <public id="0x7f060002" name="margin" type="id" />
@@ -310,15 +249,6 @@
     <public id="0x7f060077" name="edittext_user_pwd" type="id" />
     <public id="0x7f060078" name="button_user_login" type="id" />
     <public id="0x7f060079" name="wiki_title" type="id" />
-    <public id="0x7f06007a" name="xlistview_footer_content" type="id" />
-    <public id="0x7f06007b" name="xlistview_footer_progressbar" type="id" />
-    <public id="0x7f06007c" name="xlistview_footer_hint_textview" type="id" />
-    <public id="0x7f06007d" name="xlistview_header_content" type="id" />
-    <public id="0x7f06007e" name="xlistview_header_text" type="id" />
-    <public id="0x7f06007f" name="xlistview_header_hint_textview" type="id" />
-    <public id="0x7f060080" name="xlistview_header_time" type="id" />
-    <public id="0x7f060081" name="xlistview_header_arrow" type="id" />
-    <public id="0x7f060082" name="xlistview_header_progressbar" type="id" />
     <public id="0x7f060083" name="action_settings" type="id" />
     <public id="0x7f060084" name="menu_settings" type="id" />
     <public id="0x7f070000" name="red" type="color" />
@@ -394,41 +324,9 @@
     <public id="0x7f0a0003" name="default_title_indicator_selected_bold" type="bool" />
     <public id="0x7f0a0004" name="default_underline_indicator_fades" type="bool" />
     <public id="0x7f0b0000" name="app_name" type="string" />
-    <public id="0x7f0b0002" name="hello_world" type="string" />
-    <public id="0x7f0b0004" name="title_activity_main" type="string" />
-    <public id="0x7f0b0013" name="DetailsGood" type="string" />
-    <public id="0x7f0b0014" name="DetailsBed" type="string" />
-    <public id="0x7f0b0015" name="DetailsCollect" type="string" />
-    <public id="0x7f0b0016" name="DetailsShare" type="string" />
-    <public id="0x7f0b0017" name="DetailsDiscuss" type="string" />
-    <public id="0x7f0b0018" name="user_center" type="string" />
-    <public id="0x7f0b0019" name="user_login_alert" type="string" />
-    <public id="0x7f0b001a" name="user_key_alert" type="string" />
-    <public id="0x7f0b001b" name="user_bind_btn" type="string" />
-    <public id="0x7f0b001c" name="user_qr_scan_btn" type="string" />
-    <public id="0x7f0b001d" name="user_alert" type="string" />
-    <public id="0x7f0b001e" name="user_button_alert" type="string" />
-    <public id="0x7f0b001f" name="user_level_alert" type="string" />
-    <public id="0x7f0b0020" name="user_login_another" type="string" />
-    <public id="0x7f0b0021" name="user_logout" type="string" />
-    <public id="0x7f0b0022" name="user_title" type="string" />
-    <public id="0x7f0b0023" name="user_cancel" type="string" />
-    <public id="0x7f0b0024" name="user_remember" type="string" />
-    <public id="0x7f0b0025" name="user_enter" type="string" />
-    <public id="0x7f0b0026" name="user_user_empty" type="string" />
-    <public id="0x7f0b0027" name="user_pwd_empty" type="string" />
-    <public id="0x7f0b0028" name="user_login_prompt" type="string" />
-    <public id="0x7f0b0029" name="user_login_enter_key" type="string" />
-    <public id="0x7f0b002a" name="xlistview_header_hint_normal" type="string" />
-    <public id="0x7f0b002b" name="xlistview_header_hint_ready" type="string" />
-    <public id="0x7f0b002c" name="xlistview_header_hint_loading" type="string" />
-    <public id="0x7f0b002d" name="xlistview_header_last_time" type="string" />
-    <public id="0x7f0b002e" name="xlistview_footer_hint_normal" type="string" />
-    <public id="0x7f0b002f" name="xlistview_footer_hint_ready" type="string" />
     <public id="0x7f0b0030" name="press_again_exit" type="string" />
     <public id="0x7f0b0031" name="httpError" type="string" />
     <public id="0x7f0b0032" name="httpisNull" type="string" />
-    <public id="0x7f0b0033" name="user_center_error" type="string" />
     <public id="0x7f0b0034" name="user_username" type="string" />
     <public id="0x7f0b0035" name="user_pwd" type="string" />
     <public id="0x7f0b0036" name="user_login_error" type="string" />
@@ -440,21 +338,9 @@
     <public id="0x7f0b003f" name="about_tontact" type="string" />
     <public id="0x7f0b0040" name="about_sina" type="string" />
     <public id="0x7f0b0041" name="about_weixin" type="string" />
-    <public id="0x7f0b0042" name="detail_prompt" type="string" />
-    <public id="0x7f0b0043" name="detail_enter" type="string" />
-    <public id="0x7f0b0044" name="discuss_succeed" type="string" />
-    <public id="0x7f0b0045" name="discuss_fail" type="string" />
-    <public id="0x7f0b0046" name="query_prompt" type="string" />
     <public id="0x7f0b0047" name="feedback_submit" type="string" />
     <public id="0x7f0b0048" name="feedback_input_content" type="string" />
     <public id="0x7f0b0049" name="feedback_back" type="string" />
-    <public id="0x7f0b004a" name="user_center_get_info_error" type="string" />
-    <public id="0x7f0b004b" name="user_center_my_Collect" type="string" />
-    <public id="0x7f0b004c" name="user_center_my_Intro" type="string" />
-    <public id="0x7f0b004d" name="user_center_exit" type="string" />
-    <public id="0x7f0b0050" name="scan_tip" type="string" />
-    <public id="0x7f0b0051" name="scan_retry" type="string" />
-    <public id="0x7f0b0052" name="scan_title" type="string" />
     <public id="0x7f0c0000" name="AppTheme" type="style" />
     <public id="0x7f0c0001" name="Theme.splash" type="style" />
     <public id="0x7f0c0002" name="behind_button_style" type="style" />

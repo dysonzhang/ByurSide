@@ -60,7 +60,7 @@
         android:layout_margin="10dp"
         android:background="@drawable/pop_bg"
         android:gravity="center"
-        android:text="@string/app_cancle"
+        android:text="@string/cancel"
         android:textColor="@color/blue"
         android:textSize="16sp" />
 

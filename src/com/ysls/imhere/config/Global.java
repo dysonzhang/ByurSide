@@ -12,6 +12,6 @@ public class Global {
 
 	public static int CHECKIN_MODE = Constants.BT_NULL_CHECKIN_MODE;
 	
-	public static String WebView_URL = "http://www.baidu.com";
+	public static String WebView_URL = "http://www.protoshop.io";
 
 }

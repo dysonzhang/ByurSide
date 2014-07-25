@@ -51,12 +51,12 @@
             <Button
                 android:id="@+id/constact_group"
                 style="@style/top_group"
-                android:text="@string/group" />
+                android:text="分组" />
 
             <Button
                 android:id="@+id/constact_all"
                 style="@style/top_all"
-                android:text="@string/all" />
+                android:text="全部" />
         </LinearLayout>
 
         <View
